@@ -1,5 +1,19 @@
 # Growth Engine
 
+## Preamble (runs on skill start)
+
+```bash
+# Version check (silent if up to date)
+python3 telemetry/version_check.py 2>/dev/null || true
+
+# Telemetry opt-in (first run only, then remembers your choice)
+python3 telemetry/telemetry_init.py 2>/dev/null || true
+```
+
+> **Privacy:** This skill logs usage locally to `~/.ai-marketing-skills/analytics/`. Remote telemetry is opt-in only. No code, file paths, or repo content is ever collected. See `telemetry/README.md`.
+
+---
+
 Autonomous growth experimentation framework based on Karpathy's autoresearch pattern applied to marketing. Creates experiments with hypotheses, logs data points, runs statistical analysis (bootstrap CI + Mann-Whitney U), auto-promotes winners to a living playbook, and suggests next experiments. Supports batch mode (up to 10 variants simultaneously).
 
 ## Usage

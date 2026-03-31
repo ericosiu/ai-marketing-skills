@@ -9,13 +9,23 @@
     "node_modules",
     ".git",
     "__pycache__",
-    ".env.example"
+    ".env.example",
+    "security/README.md",
+    "security/sanitizer-config.json"
   ],
   "allow_patterns": [
     "api_key=ANTHROPIC_API_KEY",
     "api_key = get_",
     "API_KEY=\"your-",
-    "0123456789"
+    "0123456789",
+    "@example.com",
+    "@acme.com",
+    "@host.com",
+    "(555)",
+    "+1-555",
+    "123-45-6789",
+    "user:pass@",
+    "security@singlegrain.com"
   ],
   "placeholder_format": "bracket",
   "_comment": "Single Grain removed from blocklist since this is our repo. Fork users should add their own company names."

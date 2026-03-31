@@ -13,6 +13,21 @@ description: >-
   multi-platform content plan.
 ---
 
+
+## Preamble (runs on skill start)
+
+```bash
+# Version check (silent if up to date)
+python3 telemetry/version_check.py 2>/dev/null || true
+
+# Telemetry opt-in (first run only, then remembers your choice)
+python3 telemetry/telemetry_init.py 2>/dev/null || true
+```
+
+> **Privacy:** This skill logs usage locally to `~/.ai-marketing-skills/analytics/`. Remote telemetry is opt-in only. No code, file paths, or repo content is ever collected. See `telemetry/README.md`.
+
+---
+
 # Podcast-to-Everything Pipeline
 
 Turns podcast episodes into a full content calendar across every platform.

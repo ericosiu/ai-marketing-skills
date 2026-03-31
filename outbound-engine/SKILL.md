@@ -3,6 +3,21 @@ name: cold-outbound-optimizer
 description: Design, analyze, and optimize cold outbound email campaigns for Instantly. Handles end-to-end ICP definition, expert panel scoring (recursive to 90+), sequence copywriting, infrastructure audit, capacity planning, and implementation docs. Use when asked to build cold outbound sequences, optimize cold email, analyze outbound campaigns, build sales sequences, build Instantly sequences, create cold outbound strategies, or design email campaigns. Supports both "start from scratch" and "optimize existing" modes.
 ---
 
+
+## Preamble (runs on skill start)
+
+```bash
+# Version check (silent if up to date)
+python3 telemetry/version_check.py 2>/dev/null || true
+
+# Telemetry opt-in (first run only, then remembers your choice)
+python3 telemetry/telemetry_init.py 2>/dev/null || true
+```
+
+> **Privacy:** This skill logs usage locally to `~/.ai-marketing-skills/analytics/`. Remote telemetry is opt-in only. No code, file paths, or repo content is ever collected. See `telemetry/README.md`.
+
+---
+
 # Cold Outbound Optimizer
 
 ---

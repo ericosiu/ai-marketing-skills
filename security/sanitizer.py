@@ -163,10 +163,17 @@ def scan_line(
     company_patterns: list[tuple[re.Pattern, str, str]],
     person_patterns: list[tuple[re.Pattern, str, str]],
     placeholder_format: str,
+    allow_patterns: list[str] | None = None,
 ) -> list[Finding]:
     """Return findings for a single line."""
     if is_import_line(line):
         return []
+
+    # Skip lines matching allow_patterns
+    if allow_patterns:
+        for ap in allow_patterns:
+            if ap in line:
+                return []
 
     findings: list[Finding] = []
 
@@ -257,6 +264,7 @@ def scan_file(
     company_pats: list,
     person_pats: list,
     placeholder_format: str,
+    allow_patterns: list[str] | None = None,
 ) -> list[Finding]:
     try:
         text = filepath.read_text(errors="replace")
@@ -267,7 +275,7 @@ def scan_file(
     findings = []
     for i, line in enumerate(text.splitlines(), 1):
         findings.extend(
-            scan_line(line, i, compiled, company_pats, person_pats, placeholder_format)
+            scan_line(line, i, compiled, company_pats, person_pats, placeholder_format, allow_patterns)
         )
     return findings
 
@@ -278,6 +286,7 @@ def sanitize_file(
     company_pats: list,
     person_pats: list,
     placeholder_format: str,
+    allow_patterns: list[str] | None = None,
 ) -> list[Finding]:
     """Scan and replace PII in-place. Returns findings for reporting."""
     try:
@@ -291,7 +300,7 @@ def sanitize_file(
 
     for i, line in enumerate(text.splitlines(), 1):
         line_findings = scan_line(
-            line, i, compiled, company_pats, person_pats, placeholder_format
+            line, i, compiled, company_pats, person_pats, placeholder_format, allow_patterns
         )
         findings.extend(line_findings)
 
@@ -412,6 +421,7 @@ Examples:
 
     placeholder_format = config.get("placeholder_format", "bracket")
     skip_paths = set(config.get("skip_paths", [])) | DEFAULT_SKIP_PATHS
+    allow_patterns = config.get("allow_patterns", []) or []
 
     compiled, company_pats, person_pats = compile_patterns(config)
 
@@ -437,7 +447,7 @@ Examples:
 
     all_findings: dict[str, list[Finding]] = {}
     for fp in files:
-        findings = process_fn(fp, compiled, company_pats, person_pats, placeholder_format)
+        findings = process_fn(fp, compiled, company_pats, person_pats, placeholder_format, allow_patterns)
         if findings:
             all_findings[str(fp)] = findings
 

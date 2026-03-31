@@ -3,6 +3,21 @@ name: finance-ops
 description: "AI-powered financial analysis suite. Generates executive CFO briefings from QuickBooks exports (P&L, Balance Sheet, General Ledger, Cash Flow, etc.) with anomaly detection, burn rate, runway analysis, and scenario modeling. Also estimates codebase development costs with organizational overhead and AI ROI analysis. Triggers on: 'CFO briefing', 'financial analysis', 'cost briefing', 'expense review', 'runway analysis', 'burn rate', 'cost estimate', 'how much would this cost to build', 'development cost', 'Claude ROI'."
 ---
 
+
+## Preamble (runs on skill start)
+
+```bash
+# Version check (silent if up to date)
+python3 telemetry/version_check.py 2>/dev/null || true
+
+# Telemetry opt-in (first run only, then remembers your choice)
+python3 telemetry/telemetry_init.py 2>/dev/null || true
+```
+
+> **Privacy:** This skill logs usage locally to `~/.ai-marketing-skills/analytics/`. Remote telemetry is opt-in only. No code, file paths, or repo content is ever collected. See `telemetry/README.md`.
+
+---
+
 # AI Finance Ops
 
 Two tools: CFO Briefing Generator and Codebase Cost Estimator.

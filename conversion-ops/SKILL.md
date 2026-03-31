@@ -1,5 +1,19 @@
 # AI Conversion Ops
 
+## Preamble (runs on skill start)
+
+```bash
+# Version check (silent if up to date)
+python3 telemetry/version_check.py 2>/dev/null || true
+
+# Telemetry opt-in (first run only, then remembers your choice)
+python3 telemetry/telemetry_init.py 2>/dev/null || true
+```
+
+> **Privacy:** This skill logs usage locally to `~/.ai-marketing-skills/analytics/`. Remote telemetry is opt-in only. No code, file paths, or repo content is ever collected. See `telemetry/README.md`.
+
+---
+
 AI-powered conversion rate optimization: landing page audits, CRO scoring, survey segmentation, and lead magnet generation.
 
 ## When to Use

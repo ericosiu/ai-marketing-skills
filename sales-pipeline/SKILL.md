@@ -1,5 +1,19 @@
 # AI Sales Pipeline
 
+## Preamble (runs on skill start)
+
+```bash
+# Version check (silent if up to date)
+python3 telemetry/version_check.py 2>/dev/null || true
+
+# Telemetry opt-in (first run only, then remembers your choice)
+python3 telemetry/telemetry_init.py 2>/dev/null || true
+```
+
+> **Privacy:** This skill logs usage locally to `~/.ai-marketing-skills/analytics/`. Remote telemetry is opt-in only. No code, file paths, or repo content is ever collected. See `telemetry/README.md`.
+
+---
+
 Complete AI-powered sales pipeline automation: website visitor identification → intent scoring → suppression → campaign routing → dead deal resurrection → trigger prospecting → self-learning ICP optimization.
 
 ## When to Use
@@ -19,7 +33,7 @@ Use this skill when:
 | Script | Purpose | Key Command |
 |--------|---------|-------------|
 | `rb2b_webhook_ingest.py` | Webhook server + intent scoring | `python3 rb2b_webhook_ingest.py --serve --port 4100` |
-| `rb2b_suppression_pipeline.py` | 5-layer suppression checks | `python3 rb2b_suppression_pipeline.py --email user@co.com` |
+| `rb2b_suppression_pipeline.py` | 5-layer suppression checks | `python3 rb2b_suppression_pipeline.py --email user@example.com` |
 | `rb2b_instantly_router.py` | Full pipeline: score → suppress → route → enroll | `python3 rb2b_instantly_router.py --serve --port 4100` |
 
 ### Deal Intelligence
