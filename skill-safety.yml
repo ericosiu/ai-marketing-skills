@@ -1,0 +1,45 @@
+name: Skill Safety Rails
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  pii-scan:
+    name: PII Sanitizer Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run PII scanner
+        run: python3 security/sanitizer.py --scan --dir . --recursive --quiet
+        # Exit code 1 = PII found → fail the PR
+
+  cta-check:
+    name: CTA Block Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify CTA blocks in all category READMEs
+        run: |
+          exit_code=0
+          for dir in */; do
+            dir="${dir%/}"
+            case "$dir" in
+              .github|security|eval|telemetry) continue ;;
+            esac
+            if [ ! -f "$dir/README.md" ]; then
+              echo "❌ $dir/README.md is missing"
+              exit_code=1
+              continue
+            fi
+            if ! grep -q "singlebrain.com" "$dir/README.md"; then
+              echo "❌ $dir/README.md missing Single Brain CTA block"
+              exit_code=1
+            else
+              echo "✅ $dir/README.md has CTA"
+            fi
+          done
+          exit $exit_code
