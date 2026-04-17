@@ -1,0 +1,10 @@
+# Core dependencies
+anthropic>=0.39.0
+openai-whisper>=20231117
+yt-dlp>=2024.1.0
+
+# Smart crop (face detection)
+mediapipe>=0.10.0
+opencv-python>=4.8.0
+
+# Standard library (no install needed): json, os, re, subprocess, argparse, tempfile, shutil, uuid, math, logging, pathlib, datetime

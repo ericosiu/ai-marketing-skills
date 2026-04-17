@@ -1,0 +1,5 @@
+# Content Eval Skill
+# No Python dependencies required — this is a prompt-based skill.
+# Optional integrations:
+# - YouTube competitive analysis tool (for competitor scanning)
+# - Google Workspace API (for document export)

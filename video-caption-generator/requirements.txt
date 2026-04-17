@@ -1,0 +1,6 @@
+# Core dependencies for video-caption-generator
+# Whisper must be installed separately: pip install openai-whisper
+# Google Drive access requires a CLI tool (gws, gdrive, rclone, etc.)
+
+# No additional pip packages required — uses only Python stdlib
+# (urllib.request for Anthropic API, subprocess for Whisper + Drive CLI)
