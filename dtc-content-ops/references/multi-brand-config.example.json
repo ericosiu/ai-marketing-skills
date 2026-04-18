@@ -1,0 +1,211 @@
+{
+  "_description": "Example multi-brand configuration for a DTC supplement business with 3 brands.",
+  "_version": "1.0.0",
+  "businesses": {
+    "acme_supplements": {
+      "name": "Acme Supplements",
+      "url": "https://acme-supplements.example.com",
+      "content_strategy": "product_focused",
+      "description": "Supplement product line. Lead with the problem the product solves, then reference the product.",
+      "tone": "Direct, educational, no hype. Explain the mechanism. Let the product speak through the science.",
+      "accounts": {
+        "x": {
+          "handle": "@acmesupplements",
+          "env_vars": {
+            "api_key": "X_SUPPLEMENTS_API_KEY",
+            "api_secret": "X_SUPPLEMENTS_API_SECRET",
+            "access_token": "X_SUPPLEMENTS_ACCESS_TOKEN",
+            "access_secret": "X_SUPPLEMENTS_ACCESS_SECRET"
+          }
+        },
+        "instagram": {
+          "handle": "@acmesupplements",
+          "env_vars": {
+            "user_id": "IG_SUPPLEMENTS_USER_ID",
+            "access_token": "IG_SUPPLEMENTS_ACCESS_TOKEN"
+          }
+        },
+        "threads": {
+          "handle": "@acmesupplements",
+          "env_vars": {
+            "user_id": "THREADS_SUPPLEMENTS_USER_ID",
+            "access_token": "THREADS_SUPPLEMENTS_ACCESS_TOKEN"
+          }
+        },
+        "tiktok": {
+          "handle": "@acmesupplements",
+          "env_vars": {
+            "access_token": "TIKTOK_ACCESS_TOKEN"
+          }
+        }
+      },
+      "platform_rules": {
+        "x": {
+          "enabled": true,
+          "media_types": ["image", "video"],
+          "max_chars": 280,
+          "image_format": "1:1"
+        },
+        "instagram_feed": {
+          "enabled": true,
+          "media_types": ["image", "video"],
+          "image_format": "4:5",
+          "description": "Product images and short educational clips"
+        },
+        "instagram_story": {
+          "enabled": true,
+          "media_types": ["image", "video"],
+          "image_format": "9:16",
+          "description": "Product stories with swipe-up CTA"
+        },
+        "threads": {
+          "enabled": true,
+          "media_types": ["image", "video"],
+          "max_chars": 500,
+          "image_format": "1:1"
+        },
+        "shopify_blog": {
+          "enabled": true,
+          "media_types": ["image"],
+          "description": "SEO blog posts"
+        },
+        "tiktok": {
+          "enabled": true,
+          "media_types": ["photo", "video"],
+          "description": "Product videos and shop integration"
+        }
+      }
+    },
+    "acme_coaching": {
+      "name": "Acme Coaching",
+      "url": "https://acme-coaching.example.com",
+      "content_strategy": "educational",
+      "description": "Personal coaching brand. Educational content about nutrition, training, and coaching fundamentals.",
+      "tone": "Direct, calm, experienced coach. Basics done well over time. No fad hacks.",
+      "accounts": {
+        "x": {
+          "handle": "@acmecoaching",
+          "env_vars": {
+            "api_key": "X_COACHING_API_KEY",
+            "api_secret": "X_COACHING_API_SECRET",
+            "access_token": "X_COACHING_ACCESS_TOKEN",
+            "access_secret": "X_COACHING_ACCESS_SECRET"
+          }
+        },
+        "instagram": {
+          "handle": "@acmecoaching",
+          "env_vars": {
+            "user_id": "IG_COACHING_USER_ID",
+            "access_token": "IG_COACHING_ACCESS_TOKEN"
+          }
+        },
+        "threads": {
+          "handle": "@acmecoaching",
+          "env_vars": {
+            "user_id": "THREADS_COACHING_USER_ID",
+            "access_token": "THREADS_COACHING_ACCESS_TOKEN"
+          }
+        }
+      },
+      "platform_rules": {
+        "x": {
+          "enabled": true,
+          "media_types": ["image", "video"],
+          "max_chars": 280,
+          "description": "Educational tweets"
+        },
+        "instagram_feed": {
+          "enabled": false,
+          "_reason": "Personal coaching brand uses video reels only on IG feed"
+        },
+        "instagram_story": {
+          "enabled": true,
+          "media_types": ["video"],
+          "image_format": "9:16",
+          "description": "Video stories only"
+        },
+        "instagram_reel": {
+          "enabled": true,
+          "media_types": ["video"],
+          "description": "Video reels only"
+        },
+        "threads": {
+          "enabled": true,
+          "media_types": ["text", "image"],
+          "max_chars": 500
+        },
+        "blogger": {
+          "enabled": true,
+          "media_types": ["image"],
+          "description": "Educational blog posts"
+        }
+      }
+    },
+    "acme_ai": {
+      "name": "Acme AI Coach",
+      "url": "https://acme-ai.example.com",
+      "content_strategy": "ai_product",
+      "description": "AI coaching subscription. Content shows what the AI coach can do through practical examples.",
+      "tone": "Forward-thinking but grounded. Show the tech through results, not hype.",
+      "accounts": {
+        "x": {
+          "handle": "@acmeai",
+          "env_vars": {
+            "api_key": "X_AI_API_KEY",
+            "api_secret": "X_AI_API_SECRET",
+            "access_token": "X_AI_ACCESS_TOKEN",
+            "access_secret": "X_AI_ACCESS_SECRET"
+          }
+        },
+        "instagram": {
+          "handle": "@acmeai",
+          "env_vars": {
+            "user_id": "IG_AI_USER_ID",
+            "access_token": "IG_AI_ACCESS_TOKEN"
+          }
+        },
+        "threads": {
+          "handle": "@acmeai",
+          "env_vars": {
+            "user_id": "THREADS_AI_USER_ID",
+            "access_token": "THREADS_AI_ACCESS_TOKEN"
+          }
+        }
+      },
+      "platform_rules": {
+        "x": {
+          "enabled": true,
+          "media_types": ["image", "video"],
+          "max_chars": 280
+        },
+        "instagram_feed": {
+          "enabled": true,
+          "media_types": ["image", "video"],
+          "image_format": "4:5"
+        },
+        "instagram_story": {
+          "enabled": true,
+          "media_types": ["image", "video"],
+          "image_format": "9:16"
+        },
+        "threads": {
+          "enabled": true,
+          "media_types": ["text", "image"],
+          "max_chars": 500
+        },
+        "tiktok": {
+          "enabled": true,
+          "media_types": ["photo", "video"]
+        }
+      }
+    }
+  },
+  "content_generation": {
+    "model": "claude-sonnet-4-6",
+    "posting_schedule": {
+      "generate_time": "09:00",
+      "timezone": "America/New_York",
+      "review_window_hours": 2
+    }
+  }
+}
