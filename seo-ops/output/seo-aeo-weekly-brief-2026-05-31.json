@@ -1,0 +1,151 @@
+{
+  "report_date": "2026-05-31",
+  "report_type": "SEO + AEO Weekly Intelligence Brief",
+  "data_sources": ["Ahrefs API", "Web Trend Scanning", "SERP Feature Analysis"],
+  "striking_distance_keywords_count": 50,
+  "keywords_with_ai_overviews": 14,
+  "top_10_opportunities": [
+    {
+      "rank": 1,
+      "topic": "Answer Engine Optimization (AEO)",
+      "type": "New Content",
+      "volume": 3700,
+      "kd": 48,
+      "seo_score": 9,
+      "aeo_score": 10,
+      "priority": 9.5,
+      "serp_features": ["ai_overview", "question", "news", "discussion"],
+      "action": "Create definitive pillar content guide"
+    },
+    {
+      "rank": 2,
+      "topic": "Generative Engine Optimization (GEO)",
+      "type": "New Content",
+      "volume": 12000,
+      "kd": 80,
+      "seo_score": 8,
+      "aeo_score": 10,
+      "priority": 9.0,
+      "serp_features": ["ai_overview", "discussion", "image"],
+      "action": "Create canonical guide"
+    },
+    {
+      "rank": 3,
+      "topic": "ChatGPT Ads",
+      "type": "New Content",
+      "volume": 1600,
+      "kd": 24,
+      "seo_score": 9,
+      "aeo_score": 9,
+      "priority": 9.0,
+      "serp_features": ["ai_overview", "news"],
+      "action": "First-mover content opportunity"
+    },
+    {
+      "rank": 4,
+      "topic": "Search Intent",
+      "type": "Quick Win",
+      "current_position": 8,
+      "volume": 2600,
+      "seo_score": 9,
+      "aeo_score": 9,
+      "priority": 9.0,
+      "serp_features": ["ai_overview", "question"],
+      "action": "Refresh with answer-first format + FAQ schema",
+      "url": "https://www.singlegrain.com/blog/search-intent-optimization/"
+    },
+    {
+      "rank": 5,
+      "topic": "Agentic AI Marketing",
+      "type": "New Content",
+      "volume": 300,
+      "kd": 17,
+      "seo_score": 8,
+      "aeo_score": 9,
+      "priority": 8.5,
+      "action": "Create definitional guide early"
+    },
+    {
+      "rank": 6,
+      "topic": "AI Search Visibility",
+      "type": "New Content",
+      "volume": 1600,
+      "kd": 46,
+      "seo_score": 8,
+      "aeo_score": 9,
+      "priority": 8.5,
+      "serp_features": ["ai_overview", "news"],
+      "action": "Create measurement framework guide"
+    },
+    {
+      "rank": 7,
+      "topic": "Is YouTube Social Media",
+      "type": "Quick Win",
+      "current_position": 10,
+      "volume": 2700,
+      "seo_score": 7,
+      "aeo_score": 9,
+      "priority": 8.0,
+      "serp_features": ["ai_overview", "question", "news"],
+      "action": "Refresh with definitive answer format",
+      "url": "https://www.singlegrain.com/digital-marketing-strategy/is-youtube-considered-social-media-the-definitive-answer/"
+    },
+    {
+      "rank": 8,
+      "topic": "What is a SaaS Company",
+      "type": "Quick Win",
+      "current_position": 15,
+      "volume": 1800,
+      "seo_score": 7,
+      "aeo_score": 9,
+      "priority": 8.0,
+      "serp_features": ["ai_overview", "question", "news"],
+      "action": "Definition-first rewrite",
+      "url": "https://www.singlegrain.com/saas/examples-of-saas-companies/"
+    },
+    {
+      "rank": 9,
+      "topic": "Programmatic SEO",
+      "type": "New Content",
+      "volume": 2200,
+      "kd": 26,
+      "seo_score": 8,
+      "aeo_score": 8,
+      "priority": 8.0,
+      "serp_features": ["ai_overview", "question", "news", "discussion"],
+      "action": "Create tactical guide with AI agents angle"
+    },
+    {
+      "rank": 10,
+      "topic": "Content Strategy Framework",
+      "type": "Quick Win",
+      "current_position": 9,
+      "volume": 600,
+      "seo_score": 7,
+      "aeo_score": 9,
+      "priority": 8.0,
+      "serp_features": ["ai_overview", "question"],
+      "action": "Expand with step-by-step framework + schema",
+      "url": "https://www.singlegrain.com/blog/lu/create-content/"
+    }
+  ],
+  "quick_wins": {
+    "count": 10,
+    "description": "Striking distance keywords (pos 4-20) with AI Overview presence"
+  },
+  "new_content_needed": {
+    "count": 10,
+    "description": "Trending topics with high AEO potential where no content exists"
+  },
+  "refresh_targets": {
+    "count": 10,
+    "description": "Existing pages that could earn AI citations with targeted updates"
+  },
+  "key_landscape_signals": [
+    "Google Marketing Live 2026: Gemini is OS underneath all ad products; ads in AI Mode",
+    "ChatGPT Ads Manager self-serve launch with ~50M daily shopping queries",
+    "AI Overviews now on 58% of searches (up from ~47%)",
+    "Agentic AI: 2/3 of brand/agency buyers focused on agentic ad buying",
+    "Zero-click spans ChatGPT, Perplexity, Gemini, Bing, Meta AI; 60% searches no-click"
+  ]
+}
