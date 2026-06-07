@@ -1,0 +1,135 @@
+{
+  "report_date": "2026-06-07",
+  "report_type": "seo_aeo_weekly_brief",
+  "domain": "singlegrain.com",
+  "summary": {
+    "striking_distance_keywords": 100,
+    "top_3_rankings": 50,
+    "ai_overview_citations": 20,
+    "brand_radar_ai_mentions": 0,
+    "brand_radar_note": "Zero brand-level AI citations for Single Grain in marketing context. All matches are false positives (whisky/food)."
+  },
+  "top_10_opportunities": [
+    {
+      "rank": 1,
+      "topic": "paid media (cluster: paid media marketing, paid media definition, what is paid media)",
+      "seo_score": 9,
+      "aeo_score": 9,
+      "combined": 9.0,
+      "category": "Quick Win",
+      "action": "Consolidate & expand existing guide with structured Q&A and comparison tables",
+      "cluster_volume": 6500
+    },
+    {
+      "rank": 2,
+      "topic": "enterprise SEO companies (cluster: enterprise seo marketing company, enterprise search marketing agency)",
+      "seo_score": 8,
+      "aeo_score": 9,
+      "combined": 8.5,
+      "category": "Quick Win",
+      "action": "Refresh listicle with 2026 data, add methodology section",
+      "cluster_volume": 3400
+    },
+    {
+      "rank": 3,
+      "topic": "do keywords matter anymore (AI search era)",
+      "seo_score": 7,
+      "aeo_score": 10,
+      "combined": 8.5,
+      "category": "Quick Win",
+      "action": "Expand with fresh 2026 data and authoritative framework",
+      "cluster_volume": 350
+    },
+    {
+      "rank": 4,
+      "topic": "answer engine optimization (AEO)",
+      "seo_score": 8,
+      "aeo_score": 10,
+      "combined": 9.0,
+      "category": "New Content",
+      "action": "Create definitive AEO guide - own this term before competitors",
+      "estimated_volume": 2000
+    },
+    {
+      "rank": 5,
+      "topic": "ChatGPT advertising / agentic advertising",
+      "seo_score": 6,
+      "aeo_score": 10,
+      "combined": 8.0,
+      "category": "New Content",
+      "action": "Create comprehensive guide - ChatGPT ads projecting $2.5B for 2026",
+      "trending": true
+    },
+    {
+      "rank": 6,
+      "topic": "search intent optimization",
+      "seo_score": 7,
+      "aeo_score": 9,
+      "combined": 8.0,
+      "category": "Quick Win",
+      "action": "Expand existing post with definitive taxonomy framework",
+      "cluster_volume": 2600
+    },
+    {
+      "rank": 7,
+      "topic": "AI attribution gap",
+      "seo_score": 5,
+      "aeo_score": 10,
+      "combined": 7.5,
+      "category": "New Content",
+      "action": "Create original research piece on measuring AI-influenced conversions",
+      "trending": true
+    },
+    {
+      "rank": 8,
+      "topic": "content strategy framework",
+      "seo_score": 7,
+      "aeo_score": 8,
+      "combined": 7.5,
+      "category": "Quick Win",
+      "action": "Refresh with visual framework, downloadable template",
+      "cluster_volume": 600
+    },
+    {
+      "rank": 9,
+      "topic": "AI paragraph generator (cluster variants)",
+      "seo_score": 8,
+      "aeo_score": 6,
+      "combined": 7.0,
+      "category": "Quick Win",
+      "action": "Add FAQ schema, comparison table, structured how-it-works section",
+      "cluster_volume": 22000
+    },
+    {
+      "rank": 10,
+      "topic": "retargeting companies / account-based retargeting",
+      "seo_score": 7,
+      "aeo_score": 7,
+      "combined": 7.0,
+      "category": "Quick Win",
+      "action": "Refresh listicle with 2026 data, add comparison table and pricing",
+      "cluster_volume": 900
+    }
+  ],
+  "sections": {
+    "quick_wins": 13,
+    "new_content_needed": 7,
+    "refresh_targets": 17
+  },
+  "ai_citation_stats": {
+    "keywords_with_ai_overview_in_serp_pct": 42,
+    "keywords_with_question_features_pct": 68,
+    "informational_intent_pct": 95,
+    "commercial_intent_pct": 25,
+    "pages_in_ai_overview_position_1": 20
+  },
+  "trending_topics_june_2026": [
+    "ChatGPT advertising expansion ($2.5B projected)",
+    "Agentic advertising (Google Marketing Live)",
+    "AI attribution gap in marketing measurement",
+    "Answer Engine Optimization (AEO) paradigm shift",
+    "Meta surpassing Google in ad revenue",
+    "AI-powered campaign orchestration",
+    "69% zero-click search rate"
+  ]
+}
