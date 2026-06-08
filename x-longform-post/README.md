@@ -2,15 +2,16 @@
 
 Write long-form X (Twitter) articles and threads that actually sound human. Includes a 24-pattern AI writing detector that catches and eliminates AI slop before you publish.
 
-Most AI-generated content dies on the timeline because it *reads* like AI. This skill fixes that by running every draft through a humanizer checklist based on [Wikipedia's "Signs of AI writing"](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI-generated_content) research.
+Most AI-generated content dies on the timeline because it *reads* like AI. This skill fixes that by running every draft through a humanizer checklist based on [Wikipedia's "Signs of AI writing"](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) research.
 
 ## What It Does
 
 1. Takes a topic + contrarian angle
-2. Generates a structured long-form post with ASCII diagrams
-3. Runs the 24-pattern humanizer checklist
-4. Rewrites any sections that trigger AI patterns
-5. Outputs a post ready to paste into X
+2. Optionally pulls recent X source context and public post performance
+3. Generates a structured long-form post with ASCII diagrams
+4. Runs the 24-pattern humanizer checklist
+5. Rewrites any sections that trigger AI patterns
+6. Outputs a post ready to paste into X
 
 ## The Humanizer
 
@@ -50,6 +51,10 @@ To match your personal brand:
 1. Copy `references/voice-template.md` to your project
 2. Fill in your voice traits, vocabulary, and a sample post
 3. Reference it when generating
+
+## Source Context
+
+For evidence-backed X posts, provide real source material before drafting: recent posts, replies, public metrics, source URLs, audience context, or launch notes. If TweetClaw is already available through OpenClaw, use `references/x-source-context.md` to collect read-only X/Twitter context before the skill writes the post.
 
 ## Structure
 
