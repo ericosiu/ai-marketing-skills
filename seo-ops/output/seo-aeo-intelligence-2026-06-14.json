@@ -1,0 +1,164 @@
+{
+  "report_date": "2026-06-14",
+  "data_as_of": "2026-06-12",
+  "domain": "singlegrain.com",
+  "summary": {
+    "striking_distance_keywords": 100,
+    "with_ai_overview": 63,
+    "with_people_also_ask": 73,
+    "chatgpt_perplexity_citations": 30,
+    "google_aio_citations": 30,
+    "chatgpt_brand_mentions": 74,
+    "competitor_benchmark_hubspot": 1735
+  },
+  "top_10_priorities": [
+    {
+      "rank": 1,
+      "keyword": "generative engine optimization",
+      "volume": 12000,
+      "kd": 75,
+      "seo_score": 90,
+      "aeo_score": 95,
+      "priority": "A+",
+      "action": "Create pillar page",
+      "category": "new_content"
+    },
+    {
+      "rank": 2,
+      "keyword": "answer engine optimization",
+      "volume": 3700,
+      "kd": 31,
+      "seo_score": 85,
+      "aeo_score": 95,
+      "priority": "A+",
+      "action": "Create AEO hub page",
+      "category": "new_content"
+    },
+    {
+      "rank": 3,
+      "keyword": "ai seo agency",
+      "volume": 2100,
+      "kd": 8,
+      "seo_score": 90,
+      "aeo_score": 85,
+      "priority": "A+",
+      "action": "Create service page",
+      "category": "new_content"
+    },
+    {
+      "rank": 4,
+      "keyword": "best ai seo tools 2026",
+      "volume": 2100,
+      "kd": 6,
+      "seo_score": 85,
+      "aeo_score": 80,
+      "priority": "A",
+      "action": "Create tool roundup",
+      "category": "new_content"
+    },
+    {
+      "rank": 5,
+      "keyword": "seo cro",
+      "volume": 2600,
+      "kd": 6,
+      "current_position": 6,
+      "seo_score": 90,
+      "aeo_score": 80,
+      "priority": "A",
+      "action": "Optimize existing page with AEO structure",
+      "category": "quick_win"
+    },
+    {
+      "rank": 6,
+      "keyword": "ai marketing agency",
+      "volume": 2400,
+      "kd": 39,
+      "current_position": 27,
+      "seo_score": 80,
+      "aeo_score": 75,
+      "priority": "A",
+      "action": "Overhaul existing page",
+      "category": "refresh"
+    },
+    {
+      "rank": 7,
+      "keyword": "ai agents for marketing",
+      "volume": 1000,
+      "kd": 14,
+      "seo_score": 80,
+      "aeo_score": 90,
+      "priority": "A",
+      "action": "Create expert guide",
+      "category": "new_content"
+    },
+    {
+      "rank": 8,
+      "keyword": "is seo still valuable (refresh to 2026)",
+      "volume": 30635,
+      "seo_score": 75,
+      "aeo_score": 95,
+      "priority": "A",
+      "action": "Refresh for 2026 — already cited by ChatGPT + Perplexity",
+      "category": "refresh"
+    },
+    {
+      "rank": 9,
+      "keyword": "search intent",
+      "volume": 2300,
+      "kd": 79,
+      "current_position": 10,
+      "seo_score": 70,
+      "aeo_score": 90,
+      "priority": "A",
+      "action": "Add AEO-optimized definition structure",
+      "category": "quick_win"
+    },
+    {
+      "rank": 10,
+      "keyword": "llm optimization",
+      "volume": 600,
+      "kd": 24,
+      "seo_score": 75,
+      "aeo_score": 95,
+      "priority": "A",
+      "action": "Create technical guide — thought leadership play",
+      "category": "new_content"
+    }
+  ],
+  "quick_wins": [
+    {"keyword": "ai sentence rewriter", "pos": 4, "vol": 6600, "kd": 56},
+    {"keyword": "best grammar checker free", "pos": 4, "vol": 2800, "kd": 75},
+    {"keyword": "seo cro", "pos": 6, "vol": 2600, "kd": 6},
+    {"keyword": "search intent", "pos": 10, "vol": 2300, "kd": 79},
+    {"keyword": "seomoz review", "pos": 4, "vol": 800, "kd": 4},
+    {"keyword": "paid seo tools", "pos": 6, "vol": 1400, "kd": 50},
+    {"keyword": "enterprise seo companies", "pos": 12, "vol": 1100, "kd": 11},
+    {"keyword": "cold email template", "pos": 14, "vol": 1300, "kd": 10},
+    {"keyword": "paid advertising agency", "pos": 8, "vol": 1200, "kd": 28},
+    {"keyword": "best paid seo tools", "pos": 9, "vol": 900, "kd": 49}
+  ],
+  "new_content_needed": [
+    {"keyword": "generative engine optimization", "vol": 12000, "kd": 75},
+    {"keyword": "answer engine optimization", "vol": 3700, "kd": 31},
+    {"keyword": "ai seo agency", "vol": 2100, "kd": 8},
+    {"keyword": "best ai seo tools 2026", "vol": 2100, "kd": 6},
+    {"keyword": "ai seo services", "vol": 2100, "kd": 22},
+    {"keyword": "ai marketing automation", "vol": 2200, "kd": 54},
+    {"keyword": "ai agents for marketing", "vol": 1000, "kd": 14},
+    {"keyword": "generative ai for marketing", "vol": 1200, "kd": 24},
+    {"keyword": "llm optimization", "vol": 600, "kd": 24},
+    {"keyword": "ai marketing agency (rewrite)", "vol": 2400, "kd": 39}
+  ],
+  "refresh_targets": [
+    {"keyword": "is seo still valuable/effective", "ai_vol": 30635, "platforms": ["chatgpt", "perplexity"]},
+    {"keyword": "are tiktok ads worth it", "ai_vol": 18000, "platforms": ["chatgpt", "perplexity"]},
+    {"keyword": "total addressable market", "pos": 2, "vol": 5700},
+    {"keyword": "what is abm", "pos": 1, "vol": 1600},
+    {"keyword": "keyword stuffing", "pos": 2, "vol": 1400},
+    {"keyword": "aeo vs seo", "ai_vol": 6984, "platforms": ["perplexity"]},
+    {"keyword": "what is aio in social media", "ai_vol": 24242, "platforms": ["perplexity"]},
+    {"keyword": "enterprise seo strategy", "pos": 1, "vol": 600},
+    {"keyword": "nap data", "pos": 1, "vol": 700},
+    {"keyword": "what is paid media", "pos": 2, "vol": 900}
+  ]
+}
