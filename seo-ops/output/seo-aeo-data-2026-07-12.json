@@ -1,0 +1,35 @@
+{
+  "report_date": "2026-07-12",
+  "domain": "singlegrain.com",
+  "site_metrics": {
+    "organic_keywords": 1716,
+    "organic_traffic": 4698,
+    "traffic_value_usd": 9555.10,
+    "keywords_top_3": 946
+  },
+  "ai_citation_footprint": {
+    "chatgpt": {"citations": 119, "pages": 41},
+    "grok": {"citations": 113, "pages": 29},
+    "perplexity": {"citations": 78, "pages": 35},
+    "google_ai_overviews": {"citations": 72, "pages": 52, "keywords": 785, "keyword_pages": 323},
+    "copilot": {"citations": 48, "pages": 27},
+    "gemini": {"citations": 18, "pages": 5}
+  },
+  "top_10_opportunities": [
+    {"rank": 1, "topic": "is youtube considered social media", "category": "Quick Win", "seo_score": 9, "aeo_score": 10, "combined": 19, "volume": 2600, "position": 5, "kd": 0},
+    {"rank": 2, "topic": "meta descriptions (refresh)", "category": "Refresh", "seo_score": 9, "aeo_score": 9, "combined": 18, "volume": 6300, "position": 6, "kd": 75},
+    {"rank": 3, "topic": "do keywords matter anymore", "category": "Quick Win", "seo_score": 7, "aeo_score": 10, "combined": 17, "volume": 250, "position": 10, "kd": 0},
+    {"rank": 4, "topic": "vertical saas", "category": "Quick Win", "seo_score": 8, "aeo_score": 9, "combined": 17, "volume": 600, "position": 5, "kd": 1},
+    {"rank": 5, "topic": "keyword stuffing", "category": "Quick Win", "seo_score": 8, "aeo_score": 9, "combined": 17, "volume": 1400, "position": 5, "kd": 41},
+    {"rank": 6, "topic": "seo workflow automation", "category": "New Content", "seo_score": 8, "aeo_score": 9, "combined": 17, "volume": 900, "position": 20, "kd": 13},
+    {"rank": 7, "topic": "nap data + LLMs", "category": "New Content", "seo_score": 7, "aeo_score": 10, "combined": 17, "volume": 700, "position": 20, "kd": 2},
+    {"rank": 8, "topic": "search intent (refresh)", "category": "Refresh", "seo_score": 8, "aeo_score": 9, "combined": 17, "volume": 2300, "position": 7, "kd": 76},
+    {"rank": 9, "topic": "content strategy framework", "category": "Quick Win", "seo_score": 7, "aeo_score": 9, "combined": 16, "volume": 500, "position": 5, "kd": 39},
+    {"rank": 10, "topic": "optimization tools", "category": "Quick Win", "seo_score": 8, "aeo_score": 8, "combined": 16, "volume": 900, "position": 4, "kd": 28}
+  ],
+  "urgent_flags": [
+    {"page": "/free-tools/ai-sentence-rewriter/", "issue": "Traffic crashed 97% (722 to 15)", "action": "Investigate de-indexing or competitor displacement"},
+    {"page": "/blog/ms/total-addressable-market/", "issue": "Traffic dropped 89% (359 to 39)", "action": "Check ranking loss cause"},
+    {"page": "/paid-advertising-agency/", "issue": "Traffic dropped 76% (109 to 26)", "action": "Service page overhaul needed"}
+  ]
+}
