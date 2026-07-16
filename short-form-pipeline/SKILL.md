@@ -93,6 +93,24 @@ Each clip is output as:
 - **Word-highlighted captions** burned in
 - Ready for direct upload to TikTok, Reels, or Shorts
 
+## Optional: Schedule the Clips From Your Agent
+
+The pipeline ends with files on disk. If the user has a social scheduling tool
+with an MCP server or API, the agent can finish the job instead of handing off
+an upload chore:
+
+1. Ask what the user schedules with. MCP-connected tools (e.g.
+   [Marky](https://www.mymarky.ai/agents)) expose upload/create/schedule as
+   agent tools; others may have a REST API you can script against.
+2. Upload each clip, create one post per clip with a caption written from the
+   clip's transcript segment (the hook line usually is the caption), and stage
+   them as drafts for user approval.
+3. Schedule approved clips spaced across the week — don't dump all clips on
+   one day.
+4. Next run, pull each clip's engagement stats (if the tool exposes them) and
+   feed what worked back into `VOICE_PATTERNS` and the segmentation prompt's
+   hook criteria.
+
 ## Troubleshooting
 
 - **FFmpeg filter_complex error:** Don't use `-c:v copy` with `-filter_complex`. Only `-c:a copy` is safe.
