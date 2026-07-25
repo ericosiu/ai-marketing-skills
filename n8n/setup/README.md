@@ -60,13 +60,31 @@ Add under **Settings → Credentials**:
 ---
 
 ## 5) Route messages in
-Point your WhatsApp Business Cloud API and Plivo inbound webhooks to:
-```
-http://<your-server>:5678/webhook/real-estate-agent
-```
+### Plivo inbound
+1. In Plivo Console, open **Phone Numbers** → select your number.
+2. Set **Application Type** to **XML** or **HTTP** depending on your setup.
+3. Set the **Message URL** to the public path:
+   ```
+   https://<your-public-host-or-ngrok>/webhook/real-estate-agent
+   ```
+4. Set **HTTP Method** to `POST`.
+5. Save the config.
+6. Test by sending a WhatsApp message to your Plivo number; it should appear in n8n **Executions** and the workflow should respond.
 
-If you use Telegram too, use the in-workflow Telegram reply node as the outbound channel.
+### WhatsApp Business Cloud API
+1. In Meta App > WhatsApp > **Configuration**.
+2. Set the webhook URL to:
+   ```
+   https://<your-public-host-or-ngrok>/webhook/real-estate-agent
+   ```
+3. Verify the webhook, then send a test message from a WhatsApp account linked to your business number.
 
+## 6) Verify
+1. Open n8n **Executions**.
+2. Send: “I want to buy a 96 m² flat.”
+3. Confirm the reply includes matching inventory text or an appropriate fallback.
+
+---
 ---
 
 ## Supported flows

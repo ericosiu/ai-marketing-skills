@@ -1,5 +1,5 @@
 {
-  "name": "Real Estate Agent Workflow (LangChain + Gemini)",
+  "name": "Real Estate Agent Workflow (LangChain + Gemini) — Completed",
   "nodes": [
     {
       "parameters": {
@@ -24,6 +24,147 @@
       "position": [240, 300],
       "webhookId": "real-estate-agent",
       "httpMethod": "POST"
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://api.telegram.org/bot{{ $credentials.telegramBot.apiKey }}/getUpdates",
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "name": "Telegram Get Updates",
+      "id": "telegramGetUpdates",
+      "position": [240, 480],
+      "notes": "Optional polling fallback if webhook is not available."
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.telegram.org/bot{{ $credentials.telegramBot.apiKey }}/sendMessage",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "json",
+        "jsonBody": "={\"chat_id\":\"{{ $json.chat_id }}\",\"text\":\"{{ $json.reply_text }}\"}",
+        "options": {
+          "body": {
+            "json": "={\"chat_id\":\"{{ $json.chat_id }}\",\"text\":\"{{ $json.reply_text }}\"}"
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "name": "Send Telegram Reply",
+      "id": "sendReply",
+      "position": [1160, 300],
+      "notes": "Send result back to Telegram chat using bot token credential."
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://graph.facebook.com/v19.0/{{ $credentials.whatsapp.phoneNumberId }}/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer {{ $credentials.whatsapp.apiKey }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "json",
+        "jsonBody": "={\"messaging_product\":\"whatsapp\",\"to\":\"{{ $json.recipient_wa_id }}\",\"type\":\"text\",\"text\":{\"body\":\"{{ $json.reply_text }}\"}}",
+        "options": {
+          "body": {
+            "json": "={\"messaging_product\":\"whatsapp\",\"to\":\"{{ $json.recipient_wa_id }}\",\"type\":\"text\",\"text\":{\"body\":\"{{ $json.reply_text }}\"}}"
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "name": "Send WhatsApp Reply",
+      "id": "sendWhatsAppReply",
+      "position": [1160, 420],
+      "notes": "Send result back to WhatsApp via WhatsApp Business Cloud API."
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.plivo.com/v1/Message",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Basic {{ $base64Encode($credentials.plivo.authId + ':' + $credentials.plivo.authToken) }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "json",
+        "jsonBody": "={\"src\":\"{{ $credentials.plivo.srcNumber }}\",\"dst\":\"{{ $json.phone_number }}\",\"text\":\"{{ $json.reply_text }}\"}",
+        "options": {
+          "body": {
+            "json": "={\"src\":\"{{ $credentials.plivo.srcNumber }}\",\"dst\":\"{{ $json.phone_number }}\",\"text\":\"{{ $json.reply_text }}\"}"
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "name": "Send Plivo SMS Reply",
+      "id": "sendPlivoSmsReply",
+      "position": [1160, 540],
+      "notes": "Send SMS fallback via Plivo if WhatsApp/Telegram fail."
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "=You are a helpful real estate assistant. Use the available tools to find matching flats. If the user wants to sell and has not chosen a size, ask for 86/96/92/120 m².\n\nCustomer text: {{ $json.message_text }}",
+        "options": {
+          "systemMessage": "You answer customers about flats for sale or rent. Be concise and helpful."
+        }
+      },
+      "id": "agent",
+      "name": "AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.2,
+      "position": [640, 300],
+      "notes": "Official LangChain agent node with conversation memory."
+    },
+    {
+      "parameters": {
+        "model": "gemini-2.0-mini",
+        "options": {
+          "systemMessage": "=You are a real estate assistant for flats for sale and rent.\n\nGOAL:\n- Classify customer intent as one of: `buy`, `rent`, `sell`, `unknown`.\n- If intent = `sell` and the customer has not given size yet, ask them to choose among: 86, 96, 92, 120 m².\n- If intent = `buy` or `rent`, optionally infer the closest size from the customer's text; if unclear, ask.\n- Normalize sizes to exactly 86, 96, 92, or 120.\n\nOUTPUT RULES:\n- You MUST answer in this JSON only:\n{\n  \"intent\": \"buy|rent|sell|unknown\",\n  \"category_m2\": 86|96|92|120|null,\n  \"missing\": [\"m2\"],\n  \"reply_text\": \"short friendly message\"\n}\n- Never invent flats. If flat details are missing, set missing=[\"m2\"] and include the question in reply_text.\n- Keep replies short, specific, and sales-friendly."
+        },
+        "userMessage": "={{ $json.message_text }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChat",
+      "typeVersion": 1,
+      "name": "LLM Classifier (Gemini)",
+      "id": "classifyIntent",
+      "position": [420, 300],
+      "notes": "Uses Gemini to classify intent and optional m2 if the user explicitly mentions it."
     },
     {
       "parameters": {
@@ -170,110 +311,18 @@
       "type": "n8n-nodes-base.itemLists",
       "typeVersion": 3,
       "position": [940, 340],
-      "notes": "Merges all matched inventory rows into one list for the agent to summarize."
+      "notes": "Merges all matched inventory rows into one list for final reply generation."
     },
     {
       "parameters": {
-        "method": "POST",
-        "url": "=https://api.telegram.org/bot{{ $credentials.telegramBot.apiKey }}/sendMessage",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "Content-Type",
-              "value": "application/json"
-            }
-          ]
-        },
-        "sendBody": true,
-        "contentType": "json",
-        "jsonBody": "={ \"chat_id\": $json[\"chat_id\"], \"text\": $json[\"reply_text\"] }",
-        "options": {
-          "body": {
-            "json": "={ \"chat_id\": $json[\"chat_id\"], \"text\": $json[\"reply_text\"] }"
-          }
-        }
+        "jsCode": "const items = $input.all();\nconst last = items[items.length - 1];\nconst out = last.json || {};\n\n// Copy schema fields forward for downstream nodes\nconst payload = {\n  message_text: out.message_text || \"\",\n  intent: out.intent || null,\n  category_m2: out.category_m2 || null,\n  reply_text: out.reply_text || \"\",\n  chat_id: out.chat_id || null,\n  recipient_wa_id: out.recipient_wa_id || null,\n  phone_number: out.phone_number || null,\n  source: out.source || \"unknown\",\n  inventory_text: out.inventory_text || \"\"\n};\n\nreturn [{ json: payload }];"
       },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4,
-      "name": "Send Telegram Reply",
-      "id": "sendReply",
-      "position": [1160, 340]
-    },
-    {
-      "parameters": {
-        "method": "POST",
-        "url": "https://graph.facebook.com/v19.0/{{ $credentials.whatsapp.phoneNumberId }}/messages",
-        "sendHeaders": true,
-        "headerParameters": {
-          "parameters": [
-            {
-              "name": "Authorization",
-              "value": "Bearer {{ $credentials.whatsapp.apiKey }}"
-            },
-            {
-              "name": "Content-Type",
-              "value": "application/json"
-            }
-          ]
-        },
-        "sendBody": true,
-        "contentType": "json",
-        "jsonBody": "={\"messaging_product\":\"whatsapp\",\"to\":\"{{ $json.recipient_wa_id }}\",\"type\":\"text\",\"text\":{\"body\":\"{{ $json.reply_text }}\"}}",
-        "options": {
-          "body": {
-            "json": "={\"messaging_product\":\"whatsapp\",\"to\":\"{{ $json.recipient_wa_id }}\",\"type\":\"text\",\"text\":{\"body\":\"{{ $json.reply_text }}\"}}"
-          }
-        }
-      },
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4,
-      "name": "Send WhatsApp Reply",
-      "id": "sendWhatsAppReply",
-      "position": [1160, 440]
-    },
-    {
-      "parameters": {
-        "model": "gemini-2.0-mini",
-        "options": {
-          "systemMessage": "=You are a real estate assistant for flats for sale and rent.\n\nGOAL:\n- Classify customer intent as one of: `buy`, `rent`, `sell`, `unknown`.\n- If intent = `sell` and the customer has not given size yet, ask them to choose among: 86, 96, 92, 120 m².\n- If intent = `buy` or `rent`, optionally infer the closest size from the customer's text; if unclear, ask.\n- Normalize sizes to exactly 86, 96, 92, or 120.\n\nOUTPUT RULES:\n- You MUST answer in this JSON only:\n{\n  \"intent\": \"buy|rent|sell|unknown\",\n  \"category_m2\": 86|96|92|120|null,\n  \"missing\": [\"m2\"],\n  \"reply_text\": \"short friendly message\"\n}\n- Never invent flats. If flat details are missing, set missing=[\"m2\"] and include the question in reply_text.\n- Keep replies short, specific, and sales-friendly."
-        },
-        "userMessage": "={{ $json.message_text }}"
-      },
-      "type": "@n8n/n8n-nodes-langchain.lmChat",
-      "typeVersion": 1,
-      "name": "LLM Classifier (Gemini)",
-      "id": "classifyIntent",
-      "position": [420, 300]
-    },
-    {
-      "parameters": {
-        "promptType": "define",
-        "text": "=You are a real estate agent assistant. Use ONLY the provided inventory to answer.\n\nCustomer message:\n{{ $json.message_text }}\n\nClassified intent: {{ $json.intent }}\nPreferred size m²: {{ $json.category_m2 }}\n\nInventory:\n{{ $json.inventory_text || 'No inventory available.' }}\n\nReply in the same language as the customer. If no suitable flats, say none available now and ask if they want another size: 86, 96, 92, or 120 m².",
-        "options": {
-          "systemMessage": "You answer customers about flats for sale/rent. Always be concise and helpful."
-        }
-      },
-      "type": "@n8n/n8n-nodes-langchain.chainLlm",
-      "typeVersion": 1,
-      "name": "Draft Reply",
-      "id": "draftReply",
-      "position": [1040, 300]
-    },
-    {
-      "parameters": {
-        "agent": "conversationalAgent",
-        "promptType": "define",
-        "text": "=You are a helpful real estate assistant. Use the available tool to find matching flats. If the user wants to sell and has not chosen a size, ask for 86/96/92/120 m².\n\nCustomer text: {{ $json.message_text }}",
-        "options": {
-          "systemMessage": "You answer customers about flats for sale or rent. Be concise and helpful."
-        }
-      },
-      "id": "agent",
-      "name": "AI Agent",
-      "type": "@n8n/n8n-nodes-langchain.agent",
-      "typeVersion": 1.2,
-      "position": [640, 300]
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "name": "Normalize Output",
+      "id": "normalizeOutput",
+      "position": [1060, 300],
+      "notes": "Ensures consistent fields for reply routing and execution logging."
     }
   ],
   "connections": {
@@ -303,12 +352,28 @@
       "main": [
         [
           {
+            "node": "Normalize Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize Output": {
+      "main": [
+        [
+          {
             "node": "Send Telegram Reply",
             "type": "main",
             "index": 0
           },
           {
             "node": "Send WhatsApp Reply",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Send Plivo SMS Reply",
             "type": "main",
             "index": 0
           }
