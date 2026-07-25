@@ -1,0 +1,323 @@
+{
+  "name": "Real Estate Agent Workflow (LangChain + Gemini)",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          {
+            "key": "messages",
+            "value": "message"
+          }
+        ],
+        "parseMode": "json",
+        "httpMethod": "POST",
+        "path": "real-estate-agent",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedIps": ""
+        }
+      },
+      "id": "webhookIn",
+      "name": "WhatsApp/WEB Incoming",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [240, 300],
+      "webhookId": "real-estate-agent",
+      "httpMethod": "POST"
+    },
+    {
+      "parameters": {
+        "resource": "sheet",
+        "operation": "lookup",
+        "sheetId": {
+          "__rl": true,
+          "value": "={{ $json.sheet_id }}",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "inventory",
+          "mode": "name"
+        },
+        "filtersUI": {
+          "conditions": [
+            {
+              "leftValue": "={{ $json.category_m2 }}",
+              "rightValue": 86,
+              "operator": {"type": "string", "operation": "equals", "singleValue": true}
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "lookupInventory86",
+      "name": "Lookup 86 m²",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [820, 160],
+      "notes": "Select your spreadsheet + worksheet. Set filters to exact match on m²."
+    },
+    {
+      "parameters": {
+        "resource": "sheet",
+        "operation": "lookup",
+        "sheetId": {
+          "__rl": true,
+          "value": "={{ $json.sheet_id }}",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "inventory",
+          "mode": "name"
+        },
+        "filtersUI": {
+          "conditions": [
+            {
+              "leftValue": "={{ $json.category_m2 }}",
+              "rightValue": 96,
+              "operator": {"type": "string", "operation": "equals", "singleValue": true}
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "lookupInventory96",
+      "name": "Lookup 96 m²",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [820, 260],
+      "notes": "Select your spreadsheet + worksheet. Set filters to exact match on m²."
+    },
+    {
+      "parameters": {
+        "resource": "sheet",
+        "operation": "lookup",
+        "sheetId": {
+          "__rl": true,
+          "value": "={{ $json.sheet_id }}",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "inventory",
+          "mode": "name"
+        },
+        "filtersUI": {
+          "conditions": [
+            {
+              "leftValue": "={{ $json.category_m2 }}",
+              "rightValue": 92,
+              "operator": {"type": "string", "operation": "equals", "singleValue": true}
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "lookupInventory92",
+      "name": "Lookup 92 m²",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [820, 360],
+      "notes": "Select your spreadsheet + worksheet. Set filters to exact match on m²."
+    },
+    {
+      "parameters": {
+        "resource": "sheet",
+        "operation": "lookup",
+        "sheetId": {
+          "__rl": true,
+          "value": "={{ $json.sheet_id }}",
+          "mode": "id"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "inventory",
+          "mode": "name"
+        },
+        "filtersUI": {
+          "conditions": [
+            {
+              "leftValue": "={{ $json.category_m2 }}",
+              "rightValue": 120,
+              "operator": {"type": "string", "operation": "equals", "singleValue": true}
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "lookupInventory120",
+      "name": "Lookup 120 m²",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4,
+      "position": [820, 460],
+      "notes": "Select your spreadsheet + worksheet. Set filters to exact match on m²."
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "text",
+              "value": "={{ $input.all()[0].json.text || '' }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "mergeOutput",
+      "name": "Merge Lookup Output",
+      "type": "n8n-nodes-base.itemLists",
+      "typeVersion": 3,
+      "position": [940, 340],
+      "notes": "Merges all matched inventory rows into one list for the agent to summarize."
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.telegram.org/bot{{ $credentials.telegramBot.apiKey }}/sendMessage",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "json",
+        "jsonBody": "={ \"chat_id\": $json[\"chat_id\"], \"text\": $json[\"reply_text\"] }",
+        "options": {
+          "body": {
+            "json": "={ \"chat_id\": $json[\"chat_id\"], \"text\": $json[\"reply_text\"] }"
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "name": "Send Telegram Reply",
+      "id": "sendReply",
+      "position": [1160, 340]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://graph.facebook.com/v19.0/{{ $credentials.whatsapp.phoneNumberId }}/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer {{ $credentials.whatsapp.apiKey }}"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "json",
+        "jsonBody": "={\"messaging_product\":\"whatsapp\",\"to\":\"{{ $json.recipient_wa_id }}\",\"type\":\"text\",\"text\":{\"body\":\"{{ $json.reply_text }}\"}}",
+        "options": {
+          "body": {
+            "json": "={\"messaging_product\":\"whatsapp\",\"to\":\"{{ $json.recipient_wa_id }}\",\"type\":\"text\",\"text\":{\"body\":\"{{ $json.reply_text }}\"}}"
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "name": "Send WhatsApp Reply",
+      "id": "sendWhatsAppReply",
+      "position": [1160, 440]
+    },
+    {
+      "parameters": {
+        "model": "gemini-2.0-mini",
+        "options": {
+          "systemMessage": "=You are a real estate assistant for flats for sale and rent.\n\nGOAL:\n- Classify customer intent as one of: `buy`, `rent`, `sell`, `unknown`.\n- If intent = `sell` and the customer has not given size yet, ask them to choose among: 86, 96, 92, 120 m².\n- If intent = `buy` or `rent`, optionally infer the closest size from the customer's text; if unclear, ask.\n- Normalize sizes to exactly 86, 96, 92, or 120.\n\nOUTPUT RULES:\n- You MUST answer in this JSON only:\n{\n  \"intent\": \"buy|rent|sell|unknown\",\n  \"category_m2\": 86|96|92|120|null,\n  \"missing\": [\"m2\"],\n  \"reply_text\": \"short friendly message\"\n}\n- Never invent flats. If flat details are missing, set missing=[\"m2\"] and include the question in reply_text.\n- Keep replies short, specific, and sales-friendly."
+        },
+        "userMessage": "={{ $json.message_text }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChat",
+      "typeVersion": 1,
+      "name": "LLM Classifier (Gemini)",
+      "id": "classifyIntent",
+      "position": [420, 300]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are a real estate agent assistant. Use ONLY the provided inventory to answer.\n\nCustomer message:\n{{ $json.message_text }}\n\nClassified intent: {{ $json.intent }}\nPreferred size m²: {{ $json.category_m2 }}\n\nInventory:\n{{ $json.inventory_text || 'No inventory available.' }}\n\nReply in the same language as the customer. If no suitable flats, say none available now and ask if they want another size: 86, 96, 92, or 120 m².",
+        "options": {
+          "systemMessage": "You answer customers about flats for sale/rent. Always be concise and helpful."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1,
+      "name": "Draft Reply",
+      "id": "draftReply",
+      "position": [1040, 300]
+    },
+    {
+      "parameters": {
+        "agent": "conversationalAgent",
+        "promptType": "define",
+        "text": "=You are a helpful real estate assistant. Use the available tool to find matching flats. If the user wants to sell and has not chosen a size, ask for 86/96/92/120 m².\n\nCustomer text: {{ $json.message_text }}",
+        "options": {
+          "systemMessage": "You answer customers about flats for sale or rent. Be concise and helpful."
+        }
+      },
+      "id": "agent",
+      "name": "AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.2,
+      "position": [640, 300]
+    }
+  ],
+  "connections": {
+    "WhatsApp/WEB Incoming": {
+      "main": [
+        [
+          {
+            "node": "LLM Classifier (Gemini)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "LLM Classifier (Gemini)": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Send Telegram Reply",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Send WhatsApp Reply",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "1"
+}
