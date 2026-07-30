@@ -100,7 +100,7 @@ def extract_elements(content: str, content_type: str) -> dict[str, str]:
 
 def generate_variants(client, element_name: str, current_text: str,
                        content_type: str, num_variants: int,
-                       evolution_notes: str = "", model: str = "claude-sonnet-4-5-20250514") -> list[str]:
+                       evolution_notes: str = "", model: str = "claude-sonnet-5") -> list[str]:
     """Generate N variants of a content element."""
     evolution_context = ""
     if evolution_notes:
@@ -145,7 +145,7 @@ Example: ["Variant 1 text", "Variant 2 text", ...]"""
 
 
 def score_variants(client, variants: list[str], element_name: str,
-                    content_type: str, model: str = "claude-sonnet-4-5-20250514") -> list[dict]:
+                    content_type: str, model: str = "claude-sonnet-5") -> list[dict]:
     """Score all variants with the expert panel in a single API call."""
     config = CONTENT_TYPES[content_type]
     dimensions = config["dimensions"]
@@ -209,7 +209,7 @@ Return ONLY valid JSON (no markdown) in this exact format:
 def run_optimization(client, element_name: str, current_text: str,
                       content_type: str, num_variants: int = 10,
                       max_rounds: int = 3, min_score: int = 80,
-                      model: str = "claude-sonnet-4-5-20250514") -> dict:
+                      model: str = "claude-sonnet-5") -> dict:
     """Run the full optimization loop for a single element."""
     rounds = []
     best_score = 0
@@ -276,7 +276,7 @@ def run_optimization(client, element_name: str, current_text: str,
 
 
 def cross_breed(client, element_winners: dict[str, dict],
-                content_type: str, model: str = "claude-sonnet-4-5-20250514") -> dict:
+                content_type: str, model: str = "claude-sonnet-5") -> dict:
     """Cross-breed winning elements into complete units."""
     elements_desc = "\n".join(
         f"  {name}: \"{data['winner'][:200]}\" (score: {data['winner_score']})"
@@ -363,7 +363,7 @@ def main():
     parser.add_argument("--rounds", type=int, default=3, help="Max optimization rounds per element")
     parser.add_argument("--variants", type=int, default=10, help="Variants per round")
     parser.add_argument("--elements", help="Comma-separated elements to optimize (default: all)")
-    parser.add_argument("--model", default="claude-sonnet-4-5-20250514", help="Anthropic model to use")
+    parser.add_argument("--model", default="claude-sonnet-5", help="Anthropic model to use")
     parser.add_argument("--output-dir", default="data", help="Output directory for results")
     parser.add_argument("--name", help="Run name (default: input filename)")
     args = parser.parse_args()

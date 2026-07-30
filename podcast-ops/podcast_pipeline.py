@@ -47,7 +47,7 @@ DEDUP_SIMILARITY_THRESHOLD = 0.70
 DEFAULT_DEDUP_DAYS = 30
 
 # Content generation model (Anthropic Claude)
-ANTHROPIC_MODEL = "claude-sonnet-4-20250514"
+ANTHROPIC_MODEL = "claude-sonnet-5"
 
 # Whisper model for transcription
 WHISPER_MODEL = "whisper-1"

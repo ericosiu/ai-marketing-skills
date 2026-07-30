@@ -156,9 +156,14 @@ For each element, run the round structure above.
 **Critical API efficiency rule:** ALWAYS batch all variants into a single prompt. Never call the API once per variant. A round with 10 variants = 1 API call.
 
 Model preference (in order):
-1. `claude-sonnet-4-5` (preferred — fast + smart)
-2. `claude-opus-4` (if highest quality needed)
-3. Any claude-3.5+ model if the above aren't available
+1. `claude-sonnet-5` (preferred — this is throughput work; dozens of batched
+   generate-and-score calls where speed compounds)
+2. `claude-opus-5` (when the copy is high-stakes enough that judgment quality
+   beats round count — a homepage hero, not a subject line sweep)
+
+Override with `--model`. Pin a dated snapshot only if you need reproducible
+scores across runs; otherwise the unversioned alias keeps this current on its
+own and avoids the staleness this list used to have.
 
 ### Step 4: Cross-Breed (Multi-Element)
 
