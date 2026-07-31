@@ -1,0 +1,4 @@
+interface:
+  display_name: "Video Content Engine"
+  short_description: "Diagnose any video and route its best content portfolio"
+  default_prompt: "Use $video-content-engine to diagnose this video, recommend the strongest justified formats and first release wave, and produce only the modules I approve."

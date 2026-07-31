@@ -25,6 +25,7 @@ These aren't prompts. They're complete workflows — scripts, scoring algorithms
 | [**Autoresearch**](./autoresearch/) | Karpathy-inspired optimization loops for conversion content — 50+ variants, expert scoring, evolved winners | Variant Generator, Expert Panel Scorer, Evolution Engine |
 | [**Deck Generator**](./deck-generator/) | AI-generated slide decks with consistent visual styles in minutes | Image Generator, Google Slides Builder, Style Presets |
 | [**YT Competitive Analysis**](./yt-competitive-analysis/) | Find outlier videos and packaging patterns across any YouTube channels | Outlier Detector, Title Pattern Extractor, Channel Benchmarker |
+| [**Video Content Engine**](./video-content-engine/) | Diagnose any video and route it into the strongest justified content portfolio | Long-form Optimizer, Shorts Engine, Tutorial, Case Study, Paid Creative |
 | [**X Long-Form + Humanizer**](./x-longform-post/) | Write X articles that sound human — with a 24-pattern AI slop detector | Post Writer, Humanizer Checklist, ASCII Diagram Builder |
 
 ---
