@@ -1,0 +1,4 @@
+interface:
+  display_name: "Net-New Video Editor"
+  short_description: "Turn fresh recordings into review-ready vertical videos"
+  default_prompt: "Use $net-new-video-editor to turn my new talking-head recordings into review-ready vertical video drafts."
