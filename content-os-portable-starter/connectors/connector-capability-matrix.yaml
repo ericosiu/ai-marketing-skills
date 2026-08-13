@@ -1,0 +1,39 @@
+version: 1
+policy: "Connectors are adapters selected during onboarding; publishing is separately approved."
+capabilities:
+  - id: public_inventory_read
+    default: allowed
+    approval: onboarding_scope
+  - id: private_source_read
+    default: blocked
+    approval: data_owner
+  - id: roadmap_write
+    default: blocked
+    approval: workflow_owner
+  - id: local_draft_write
+    default: allowed
+    approval: onboarding_scope
+  - id: cms_draft_write
+    default: blocked
+    approval: cms_owner
+  - id: cms_publish
+    default: blocked
+    approval: separate_publish_approval
+  - id: destructive_content_change
+    default: blocked
+    approval: separate_change_approval
+adapter_template:
+  adapter_id: replace-me
+  vendor: replace-me
+  owner: replace-me
+  status: not_configured
+  authentication: not_configured
+  secret_reference_env: null
+  scopes: []
+  data_classes: []
+  read_capabilities: []
+  write_capabilities: []
+  freshness_sla: null
+  rate_limit: null
+  approval_receipt: null
+  last_verified_at: null

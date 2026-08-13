@@ -1,0 +1,37 @@
+version: 1
+item_id: replace-me
+canonical_url: null
+treatment:
+  hypothesis: replace-me
+  exact_change: replace-me
+  artifact_sha256: replace-me
+  approved_at: null
+baseline:
+  source: replace-me
+  window_start: null
+  window_end: null
+  metric: replace-me
+  value: null
+  sample_size: null
+checkpoints:
+  - offset_days: 7
+    due_at: null
+    value: null
+    sample_size: null
+    maturity: pending
+  - offset_days: 14
+    due_at: null
+    value: null
+    sample_size: null
+    maturity: pending
+  - offset_days: 30
+    due_at: null
+    value: null
+    sample_size: null
+    maturity: pending
+confounders: []
+verdict: pending
+learning:
+  eligible: false
+  reason: insufficient_mature_evidence
+  consumed_by_run_id: null

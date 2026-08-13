@@ -1,0 +1,36 @@
+schema_version: "1.0"
+site:
+  id: northstar-garden-tools
+  name: Northstar Garden Tools (Fictitious)
+  base_url: https://northstar-garden.example
+  locale: en-US
+  timezone: America/Denver
+  sitemap_urls:
+    - https://northstar-garden.example/sitemap.xml
+mode: bootstrap
+owners:
+  program: content-program-owner
+  editorial: editorial-approver
+  technical: web-platform-owner
+approvals:
+  publishing: blocked
+  cms_draft_write: blocked
+connectors:
+  - adapter_id: public-sitemap
+    type: public_web
+    status: proposed
+    read_capabilities: [public_inventory_read]
+    write_capabilities: []
+content:
+  canonical_host: northstar-garden.example
+  allowed_path_prefixes: [/guides, /products]
+  excluded_path_prefixes: [/account, /checkout]
+measurement:
+  authoritative_source: approved-search-console-adapter
+  baseline_days: 28
+  checkpoints_days: [7, 14, 30]
+  minimum_sample_size: 100
+safety:
+  pii_policy: minimize
+  raw_private_inputs_in_outputs: false
+  fail_closed: true

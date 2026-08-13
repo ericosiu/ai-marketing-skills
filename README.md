@@ -13,6 +13,7 @@ These aren't prompts. They're complete workflows — scripts, scoring algorithms
 | [**Growth Engine**](./growth-engine/) | Autonomous marketing experiments that run, measure, and optimize themselves | Experiment Engine, Pacing Alerts, Weekly Scorecard |
 | [**Sales Pipeline**](./sales-pipeline/) | Turn anonymous website visitors into qualified pipeline | RB2B Router, Deal Resurrector, Trigger Prospector, ICP Learner |
 | [**Content Ops**](./content-ops/) | Ship content that scores 90+ every time | Expert Panel, Quality Gate, Editorial Brain, Quote Miner |
+| [**Content OS Portable Starter**](./content-os-portable-starter/) | Bootstrap a vendor-neutral, draft-first content control loop | Config Schema, Approval Gates, Connector Matrix, Readback Templates |
 | [**Personal Strategic Signal Intelligence**](./personal-strategic-signal-intelligence/) | Turn private reading, bookmarks, notes, and applied work into source-grounded decision intelligence | Attention Drift, Decision Court, Bookmark-to-Build, Content Negative-Space |
 | [**Outbound Engine**](./outbound-engine/) | ICP definition to emails in inbox — fully automated | Cold Outbound Optimizer, Lead Pipeline, Competitive Monitor |
 | [**SEO Ops**](./seo-ops/) | Find the keywords your competitors missed | Content Attack Briefs, GSC Optimizer, Trend Scout |

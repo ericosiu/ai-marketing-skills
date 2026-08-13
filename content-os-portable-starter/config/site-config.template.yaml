@@ -1,0 +1,31 @@
+schema_version: "1.0"
+site:
+  id: replace-me
+  name: Replace Me
+  base_url: https://example.invalid
+  locale: en-US
+  timezone: UTC
+  sitemap_urls:
+    - https://example.invalid/sitemap.xml
+mode: bootstrap
+owners:
+  program: replace-me
+  editorial: replace-me
+  technical: replace-me
+approvals:
+  publishing: blocked
+  cms_draft_write: blocked
+connectors: []
+content:
+  canonical_host: example.invalid
+  allowed_path_prefixes: [/]
+  excluded_path_prefixes: [/private]
+measurement:
+  authoritative_source: replace-me
+  baseline_days: 28
+  checkpoints_days: [7, 14, 30]
+  minimum_sample_size: 100
+safety:
+  pii_policy: minimize
+  raw_private_inputs_in_outputs: false
+  fail_closed: true
