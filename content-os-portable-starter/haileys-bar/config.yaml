@@ -1,0 +1,140 @@
+# Hailey's Bar v1.1 Configuration
+# Thresholds and weights for content quality evaluation
+
+layer_1:
+  tier_a:
+    # A1: Internal links threshold
+    internal_links_min: 3  # Three or more in-body links to other SG pages
+    
+    # A2: External links threshold
+    external_links_min: 2  # Two or more links to authoritative third-party sources
+    
+    # A3: Links resolve (checked in production, not in tests)
+    check_link_resolution: true
+    
+    # A4: SEO-Proof Intro requirements
+    seo_proof_intro:
+      keyword_in_first_paragraph: true
+      preview_required: true
+      hook_required: true
+    
+    # A5: Definitional H2 required
+    definitional_h2_required: true
+    
+    # A6: Readability grade range
+    # NOTE: Target is 8-10, but acceptable range is wider for technical content
+    # UNCONFIRMED: Final thresholds pending calibration
+    readability:
+      min_grade: 6
+      max_grade: 20
+  
+  tier_b:
+    # B1: Section lead-ins required
+    section_leadins_required: true
+    
+    # B2: Bullet capitalization
+    bullet_capitalization_required: true
+    
+    # B3: No semicolons in bullets
+    no_semicolons_in_bullets: true
+    
+    # B4: Title Case headings
+    title_case_headings_required: true
+
+# AI-phrasing scanner patterns
+ai_phrasing:
+  # Negation-antithesis patterns to detect
+  patterns:
+    - pattern: "(?i)(\\w+) (?:does not|do not|doesn't|don't) need [\\w\\s]+\\.[\\s]*(?:It|They|This|That|The \\w+) needs? [\\w\\s]+"
+      description: "Negation-antithesis: does not need X. needs Y"
+    - pattern: "(?i)(\\w+) (?:is not|are not|isn't|aren't|was not|were not|wasn't|weren't) [\\w\\s,]+\\.[\\s]*(?:It|They|This|That|The \\w+) (?:is|are|was|were) [\\w\\s]+"
+      description: "Negation-antithesis: is not X. is Y"
+    - pattern: "(?i)A (\\w+) that [\\w\\s]+ is [\\w\\s]+\\. A \\1 that [\\w\\s]+ is [\\w\\s]+\\. A \\1 that"
+      description: "Negation-antithesis: parallel A X that ... is Y structure"
+    - pattern: "(?i)(?:Zero|Unknown) (?:means|indicates) [\\w\\s]+\\.[\\s]*(?:Zero|Unknown) (?:means|indicates) [\\w\\s]+"
+      description: "Negation-antithesis: definitional parallel (Zero means X. Unknown means Y)"
+    - pattern: "(?i)(\\w+) is earned [\\w\\s]+\\.[\\s]*It is not [\\w\\s]+"
+      description: "Negation-antithesis: X is earned ... It is not ..."
+    - pattern: "(?i)[\\w\\s]+ (?:is not|are not|isn't|aren't) [\\w\\s]+\\."
+      description: "Negation-antithesis: general negation pattern"
+    - pattern: "(?i)\\bIt does not [\\w\\s]+\\."
+      description: "Negation-antithesis: It does not X"
+
+# Layer 1B: Batch diversity checks
+# NOTE: Thresholds marked UNCONFIRMED are conservative defaults pending sign-off
+batch_diversity:
+  enabled: true
+  
+  # Rolling window for recently published posts (UNCONFIRMED)
+  recent_posts_window_days: 30
+  
+  # Structural sameness: H2/H3 outline overlap (UNCONFIRMED)
+  max_outline_overlap_ratio: 0.5  # Max 50% shared heading structure
+  
+  # Verbatim language reuse: word-shingle overlap (UNCONFIRMED)
+  shingle_size: 6  # 6-8 word sequences
+  max_shingle_overlap_ratio: 0.3  # Max 30% shared shingles
+  
+  # Opening-move sameness: intro template clustering (UNCONFIRMED)
+  max_intro_similarity_ratio: 0.6  # Max 60% similar intro structure
+  
+  # Stock-transition reuse threshold (UNCONFIRMED)
+  max_transition_reuse_count: 3  # Max 3 drafts using same transitions
+  
+  # Allow-list: phrases excluded from verbatim checks
+  allowlist:
+    - "contact us"
+    - "get started"
+    - "free consultation"
+    - "schedule a call"
+    - "learn more"
+    - "read more"
+    - "for example"
+    - "in other words"
+    - "that said"
+
+# Layer 2: LLM judge rubric
+# Each criterion scored 1-10, weighted average is judge score
+layer_2:
+  judge_rubric:
+    criteria:
+      C1:
+        name: "Link quality and relevance"
+        weight: 0.15
+        description: "Links are contextual, authoritative, and add value"
+      C2:
+        name: "Reads for humans, no AI voice"
+        weight: 0.20
+        description: "Natural prose, no AI clichés or negation-antithesis patterns"
+      C3:
+        name: "Defines its concepts"
+        weight: 0.15
+        description: "Clear explanations of technical terms and key concepts"
+      C4:
+        name: "Section transitions"
+        weight: 0.10
+        description: "Smooth flow between sections with contextual transitions"
+      C5:
+        name: "Primary keyword clarity"
+        weight: 0.20
+        description: "Primary keyword used naturally and appropriately throughout"
+      C6:
+        name: "Heading architecture for SEO and AEO"
+        weight: 0.20
+        description: "Headers follow SEO best practices and answer-engine optimization"
+  
+  # Minimum judge score to clear scale gate
+  min_judge_score: 8.0
+
+# Scale gate: draft clears to scale when ALL conditions met
+scale_gate:
+  conditions:
+    - "tier_a_pass"  # All Tier A checks pass
+    - "tier_b_fixed"  # All Tier B issues fixed
+    - "batch_pass"  # Batch diversity checks pass (when in batch)
+    - "judge_score_min"  # Judge score >= 8.0
+
+# Open questions / unconfirmed settings (document as comments):
+# - A4b preview sentence: no length limit yet
+# - Batch diversity numeric thresholds need sign-off
+# - Coined keywords (e.g. "Company Brain"): currently a judge penalty on C5, not auto-fail
