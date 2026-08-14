@@ -5,6 +5,7 @@ A vendor-neutral, draft-first starter for operating a content program as a measu
 ## What is included
 
 - Concise portable mirrors of five governing workflow skills under `skills/`
+- **Hailey's Bar v1.1** draft evaluation system under `haileys-bar/` — three-layer quality gate (programmatic checks, batch diversity, LLM judge rubric) that drafts must clear before scaling
 - A JSON Schema for site configuration plus a generic YAML template and one fictitious example
 - An onboarding questionnaire
 - A connector capability matrix and adapter template
@@ -29,6 +30,7 @@ A vendor-neutral, draft-first starter for operating a content program as a measu
 - **Read access is scoped and approved.** Private customer-language sources require authorization and minimization.
 - **Connectors are adapters selected during onboarding.** Availability never implies authorization, healthy authentication, current data, or write permission.
 - **Drafting is not publishing.** Draft creation, CMS draft writes, publishing, redirects, deletion, indexing changes, analytics mutations, scheduling, and external messages are distinct capabilities.
+- **Draft quality gate (Hailey's Bar).** Drafts must pass programmatic checks, batch diversity analysis, and judge rubric before scaling. See `haileys-bar/README.md`.
 - **Publishing is separately approved.** No connector or automation may publish merely because drafting or CMS access was approved.
 - **Fail closed.** Missing evidence, stale sources, schema errors, ambiguous ownership, or absent approval produce a blocked state.
 - **No secrets in config.** Store only environment-variable names or secret-manager references in private runtime configuration; never put secret values in this pack.
