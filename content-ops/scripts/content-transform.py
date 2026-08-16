@@ -376,7 +376,7 @@ def load_voice_references():
     return voice_config, style_guide
 
 
-def call_anthropic(client, messages, system=None, model="claude-sonnet-4-20250514", max_tokens=2000):
+def call_anthropic(client, messages, system=None, model="claude-sonnet-5", max_tokens=2000):
     """Call Anthropic API."""
     kwargs = {"model": model, "max_tokens": max_tokens, "messages": messages}
     if system:

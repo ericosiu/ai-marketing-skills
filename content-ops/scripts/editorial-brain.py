@@ -34,7 +34,7 @@ DATA_DIR = Path(os.environ.get("CONTENT_OPS_DATA_DIR", PROJECT_DIR / "data"))
 CLIPS_DIR = DATA_DIR / "clips"
 
 # Model configuration
-DEFAULT_MODEL = os.environ.get("EDITORIAL_BRAIN_MODEL", "claude-sonnet-4-20250514")
+DEFAULT_MODEL = os.environ.get("EDITORIAL_BRAIN_MODEL", "claude-sonnet-5")
 
 
 def call_claude(prompt, model=None, max_tokens=4000):
