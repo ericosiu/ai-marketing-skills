@@ -1,0 +1,92 @@
+{
+  "_description": "Example product rotation config for a DTC supplement brand.",
+  "next_in_rotation": "Appetite Control Pro",
+  "cross_sell_frequency": 3,
+  "image_cooldown_days": 14,
+  "products": [
+    {
+      "name": "Appetite Control Pro",
+      "folder": "appetite-control-pro",
+      "tier": 1,
+      "category": "appetite management",
+      "tagline": "Appetite management for serious dieters",
+      "education_angles": [
+        "Managing hunger during a cut without willpower alone",
+        "Why appetite increases during dieting and what actually helps",
+        "The difference between hunger and cravings during prep"
+      ],
+      "shopify_url": "https://acme-supplements.example.com/products/appetite-control-pro",
+      "image_count": 10
+    },
+    {
+      "name": "Meal Ready",
+      "folder": "meal-ready",
+      "tier": 1,
+      "category": "meal replacement",
+      "tagline": "Real food nutrition when you can't sit down for a meal",
+      "education_angles": [
+        "Why meal prep fails and what to do when it does",
+        "Hitting macros on busy days without resorting to junk",
+        "The difference between a protein bar and actual food-based nutrition"
+      ],
+      "shopify_url": "https://acme-supplements.example.com/products/meal-ready",
+      "image_count": 12
+    },
+    {
+      "name": "Metabolic Ignite",
+      "folder": "metabolic-ignite",
+      "tier": 1,
+      "category": "fat burner / metabolic support",
+      "tagline": "Metabolic support that actually has a mechanism of action",
+      "education_angles": [
+        "What fat burners actually do (and don't do) for your physique",
+        "When to add a fat burner during a cut and when it's a waste",
+        "Thermogenics vs metabolic support: understanding the difference"
+      ],
+      "shopify_url": "https://acme-supplements.example.com/products/metabolic-ignite",
+      "image_count": 8
+    },
+    {
+      "name": "Night Recovery",
+      "folder": "night-recovery",
+      "tier": 1,
+      "category": "sleep / recovery",
+      "tagline": "Wind down after training so recovery actually happens",
+      "education_angles": [
+        "Why sleep is the most underrated recovery tool",
+        "The connection between training intensity and sleep quality",
+        "What to do when your CNS is fried but you still can't sleep"
+      ],
+      "shopify_url": "https://acme-supplements.example.com/products/night-recovery",
+      "image_count": 7
+    },
+    {
+      "name": "Complete Protein",
+      "folder": "complete-protein",
+      "tier": 2,
+      "category": "protein",
+      "tagline": "Multi-source protein for sustained amino acid delivery",
+      "education_angles": [
+        "Why protein source matters — not all servings are created equal",
+        "Time-release protein explained: sequential absorption vs single spike",
+        "Getting enough protein without living on chicken and rice"
+      ],
+      "shopify_url": "https://acme-supplements.example.com/products/complete-protein",
+      "image_count": 15
+    },
+    {
+      "name": "Basic Creatine",
+      "folder": "basic-creatine",
+      "tier": 3,
+      "category": "performance",
+      "tagline": "Creatine monohydrate — the most researched supplement there is",
+      "education_angles": [
+        "Creatine loading: necessary or not?",
+        "Why creatine is the most evidence-based supplement and what it actually does"
+      ],
+      "shopify_url": "https://acme-supplements.example.com/products/basic-creatine",
+      "image_count": 5
+    }
+  ],
+  "rotation_log": []
+}
