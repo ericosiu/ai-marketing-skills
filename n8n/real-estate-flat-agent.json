@@ -1,0 +1,155 @@
+{
+  "name": "Real Estate AI Agent - WhatsApp & Calls",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          {
+            "value": "message",
+            "key": "messages"
+          }
+        ],
+        "parseMode": "json",
+        "httpMethod": "POST",
+        "path": "webhook/real-estate-agent",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedIps": ""
+        }
+      },
+      "id": "webhookTrigger",
+      "name": "WhatsApp Incoming (Webhook)",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        240,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://api.telegram.org/bot{{ $credentials.telegramBot.apiKey }}/sendMessage",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "json",
+        "jsonBody": "={ \"chat_id\": $json[\"chat_id\"] ?? \"PUT_CHAT_ID\", \"text\": $json[\"reply_text\"] }",
+        "options": {
+          "body": {
+            "json": "={ \"chat_id\": $json[\"chat_id\"] ?? \"PUT_CHAT_ID\", \"text\": $json[\"reply_text\"] }"
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "name": "Send Telegram/WhatsApp Reply",
+      "id": "sendReply",
+      "position": [
+        760,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "model": "gpt-4o-mini",
+        "options": {
+          "systemMessage": "=You are a real estate assistant for flats for sale/rent.\n\nYou MUST respond ONLY with a JSON object in this exact format:\n{\n  \"intent\": \"buy|rent|sell|unknown\",\n  \"category_m2\": 86|96|92|120|null,\n  \"missing\": [\"m2\"],\n  \"reply_text\": \"...\"\n}\n\nRules:\n- If the user wants to SELL a flat AND the message does not include an m2, set intent=sell and missing=[\"m2\"]. Ask for 86/96/92/120.\n- If m2 is provided, normalize it to the closest allowed value in [86, 96, 92, 120].\n- If the user asks to BUY/RENT a flat, set intent=rent or intent=buy and category_m2 to the closest allowed m2 if clearly stated.\n- If nothing is clear, set intent=unknown.\n- Keep reply_text short, friendly, and specific."
+        },
+        "userMessage": "={{ $json.chat_id }} {{ $json.message_text }} {{ $json.sender_name }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChat",
+      "typeVersion": 1,
+      "name": "Classify Intent",
+      "id": "classifyIntent",
+      "position": [
+        420,
+        300
+      ],
+      "notes": "Replace with your actual LLM credentials. Uses OpenAI-compatible chat model."
+    },
+    {
+      "parameters": {
+        "jsCode": "const msg = $input.first().json;\nconst m2 = msg[\"category_m2\"];\nconst intent = msg[\"intent\"];\nconst missing = msg[\"missing\"] || [];\n\nif (missing.length) {\n  return {\n    chat_id: msg.chat_id,\n    needs_user_input: true,\n    missing,\n    reply_text: missing.includes(\"m2\") ? \"To help you list this flat for sale, which size category describes it? 86, 96, 92, or 120 m²?\" : msg.reply_text\n  };\n}\n\nreturn { chat_id: msg.chat_id, reply_text: msg.reply_text, intent, category_m2: m2, needs_user_input: false };"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "name": "Convert Classifier Output To Message",
+      "id": "parseClassifier",
+      "position": [
+        540,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const item = $input.first().json;\nconst m2 = item[\"category_m2\"];\n\nif (!m2) {\n  return [{ json: { chat_id: item.chat_id, reply_text: item.reply_text } }];\n}\n\nlet text = item.reply_text || \"Here are matching flats:\";\n\n// Replace this block with your real inventory source: Google Sheet, Airtable, Postgres, CSV, etc.\nconst inventory = {\n  86: [{ title: \"86 A\", address: \"Street 1\" }],\n  96: [{ title: \"96 X\", address: \"Street 2\" }],\n  92: [{ title: \"92 Y\", address: \"Street 3\" }],\n  120: [{ title: \"120 Z\", address: \"Street 4\" }]\n};\n\nconst matches = inventory[m2] || [];\nif (matches.length) {\n  text = matches.map((f, i) => `${i + 1}. ${f.title} - ${f.address}`).join(\"\\n\");\n} else {\n  text = `No current flats available in the ${m2} m² category.`;\n}\n\nreturn [{ json: { chat_id: item.chat_id, reply_text: text } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "name": "Lookup Inventory By m2",
+      "id": "lookupInventory",
+      "position": [
+        640,
+        380
+      ]
+    }
+  ],
+  "connections": {
+    "WhatsApp Incoming (Webhook)": {
+      "main": [
+        [
+          {
+            "node": "Classify Intent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Classify Intent": {
+      "main": [
+        [
+          {
+            "node": "Convert Classifier Output To Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert Classifier Output To Message": {
+      "main": [
+        [
+          {
+            "node": "Lookup Inventory By m2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lookup Inventory By m2": {
+      "main": [
+        [
+          {
+            "node": "Send Telegram/WhatsApp Reply",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "1"
+}
