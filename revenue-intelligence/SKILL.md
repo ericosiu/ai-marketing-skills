@@ -1,3 +1,8 @@
+---
+name: revenue-intelligence
+description: Extract sales-call insights, map content to pipeline and closed revenue, and generate multi-source client reports. Use for Gong analysis, objection and buying-signal mining, revenue attribution, buyer-journey gaps, reporting, and anomaly detection.
+---
+
 # AI Revenue Intelligence
 
 ## Preamble (runs on skill start)
