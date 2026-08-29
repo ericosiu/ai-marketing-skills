@@ -12,6 +12,8 @@ Most AI-generated content dies on the timeline because it *reads* like AI. This 
 4. Rewrites any sections that trigger AI patterns
 5. Outputs a post ready to paste into X
 
+Use the optional Xquik source packet to research recent public X posts. It gives the Skill source URLs, audience language, questions, and engagement counts before drafting.
+
 ## The Humanizer
 
 The real value here. 24 specific patterns that reveal AI-generated text:
@@ -31,11 +33,26 @@ Full checklist with all 24 patterns and deduction weights in `SKILL.md`.
 
 ## Quick Start
 
-Drop `SKILL.md` into your Claude Code project:
+Copy the Skill directory into your Claude Code project:
 
 ```bash
-cp x-longform-post/SKILL.md your-project/.claude/skills/x-longform-post.md
+cp -R x-longform-post your-project/.claude/skills/
 ```
+
+The prompt workflow needs no dependency. Install the pinned Xquik Python SDK to collect a public source packet:
+
+```bash
+python3 -m pip install -r your-project/.claude/skills/x-longform-post/requirements.txt
+read -rs XQUIK_API_KEY
+export XQUIK_API_KEY
+python3 your-project/.claude/skills/x-longform-post/scripts/xquik_source_packet.py \
+  --query "your topic" \
+  --output /tmp/x-source-packet.json
+```
+
+Packets default to 20 posts and accept up to 100. The command excludes replies and reposts, enables safe search, records source URLs, and writes the file with owner-only permissions. Delete the packet after drafting.
+
+See the [Xquik Python SDK guide](https://docs.xquik.com/sdks/python) for authentication and request behavior.
 
 Then ask Claude Code:
 - "Write an X article about why most companies waste money on brand awareness"
@@ -82,7 +99,9 @@ Lead → AI Score → Route
 
 ## Requirements
 
-This is a prompt-based skill (no Python dependencies). Works with any Claude Code or AI coding agent setup.
+The prompt workflow works with any Claude Code or AI coding agent setup. Public X research needs Python 3.10+, the pinned Xquik SDK, and an API key.
+
+Xquik is an independent third-party service. Not affiliated with X Corp. "Twitter" and "X" are trademarks of X Corp.
 
 ## License
 

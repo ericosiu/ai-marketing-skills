@@ -1,1 +1,2 @@
-# Prompt-based skill — no Python dependencies
+# Optional public X source packet
+x_twitter_scraper==0.11.2
