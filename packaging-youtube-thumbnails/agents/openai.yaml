@@ -1,0 +1,4 @@
+interface:
+  display_name: "YouTube Thumbnail Packager"
+  short_description: "Create and improve evidence-backed YouTube packages"
+  default_prompt: "Use $packaging-youtube-thumbnails with my saved channel profile, performance memory, and attached source content to create and render the requested number of materially different YouTube packages, then show them in an inline review format."
