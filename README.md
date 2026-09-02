@@ -27,6 +27,7 @@ These aren't prompts. They're complete workflows — scripts, scoring algorithms
 | [**Deck Generator**](./deck-generator/) | AI-generated slide decks with consistent visual styles in minutes | Image Generator, Google Slides Builder, Style Presets |
 | [**YT Competitive Analysis**](./yt-competitive-analysis/) | Find outlier videos and packaging patterns across any YouTube channels | Outlier Detector, Title Pattern Extractor, Channel Benchmarker |
 | [**Video Content Engine**](./video-content-engine/) | Diagnose any video and route it into the strongest justified content portfolio | Long-form Optimizer, Shorts Engine, Tutorial, Case Study, Paid Creative |
+| [**Agentic Video Understanding**](./agentic-video-understanding/) | Goal-directed moment extraction from long video/audio via Gemini (cheaper than fixed-FPS ingest) | Moment Finder, Hook Hunt, Call Mining, Loom Bar Evidence |
 | [**Show-and-Tell Video Slate**](./show-and-tell-video-slate/) | Turn real builds and first-party proof into ranked 15-minute video episodes before production | Evidence Inventory, Episode Scoring, Packaging Gates, Shoot Order |
 | [**Shortform Idea Grill**](./shortform-idea-grill/) | Interview, score, and rank proof-led short-form video ideas | Five-Second Hooks, Three-Second Scores, Talking Bullets, CTA Mapping |
 | [**Net-New Video Editor**](./net-new-video-editor/) | Turn fresh talking-head recordings into reversible, review-ready vertical drafts | JSON Edit Plans, FFmpeg Rendering, Captions, Hook Cards, Visual QA |
