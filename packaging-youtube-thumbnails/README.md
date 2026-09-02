@@ -21,6 +21,69 @@ passing variants, and show the current comparison set inline.
 
 If no channel profile exists, supply the channel URL and authorized reference material. The skill will create a reusable profile before packaging.
 
+## Install in an agent harness
+
+Clone this repository, then copy or import the complete `packaging-youtube-thumbnails/` directory. Do not copy only `SKILL.md`: the workflow also uses its bundled scripts, references, dependency file, and harness metadata.
+
+For Claude Code:
+
+```bash
+mkdir -p .claude/skills
+cp -R ai-marketing-skills/packaging-youtube-thumbnails \
+  .claude/skills/packaging-youtube-thumbnails
+```
+
+For Codex:
+
+```bash
+mkdir -p ~/.codex/skills
+cp -R ai-marketing-skills/packaging-youtube-thumbnails \
+  ~/.codex/skills/packaging-youtube-thumbnails
+```
+
+For another harness, import the same complete directory and point its skill discovery at `SKILL.md`. OpenAI-compatible registries can also read `agents/openai.yaml`. Reload the harness after installation, then invoke `$packaging-youtube-thumbnails`.
+
+## Package layout
+
+```text
+packaging-youtube-thumbnails/
+├── SKILL.md                  # Workflow and delivery contract
+├── agents/openai.yaml        # OpenAI-compatible display metadata
+├── references/               # Profile, rubric, image, and learning contracts
+├── scripts/                  # Deterministic image and performance checks
+├── tests/                    # Public package and script tests
+└── requirements.txt          # Image-validation dependency
+```
+
+The harness follows `SKILL.md`. The scripts enforce repeatable checks, while the reference files define the reusable contracts that the workflow loads only when needed.
+
+## Example workflows
+
+Create packages from source material:
+
+```text
+Use $packaging-youtube-thumbnails with this channel profile and transcript.
+Create three distinct packages, render the passing variants, and show them inline.
+```
+
+Validate a final thumbnail without running the full workflow:
+
+```bash
+python3 <skill-root>/scripts/thumbnail_guard.py final \
+  --image thumbnail.png \
+  --safe-box 'product-mark:120,80,360,280'
+```
+
+Generate a pre-package performance brief from local, sanitized readbacks:
+
+```bash
+python3 <skill-root>/scripts/thumbnail_learning.py brief \
+  --ledger <output-root>/_performance/performance-ledger.jsonl \
+  --lessons <output-root>/_performance/lessons.jsonl \
+  --comparison-group operator-framework \
+  --published-at 2026-09-02T12:00:00Z
+```
+
 ## Install and validate
 
 Install the image-validation dependency, then run the tests:

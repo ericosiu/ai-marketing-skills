@@ -67,12 +67,21 @@ python experiment-engine.py create \
 
 ## 🧠 How These Work with Claude Code
 
-Every category includes a `SKILL.md` file. Drop it into your Claude Code project and the AI agent knows how to use the tools:
+Every category includes a `SKILL.md` file. Copy the complete skill directory when it also contains `scripts/`, `references/`, `agents/`, or other bundled files. Copying only `SKILL.md` will leave those workflows incomplete.
 
 ```
 # In your project directory
 cp ai-marketing-skills/growth-engine/SKILL.md .claude/skills/growth-engine.md
 ```
+
+For a bundled skill such as YouTube Packaging, install the full directory:
+
+```bash
+cp -R ai-marketing-skills/packaging-youtube-thumbnails \
+  .claude/skills/packaging-youtube-thumbnails
+```
+
+Other agent harnesses should import the same complete directory and use its `SKILL.md` as the entry point. OpenAI-compatible harnesses can also read `agents/openai.yaml` for display metadata and the default prompt.
 
 Then ask Claude Code: *"Run an experiment testing carousel vs. static posts on LinkedIn"* — it handles the rest.
 
