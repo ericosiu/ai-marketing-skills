@@ -1,3 +1,8 @@
+---
+name: seo-ops
+description: Run SEO operations across keyword intelligence, Google Search Console optimization, competitor gaps, trend detection, and content-decay analysis. Use for keyword research, content briefs, quick-win discovery, SEO audits, and prioritized content opportunities.
+---
+
 # AI SEO Ops
 
 ## Preamble (runs on skill start)

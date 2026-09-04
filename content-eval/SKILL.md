@@ -1,4 +1,7 @@
 ---
+name: content-eval
+description: Generate and score content ideas with an expert panel using transcripts, meeting notes, competitor analysis, and trends. Use for content evaluation, weekly content menus, production schedules, choosing what to film, scoring ideas, or ranking video concepts.
+---
 
 ## Preamble (runs on skill start)
 
@@ -11,16 +14,6 @@ python3 telemetry/telemetry_init.py 2>/dev/null || true
 ```
 
 > **Privacy:** This skill logs usage locally to `~/.ai-marketing-skills/analytics/`. Remote telemetry is opt-in only. No code, file paths, or repo content is ever collected. See `telemetry/README.md`.
-
----
-name: content-eval
-description: >-
-  Generate and score content ideas using an expert panel. Pulls from podcast
-  transcripts, meeting notes, competitor analysis, and trending topics to
-  produce a ranked content menu with production schedule. Use when asked to:
-  "content eval", "score content ideas", "weekly content menu", "what should
-  I film", "content ideas", "rate these video ideas".
----
 
 # Content Eval
 

@@ -1,4 +1,7 @@
 ---
+name: video-caption-generator
+description: Transcribe short videos from Google Drive, detect duplicates and A/B variants, and generate social captions plus YouTube and Facebook titles. Use when asked to process Drive videos, transcribe new clips, caption videos, or generate titles for clips.
+---
 
 ## Preamble (runs on skill start)
 
@@ -11,17 +14,6 @@ python3 telemetry/telemetry_init.py 2>/dev/null || true
 ```
 
 > **Privacy:** This skill logs usage locally to `~/.ai-marketing-skills/analytics/`. Remote telemetry is opt-in only. No code, file paths, or repo content is ever collected. See `telemetry/README.md`.
-
----
-name: video-caption-generator
-description: >
-  Transcribe short videos from a Google Drive folder, deduplicate by content,
-  and generate social captions + YouTube/Facebook titles. Use when new video
-  clips are dropped into a Drive folder and you need transcript, caption, and
-  title for each unique clip.
-  Trigger phrases: "process videos in drive", "transcribe new clips",
-  "caption these videos", "generate titles for these clips".
----
 
 # Video Caption Generator
 
