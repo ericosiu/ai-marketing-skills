@@ -1,3 +1,8 @@
+---
+name: conversion-ops
+description: Audit landing pages, identify conversion bottlenecks, and turn survey responses into lead-magnet ideas. Use for CRO reviews and survey segmentation.
+---
+
 # AI Conversion Ops
 
 ## Preamble (runs on skill start)

@@ -1,3 +1,8 @@
+---
+name: growth-engine
+description: Create marketing experiments, log results, compare variants, and maintain a playbook of measured winners. Use for experiment tracking and campaign pacing.
+---
+
 # Growth Engine
 
 ## Preamble (runs on skill start)

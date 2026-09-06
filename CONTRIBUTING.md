@@ -1,8 +1,8 @@
 # Contributing to AI Marketing Skills
 
-AI Marketing Skills is an open-source collection of production marketing automation skills. Thanks for contributing.
+AI Marketing Skills is an open-source collection of reusable marketing and sales workflows. Thanks for contributing.
 
-- **Repo:** [github.com/singlegrain/ai-marketing-skills](https://github.com/singlegrain/ai-marketing-skills)
+- **Repo:** [github.com/ericosiu/ai-marketing-skills](https://github.com/ericosiu/ai-marketing-skills)
 - **README:** [README.md](./README.md)
 
 ---
@@ -34,19 +34,27 @@ The pre-commit hook will block commits with detected PII. See [security/README.m
 
 ## Skill Structure
 
-Every skill category requires these files:
+Each skill needs a folder with a `SKILL.md` that begins with valid YAML frontmatter:
 
-```
-skill-category/
-├── SKILL.md            # Claude Code skill definition (name, description, steps)
-├── README.md           # Overview, quick start, architecture, examples
-├── requirements.txt    # Python dependencies
-└── *.py                # Implementation scripts
+```yaml
+---
+name: example-skill
+description: Explain the task this skill handles and when to use it.
+---
 ```
 
-- **SKILL.md** follows Claude Code skill conventions: name, description, numbered steps.
-- **README.md** includes: overview, quick start, architecture, examples, and the standard footer.
-- **Python scripts** use `argparse` for CLI, include clear API stubs with comments, and handle missing dependencies gracefully.
+Put startup commands and Markdown headings after the closing frontmatter delimiter. Use lowercase letters, digits, and hyphens for new names. Preserve established invocation names when updating existing packages.
+
+Include supporting files only when needed:
+
+- `README.md`: setup, required tools, sample input/output, and limits.
+- `scripts/`: executable helpers, with documented dependencies.
+- `references/` and `assets/`: supporting instructions and output resources.
+- `requirements.txt`: only when the skill actually needs Python dependencies.
+
+Copying one instruction file is not enough when it depends on other files. Document shared repository dependencies explicitly.
+
+Update [CATALOG.md](CATALOG.md) for every added, renamed, or retired package. Add a README shortcut only if it helps a common starting task. Do not claim production readiness or business results without evidence.
 
 ---
 
@@ -72,7 +80,7 @@ api_key = os.environ["API_KEY"]  # KeyError if missing
 
 ## Telemetry Integration
 
-New skills **must** integrate telemetry logging. See [telemetry/README.md](./telemetry/README.md) for the integration guide.
+Follow the existing telemetry integration requirement for new skills; see [telemetry/README.md](./telemetry/README.md). Keep helper references resolvable in the documented installation layout.
 
 - Add a version check to your SKILL.md preamble
 - **Never log sensitive data through telemetry** (API keys, PII, client data)
@@ -85,7 +93,8 @@ New skills **must** integrate telemetry logging. See [telemetry/README.md](./tel
 2. **Branch** from `main` (use descriptive branch names: `feat/email-drip-skill`, `fix/sanitizer-regex`)
 3. **Build** your changes
 4. **Verify** before submitting:
-   - All Python files compile clean: `python3 -m py_compile your_file.py`
+   - The opening YAML in `SKILL.md` contains `name` and `description`, and the catalog links resolve.
+   - Changed Python files compile clean: `python3 -m py_compile your_file.py`
    - Sanitizer scan passes: `python3 security/sanitizer.py --scan --dir . --recursive`
 5. **Open a PR** with a description that includes:
    - What it does

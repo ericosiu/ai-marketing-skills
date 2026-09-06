@@ -1,3 +1,8 @@
+---
+name: video-clip-pipeline
+description: Find and cut standalone highlights from long-form YouTube videos using transcripts and sentence-boundary checks. Use for the bundled long-form clip pipeline.
+---
+
 # Long-Form Video Clip Pipeline
 
 ## Preamble (runs on skill start)

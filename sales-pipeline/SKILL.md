@@ -1,3 +1,8 @@
+---
+name: sales-pipeline
+description: Analyze website-visitor intent, route prospects, revisit closed-lost deals, and refine an ICP. Use for sales-pipeline operations and prospecting workflows.
+---
+
 # AI Sales Pipeline
 
 ## Preamble (runs on skill start)
