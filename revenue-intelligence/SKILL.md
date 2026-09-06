@@ -1,3 +1,8 @@
+---
+name: revenue-intelligence
+description: Extract sales-call insights, analyze content attribution, and assemble client reports. Use for revenue analysis and buyer-journey gaps.
+---
+
 # AI Revenue Intelligence
 
 ## Preamble (runs on skill start)

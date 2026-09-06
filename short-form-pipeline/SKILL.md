@@ -1,3 +1,8 @@
+---
+name: short-form-pipeline
+description: Extract vertical short-form clips from long-form YouTube videos using transcription, segmentation, cropping, and captions. Use for the bundled short-form pipeline.
+---
+
 # Short-Form Video Clip Pipeline — Skill
 
 ## Preamble (runs on skill start)

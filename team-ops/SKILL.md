@@ -1,3 +1,8 @@
+---
+name: team-ops
+description: Analyze team performance and extract decisions and action items from meeting transcripts. Use for team operations reviews and meeting follow-up preparation.
+---
+
 # AI Team Ops
 
 ## Preamble (runs on skill start)

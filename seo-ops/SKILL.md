@@ -1,3 +1,8 @@
+---
+name: seo-ops
+description: Research keywords, analyze competitor gaps, review Search Console opportunities, and identify content trends. Use for SEO briefs and optimization priorities.
+---
+
 # AI SEO Ops
 
 ## Preamble (runs on skill start)

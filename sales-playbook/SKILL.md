@@ -1,3 +1,8 @@
+---
+name: sales-playbook
+description: Prepare sales calls, build value-based pricing packages, and review sales transcripts. Use for proposals, deal preparation, and pricing analysis.
+---
+
 # AI Sales Playbook — Value-Based Pricing & Deal Upselling
 
 ## Preamble (runs on skill start)
