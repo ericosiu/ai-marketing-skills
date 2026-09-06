@@ -1,0 +1,2 @@
+# Instruction-only skill: no Python package dependencies.
+# Rendering and connector dependencies come from the chosen execution environment.

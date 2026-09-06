@@ -1,0 +1,4 @@
+interface:
+  display_name: "Growth Signal Charts"
+  short_description: "Original content and measured signals into cited charts"
+  default_prompt: "Use $growth-signal-charts to match my recent original content to measured post results, shortlist strong chart ideas, and preview the best in Desk Edition with PNG/PDF exports and platform captions."
