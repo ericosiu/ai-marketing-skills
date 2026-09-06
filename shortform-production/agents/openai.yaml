@@ -1,0 +1,6 @@
+interface:
+  display_name: "Shortform Production"
+  short_description: "V5 edits, hook previews, and verified API delivery"
+  default_prompt: "Use $shortform-production to turn this source into a readable short with evidence-based visuals."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,166 @@
+{
+  "name": "shortform-editorial-quality",
+  "version": "1.0.0",
+  "score_max": 100,
+  "decision_question": "Does this edit communicate the intended idea with reference-level clarity, proof, pace, and visual craft?",
+  "score_scale": {
+    "0": "Missing, broken, or actively harmful.",
+    "1": "Poor. The treatment obscures the message or feels unfinished.",
+    "2": "Below the bar. Understandable, but generic, weak, or inconsistent.",
+    "3": "Competent. Clear and functional, but ordinary or predictable.",
+    "4": "Strong. Purposeful, polished, and clearly above average.",
+    "5": "Reference-level. Precise, memorable, and difficult to improve without changing the concept."
+  },
+  "score_bands": [
+    {"min": 90, "max": 100, "label": "reference_level", "action": "publish_ready"},
+    {"min": 82, "max": 89.99, "label": "strong", "action": "minor_fixes"},
+    {"min": 70, "max": 81.99, "label": "pedestrian", "action": "editorial_upgrade"},
+    {"min": 0, "max": 69.99, "label": "weak", "action": "rebuild_edit_plan"}
+  ],
+  "formula": "weighted_score = sum((dimension_score / 5) * dimension_weight); apply caps and hard gates after calculation",
+  "dimensions": [
+    {
+      "id": "hook_and_structure",
+      "weight": 18,
+      "question": "Does the opening stop attention and create a clear reason to continue, then repay that promise?",
+      "score_3": "The topic is clear, but the hook is familiar or the payoff arrives slowly.",
+      "score_5": "The first sentence and opening visual work together immediately; the sequence creates curiosity and fully repays it."
+    },
+    {
+      "id": "intent_and_authority",
+      "weight": 12,
+      "question": "Does the edit preserve the creator's intended thesis, authority, specificity, and tone?",
+      "score_3": "The core point survives, but important authority or nuance is weakened.",
+      "score_5": "The exact thesis and authority sequence remain intact, including intentional second-sentence credentials or proof."
+    },
+    {
+      "id": "visual_proof_and_relevance",
+      "weight": 18,
+      "question": "Do the visuals show the claim, result, interface, artifact, or example at the moment it is discussed?",
+      "score_3": "Visuals are related but mostly decorative, late, small, or hard to read.",
+      "score_5": "Evidence appears at the right moment, is legible, and makes the spoken claim easier to trust and understand."
+    },
+    {
+      "id": "pacing_and_attention",
+      "weight": 14,
+      "question": "Does the edit maintain momentum without rushing, dragging, or stealing attention from comprehension?",
+      "score_3": "The pace is acceptable but uniform; some beats feel slow, abrupt, or repetitive.",
+      "score_5": "Cuts, pauses, reframes, and visual changes follow the idea's rhythm; every beat earns its duration."
+    },
+    {
+      "id": "captions_and_information_design",
+      "weight": 10,
+      "question": "Are captions accurate, readable, well placed, and used to emphasize meaning rather than transcribe mechanically?",
+      "score_3": "Readable and accurate, but generic, overlong, or weakly emphasized.",
+      "score_5": "Chunking, hierarchy, timing, and emphasis guide the eye while leaving the main visual unobstructed."
+    },
+    {
+      "id": "composition_and_reframing",
+      "weight": 8,
+      "question": "Are framing, crop, picture-in-picture, and screen space used deliberately?",
+      "score_3": "Clean framing with limited visual development.",
+      "score_5": "The layout changes with the argument and keeps the speaker, evidence, and captions legible at all times."
+    },
+    {
+      "id": "broll_and_motion_utility",
+      "weight": 8,
+      "question": "Does B-roll or motion explain, prove, or intensify the point without becoming generic decoration?",
+      "score_3": "Mostly relevant, but predictable, overused, or weakly synchronized.",
+      "score_5": "Every visual insert has a clear job and lands on the spoken beat; restraint receives full credit when no insert is needed."
+    },
+    {
+      "id": "sound_and_delivery",
+      "weight": 5,
+      "question": "Are speech, music, silence, and sound accents clear and intentionally balanced?",
+      "score_3": "Speech is clear, but the sound bed and transitions add little.",
+      "score_5": "Clean speech and restrained sound design support emphasis without calling attention to themselves."
+    },
+    {
+      "id": "platform_and_brand_fit",
+      "weight": 5,
+      "question": "Does the piece feel native to the target platform while remaining recognizably the creator's content?",
+      "score_3": "Usable on the platform but visually generic or weakly branded.",
+      "score_5": "Native, current, distinctive, and consistent enough to become a repeatable house style."
+    },
+    {
+      "id": "technical_finish",
+      "weight": 2,
+      "question": "Is the export free of sync errors, clipped text, bad crops, flashes, audio pops, and visible rendering defects?",
+      "score_3": "Minor imperfections that do not block viewing.",
+      "score_5": "No visible or audible technical defect in a complete playback."
+    }
+  ],
+  "hard_gates": [
+    {
+      "id": "creator_intent_preserved",
+      "fail_when": "An intentional thesis, authority line, qualification, or payoff is removed or materially changed without an approved reason.",
+      "result": "fail"
+    },
+    {
+      "id": "evidence_integrity",
+      "fail_when": "Generated, altered, mismatched, or unreadable media is presented as proof of a factual claim, metric, product result, or interface behavior.",
+      "result": "fail"
+    },
+    {
+      "id": "caption_integrity",
+      "fail_when": "Captions materially change the meaning, hide critical evidence, or become unreadable in the platform-safe area.",
+      "result": "fail"
+    },
+    {
+      "id": "sync_and_continuity",
+      "fail_when": "Audio and video are visibly out of sync, a cut lands inside a spoken word, or a technical error interrupts comprehension.",
+      "result": "fail"
+    }
+  ],
+  "score_caps": [
+    {
+      "condition": "hook_and_structure < 3",
+      "maximum_total": 69,
+      "reason": "A short-form edit cannot pass with a weak opening."
+    },
+    {
+      "condition": "intent_and_authority < 3",
+      "maximum_total": 59,
+      "reason": "A polished edit cannot compensate for changing the creator's intended argument."
+    },
+    {
+      "condition": "candidate makes a proof-dependent claim and visual_proof_and_relevance < 3",
+      "maximum_total": 74,
+      "reason": "Proof-dependent content must show usable proof."
+    }
+  ],
+  "profiles": {
+    "talking_head": {
+      "required_checks": [
+        "The first visual and first spoken sentence create one coherent hook.",
+        "The face, hands, or purposeful activity create natural visual energy.",
+        "Reframes and caption emphasis follow idea changes rather than a timer.",
+        "Background action does not steal attention from the message.",
+        "The edit does not add B-roll only to avoid staying on the speaker."
+      ]
+    },
+    "proof_driven": {
+      "required_checks": [
+        "The proof source appears when the claim is made, preferably within the opening three seconds when it is the hook.",
+        "The relevant interface, result, metric, or post is readable on a phone.",
+        "Crop, zoom, highlight, and pointer motion direct attention to the exact evidence.",
+        "The speaker remains visible only when facial delivery adds value.",
+        "No generated reconstruction replaces real evidence that exists in the source recording."
+      ]
+    },
+    "motion_graphics": {
+      "required_checks": [
+        "Motion reveals information in the same order as the narration.",
+        "The viewer has enough time to read each state at normal speed.",
+        "Typography, palette, lighting, and transitions stay consistent.",
+        "The final state holds long enough to register.",
+        "Generated visuals illustrate concepts and never impersonate factual evidence."
+      ]
+    }
+  },
+  "mandatory_evidence": {
+    "per_dimension": "At least one timestamped observation.",
+    "hard_gate": "A timestamp and exact description for every failure.",
+    "recommendations": "At most three changes, ordered by expected score impact."
+  }
+}
