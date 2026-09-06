@@ -1,0 +1,4 @@
+interface:
+  display_name: "Video Analysis"
+  short_description: "Read transcripts first; check video silently"
+  default_prompt: "Use $video-analysis to review this video, starting with its transcript and checking footage only where needed, without audible playback."

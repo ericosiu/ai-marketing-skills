@@ -1,0 +1,2 @@
+# No required Python packages. This instruction-only skill uses available tools.
+# Install Google's official google-genai SDK only if choosing its Python route.

@@ -28,6 +28,7 @@ These aren't prompts. They're complete workflows — scripts, scoring algorithms
 | [**YT Competitive Analysis**](./yt-competitive-analysis/) | Find outlier videos and packaging patterns across any YouTube channels | Outlier Detector, Title Pattern Extractor, Channel Benchmarker |
 | [**YouTube Packaging**](./packaging-youtube-thumbnails/) | Create, render, revise, and learn from evidence-backed title-thumbnail packages | Channel Profiles, Package Scoring, Visual QA, Performance Learning |
 | [**Video Content Engine**](./video-content-engine/) | Diagnose any video and route it into the strongest justified content portfolio | Long-form Optimizer, Shorts Engine, Tutorial, Case Study, Paid Creative |
+| [**Video Analysis**](./video-analysis/) | Read transcripts first and inspect video silently when visuals or timing matter | Transcript Review, Demo Verification, Clip Boundaries |
 | [**Agentic Video Understanding**](./agentic-video-understanding/) | Goal-directed moment extraction from long video/audio via Gemini (cheaper than fixed-FPS ingest) | Moment Finder, Hook Hunt, Call Mining, Loom Bar Evidence |
 | [**Show-and-Tell Video Slate**](./show-and-tell-video-slate/) | Turn real builds and first-party proof into ranked 15-minute video episodes before production | Evidence Inventory, Episode Scoring, Packaging Gates, Shoot Order |
 | [**Shortform Production**](./shortform-production/) | Produce readable shorts and deliver approved clips through the API | V5 Style, Hook Previews, Editorial Review, Metricool Delivery |
