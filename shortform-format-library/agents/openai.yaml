@@ -1,0 +1,4 @@
+interface:
+  display_name: "Shortform Format Library"
+  short_description: "Research formats and turn ideas into recording outlines"
+  default_prompt: "Use $shortform-format-library to review my content spikes, refresh the format library, and propose source-grounded recording outlines."

@@ -34,6 +34,7 @@ These aren't prompts. They're complete workflows — scripts, scoring algorithms
 | [**Show-and-Tell Video Slate**](./show-and-tell-video-slate/) | Turn real builds and first-party proof into ranked 15-minute video episodes before production | Evidence Inventory, Episode Scoring, Packaging Gates, Shoot Order |
 | [**Shortform Production**](./shortform-production/) | Produce readable shorts and deliver approved clips through the API | V5 Style, Hook Previews, Editorial Review, Metricool Delivery |
 | [**Shortform Idea Grill**](./shortform-idea-grill/) | Interview, score, and rank proof-led short-form video ideas | Five-Second Hooks, Three-Second Scores, Talking Bullets, CTA Mapping |
+| [**Shortform Format Library**](./shortform-format-library/) | Maintain visual format references and match content ideas to recording outlines | Content Spikes, Creator Discovery, Freshness, Edit Briefs, Lead-Magnet Handoff |
 | [**Net-New Video Editor**](./net-new-video-editor/) | Turn fresh talking-head recordings into reversible, review-ready vertical drafts | JSON Edit Plans, FFmpeg Rendering, Captions, Hook Cards, Visual QA |
 | [**X Long-Form + Humanizer**](./x-longform-post/) | Write X articles that sound human — with a 24-pattern AI slop detector | Post Writer, Humanizer Checklist, ASCII Diagram Builder |
 
