@@ -4,6 +4,8 @@
 
 For a selected idea and format, specify exact source/media identity, timestamped spoken beats, proposed pickups, output ranges, source ranges, actual assets, layout, caption treatment, proof timing, pauses/cuts, CTA, and acceptance criteria. Planned output times are not source timestamps. New words require a new recording or explicitly requested narration.
 
+Carry the content table’s chosen **Watch reference** URL and creator label into the brief. State the specific delivery, layout, pacing, or proof sequence to adapt and any limits of the reference inspection. Keep this style reference separate from the raw recording and claim evidence.
+
 Start with one pilot in each needed treatment, such as natural yapping or a screen demonstration. Apply the user's approved visual style. Retain meaningful pauses and a stable readable layout. Match real screen evidence to spoken claims. Avoid unrelated stock and invented screenshots. Review the actual render with sound at phone size before claiming quality or creating a broad preset catalog.
 
 For Overlap, verify current official docs and the selected account's workflow before using the API:

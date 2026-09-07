@@ -12,6 +12,10 @@ format page. Return a proposed content table, match each idea to two formats,
 and prepare three talking prompts. Keep performance claims tied to evidence.
 ```
 
+## Default content table
+
+Each idea includes priority, proposed hook, idea source, suggested format, a **Watch reference** video link, three talking prompts, visual payoff/claim limit, and CTA. The creator and editor use the same chosen reference. Missing references are labeled rather than invented.
+
 ## Architecture
 
 `SKILL.md` routes research, content tables, page updates, and production handoffs. References explain spike interpretation, source freshness, stable outline storage, and editor/ManyChat boundaries. The optional validator checks a portable JSON interchange. Existing page schemas need not change.
