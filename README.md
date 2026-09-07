@@ -23,6 +23,7 @@ These aren't prompts. They're complete workflows — scripts, scoring algorithms
 | [**Conversion Ops**](./conversion-ops/) | Score any landing page and turn survey data into lead magnets | CRO Audit, Survey-to-Lead-Magnet Engine |
 | [**Podcast Ops**](./podcast-ops/) | One episode → 20+ content pieces across every platform | Podcast-to-Everything Pipeline, Content Calendar |
 | [**Team Ops**](./team-ops/) | Ruthless performance audits and meeting intelligence | Elon Algorithm, Meeting-to-Action Extractor |
+| [**Sidebar Prioritizer**](./sidebar-prioritizer/) | Reset Codex sidebar priorities and label tasks by work category and inactivity | P0–P4 Priorities, B7 Age Markers, Follow-up Evidence, Verified Labels |
 | [**Sales Playbook**](./sales-playbook/) | Value-based pricing framework that turns $10K deals into $100K deals | Pre-Call Briefing, Tiered Packager, Call Analyzer, Pattern Library |
 | [**Autoresearch**](./autoresearch/) | Karpathy-inspired optimization loops for conversion content — 50+ variants, expert scoring, evolved winners | Variant Generator, Expert Panel Scorer, Evolution Engine |
 | [**Deck Generator**](./deck-generator/) | AI-generated slide decks with consistent visual styles in minutes | Image Generator, Google Slides Builder, Style Presets |

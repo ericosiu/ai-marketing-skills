@@ -1,0 +1,4 @@
+interface:
+  display_name: "Sidebar Prioritizer"
+  short_description: "Reset task priorities, categories, and stale labels"
+  default_prompt: "Use $sidebar-prioritizer to reset my sidebar priorities, label work categories, and mark tasks inactive beyond seven days with B7."
