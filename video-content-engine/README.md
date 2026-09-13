@@ -11,6 +11,12 @@ Turn any authorized video link, upload, recording, transcript, podcast, intervie
 - Defaults to burned captions, matching SRT, and a designed opening overlay.
 - Packages deliverables into a versioned, validated manifest.
 
+## Public package and scope
+
+This is the sanitized, brand-neutral public derivative of the Leveling Up Content Engine. It includes portfolio routing, editorial and delivery contracts, and runnable boundary and file-integrity validators. It excludes private recordings, transcripts, review comments, brand reference assets, credentials, and machine-specific configuration.
+
+The current workflow covers screen-share completeness, spoken hooks, full-length review, versioned revisions, and editable team handoff. The shared editing workspace is a design contract, not a bundled or deployed application. No hosting, cloud rendering, or multiplayer service is installed by this skill.
+
 ## Quick start
 
 ```text
@@ -19,6 +25,26 @@ Diagnose it and recommend the highest-leverage first release wave before produci
 ```
 
 The skill defaults to diagnosis. Uploading, scheduling, publishing, changing sharing, spending quota, or activating a campaign requires explicit approval and readback.
+
+For an approved production pass:
+
+```text
+Produce the agreed portfolio from the authorized source. Inventory all camera,
+screen-share, and audio tracks. Show the cut plan and opening beats, then
+provide full-duration versioned previews and an editable project for review.
+Keep all files private and do not publish.
+```
+
+Read [editorial review](references/editorial-review.md) for edit acceptance and [editing workflow](references/editing-workflow.md) for preview, revision, and team handoff requirements.
+
+## Validation
+
+```bash
+python3 -m unittest discover -s video-content-engine/tests -v
+python3 security/sanitizer.py --scan --dir video-content-engine --recursive
+```
+
+The validators do not prove editorial quality or approval. Full output review remains required.
 
 ## Requirements
 

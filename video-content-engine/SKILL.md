@@ -49,6 +49,8 @@ Unless production is requested, return a brief with the source score, recommende
 
 The opportunity inventory is the source of truth. Recommend how many assets the source supports; do not default to a quota.
 
+Before editing, read [references/editorial-review.md](references/editorial-review.md) for complete track coverage, proof-led openings, and whole-asset review. Inventory camera, screen-share, presentation, and playback-audio tracks separately; a camera composite may omit the evidence the speaker discusses.
+
 ## Choose the transformation
 
 Read [references/quality-gates.md](references/quality-gates.md). Score hook, clarity, proof, pacing, and payoff from 0–20 each.
@@ -101,7 +103,7 @@ Create 6–20 second teasers, hook tests, story units, paid cutdowns, or quote m
 
 Default masters to readable burned-in captions plus matching SRT unless the user opts out. Validate monotonic non-overlapping cues, at most two lines, mobile-safe margins, and cue end at or before the master.
 
-Default the first three seconds to a designed hook overlay unless the brief requires a clean opening. Reinforce the spoken promise without strengthening the claim. Check collisions with captions, lower thirds, chapter cards, and qualifiers. Claim qualifiers take priority.
+Use the approved brand brief for opening-overlay duration; without one, use four seconds as a starting point, or a clean opening when the source calls for it. An overlay cannot repair a weak spoken hook. Reinforce the spoken promise without strengthening the claim. Check collisions with captions, lower thirds, chapter cards, and qualifiers. Claim qualifiers take priority.
 
 ### Carousels and written derivatives
 
@@ -124,6 +126,12 @@ When requested, produce a release map with order, spacing, platform, routes, tim
 
 Never publish, schedule, upload, change sharing, spend quota, or activate a campaign without explicit approval and authoritative readback.
 
+## Review and hand off an editable project
+
+Read [references/editing-workflow.md](references/editing-workflow.md) before planning previews, revisions, or team handoff. Provide full-duration access to every selected asset, immutable versions, timestamped feedback, and editable source mappings. Hook tests and compact previews supplement full review. Respect the user’s storage and foreground-playback preferences.
+
+This package contains an operating skill and two validators. It does not contain a hosted editor, media storage, render service, or multiplayer application. Use an available authorized editor or renderer; describe missing infrastructure plainly. The shared-workspace design in the reference is an implementation contract, not a deployed capability.
+
 ## Converge, deliver, and learn
 
 Apply [references/quality-gates.md](references/quality-gates.md). Confirm source integrity, portfolio alignment, media decode and timing, edit boundaries, rendered joins, captions, overlays, claims, rights, packaging, and delivery files.
@@ -136,4 +144,11 @@ Read [references/delivery-contract.md](references/delivery-contract.md), produce
 python3 scripts/validate_delivery.py --root <delivery-folder>
 ```
 
+The delivery validator checks referenced paths, hashes, and selected manifest fields. A PASS does not establish playable media, caption quality, editorial approval, or publication readiness. Keep pending and failed human/agent review gates visible.
+
 Return scores, mode, opportunity counts, portfolio map, runtimes, packages, sources, outputs, QC, verified destination, publication status, and a 24-hour, 72-hour, and seven-day measurement plan. Promote a lesson only after repeated comparable results.
+
+
+## Maintain the engine
+
+Run on request; this skill installs no background job. Track each asset through prepared, review candidate, changes requested, approved, rendering, and delivered; track publication separately with destination evidence. Record corrections as reusable editing rules without private project details. Keep performance observations separate from brand preferences. Promote a workflow only after real artifacts pass its applicable gates, and retire a rule when a documented replacement supersedes it.

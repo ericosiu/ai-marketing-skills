@@ -32,9 +32,17 @@
 
 - Burned captions plus matching SRT are the default.
 - SRT cues are monotonic, non-overlapping, at most two lines, mobile-safe, and end by the master.
-- The first three seconds use a designed hook overlay unless the brief requires a clean opening.
+- Use the brief’s opening treatment; a four-second overlay is a starting point when unspecified. Check the spoken hook independently.
 - Captions move around lower thirds, graphics, and qualifiers; qualifiers take priority.
 - Package intent is browse, search, or conversion and the opening pays it off.
 - Variants test promise hypotheses, not colors.
 - No external release action is claimed without approval and readback.
 - Manifest modules match produced modules; files exist and hashes match.
+
+## Source coverage and review readiness
+
+- Inventory and synchronize all authorized camera, screen, slide, and playback-audio tracks.
+- Map each spoken demonstration reference to visible, legible evidence. Missing proof is a repair, not a passing review candidate.
+- Review the full output with audio and inspect joins, layout changes, proof, captions, and ending. Record exact version and reviewer evidence.
+- Keep technical, editorial, caption, claim, rights, and approval results separate. Unknown or pending checks remain pending.
+- Read [editorial-review.md](editorial-review.md) for the review record and [editing-workflow.md](editing-workflow.md) for preview and handoff acceptance.
