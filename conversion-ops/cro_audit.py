@@ -75,7 +75,7 @@ CTA_PATTERNS = re.compile(
 SOCIAL_PROOF_PATTERNS = re.compile(
     r"\b(testimonial|review|rating|stars?|customers?|clients?|"
     r"companies|trusted by|used by|loved by|join \d|"
-    r"case stud|success stor|\d+\s*\+?\s*(users?|customers?|clients?|companies|businesses)|"
+    r"case stud|success stor|\d+\s*\+?\s*(?:users?|customers?|clients?|companies|businesses)|"
     r"as seen|featured in|featured on|logo|partner)\b",
     re.IGNORECASE,
 )
@@ -84,7 +84,7 @@ SOCIAL_PROOF_PATTERNS = re.compile(
 URGENCY_PATTERNS = re.compile(
     r"\b(limited time|act now|hurry|expires?|deadline|only \d|"
     r"last chance|don'?t miss|ending soon|today only|"
-    r"while supplies|few (left|remaining|spots)|countdown|"
+    r"while supplies|few (?:left|remaining|spots)|countdown|"
     r"offer ends|sale ends|hours left|minutes left|spots? left|"
     r"exclusive|one-time|flash sale|clearance)\b",
     re.IGNORECASE,
