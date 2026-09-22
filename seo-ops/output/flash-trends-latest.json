@@ -1,0 +1,192 @@
+{
+  "trends": {
+    "timestamp": "2026-07-24T18:55:27.104135",
+    "verticals": [
+      "AI marketing automation",
+      "AI agents for business",
+      "SEO trends",
+      "content marketing AI",
+      "marketing agency transformation",
+      "programmatic SEO",
+      "AI search optimization AEO",
+      "startup growth strategy"
+    ],
+    "google_trends": [
+      {
+        "topic": "espn",
+        "traffic": "20000+",
+        "news_titles": [
+          "Sources: Duke-Michigan game off; Texas Tech replaces Wolverines",
+          "Why Michigan basketball will no longer play Duke in 2026-27 season"
+        ],
+        "news_urls": [
+          "https://www.espn.com/mens-college-basketball/story/_/id/49439042/sources-duke-michigan-game-texas-tech-replaces-wolverines",
+          "https://sports.yahoo.com/articles/why-michigan-basketball-no-longer-145304409.html"
+        ]
+      },
+      {
+        "topic": "joel embiid",
+        "traffic": "2000+",
+        "news_titles": [
+          "Anthony Davis Posts Cryptic IG Video Amid Wizards Contract Rumors, LeBron James Links",
+          "Warriors have not engaged the Wizards about Anthony Davis"
+        ],
+        "news_urls": [
+          "https://bleacherreport.com/articles/25457471-anthony-davis-posts-cryptic-ig-video-amid-wizards-contract-rumors-lebron-james-links",
+          "https://sports.yahoo.com/articles/warriors-not-engaged-wizards-anthony-143159062.html"
+        ]
+      },
+      {
+        "topic": "jalen brown",
+        "traffic": "2000+",
+        "news_titles": [
+          "Celtics get updated trade package for Jaylen Brown replacement, and it\u2019s insane",
+          "Celtics trade rumor helps the Jaylen Brown trade make much more sense"
+        ],
+        "news_urls": [
+          "https://www.sportingnews.com/us/nba/boston-celtics/news/celtics-updated-trade-package-jaylen-brown-replacement/c31882d3378a5209ea772c94",
+          "https://www.sportingnews.com/us/nba/boston-celtics/news/celtics-trade-rumor-helps-jaylen-brown-trade-make-more-sense/b2eb9041e70d7bd607b82f70"
+        ]
+      },
+      {
+        "topic": "bronny james",
+        "traffic": "2000+",
+        "news_titles": [
+          "LeBron James' Absence Does Not Mean Bronny James Is Done With Lakers",
+          "Three Lakers players emerge as likely trade candidates after latest signing"
+        ],
+        "news_urls": [
+          "https://sports.yahoo.com/articles/lebron-james-absence-does-not-130032005.html",
+          "https://basketnews.com/news-252387-three-lakers-players-emerge-as-likely-trade-candidates-after-latest-signing.html"
+        ]
+      },
+      {
+        "topic": "philly",
+        "traffic": "1000+",
+        "news_titles": [
+          "Passes for the Philadelphia Marathon sell out in record time, organizers say",
+          "Suspect charged in 2023 ambush murder of man in North Philadelphia"
+        ],
+        "news_urls": [
+          "https://www.nbcphiladelphia.com/news/local/passes-for-the-philadelphia-marathon-sell-out-in-record-time-organizers-say/4438156/",
+          "https://6abc.com/post/suspect-charged-2023-ambush-murder-man-north-philadelphia/19564229/"
+        ]
+      },
+      {
+        "topic": "james harden",
+        "traffic": "500+",
+        "news_titles": [
+          "New LeBron Rumors Suggest Cavaliers Could Be Eyeing Something Bigger",
+          "Markieff Morris Makes Bold Prediction on LeBron James, Harden Landing Spots amid NBA Free Agency"
+        ],
+        "news_urls": [
+          "https://www.si.com/nba/cavaliers/onsi/new-lebron-rumors-suggest-cavaliers-could-be-eyeing-something-bigger-01ky7rsjp32p",
+          "https://bleacherreport.com/articles/25457253-markieff-morris-makes-bold-prediction-lebron-james-harden-landing-spots-amid-nba-free-agency"
+        ]
+      },
+      {
+        "topic": "anfernee simons",
+        "traffic": "500+",
+        "news_titles": [
+          "76ers' Under-the-Radar Free Agency Signing Could Pay Off Big Time",
+          "76ers' Under-the-Radar Free Agency Signing Could Pay Off Big Time"
+        ],
+        "news_urls": [
+          "https://sports.yahoo.com/articles/76ers-under-radar-free-agency-131015807.html",
+          "https://roundtable.io/sports/nba/76ers/opinion/76ers-under-the-radar-free-agency-signing-could-pay-off-big-time"
+        ]
+      },
+      {
+        "topic": "andre drummond",
+        "traffic": "500+",
+        "news_titles": [
+          "Andre Drummond already filling in for Mitchell Robinson as Knicks' enforcer",
+          "Knicks given surprising offseason grade after winning championship"
+        ],
+        "news_urls": [
+          "https://dailyknicks.com/drummond-already-filling-robinson-knicks-enforcer",
+          "https://www.postingandtoasting.com/knicks-news/88091/knicks-given-surprising-offseason-grade-after-winning-championship"
+        ]
+      },
+      {
+        "topic": "lebron james contract",
+        "traffic": "500+",
+        "news_titles": [
+          "LeBron James Could Accept [AMOUNT] Pay Cut; Not Interested In Warriors\u2019 Anthony Davis Pursuit",
+          "LeBron James limited to minimum contract with any next NBA team"
+        ],
+        "news_urls": [
+          "https://sports.yahoo.com/articles/lebron-james-could-accept-48-014109437.html",
+          "https://basketnews.com/news-252529-lebron-james-limited-to-minimum-contract-with-any-next-nba-team.html"
+        ]
+      },
+      {
+        "topic": "measles",
+        "traffic": "2000+",
+        "news_titles": [
+          "Measles Cases Hit New Record in U.S., as Vaccination Rates Wane",
+          "As measles cases reach record highs, see your school\u2019s vaccine rates"
+        ],
+        "news_urls": [
+          "https://www.nytimes.com/2026/07/24/well/measles-record-united-states-numbers.html",
+          "https://www.washingtonpost.com/health/2026/07/24/measles-cases-reach-record-highs-see-your-schools-vaccine-rates/"
+        ]
+      }
+    ],
+    "hackernews": [
+      {
+        "title": "Half-Life 2 running natively on HaikuOS",
+        "url": "https://discuss.haiku-os.org/t/haiku-nvidia-porting-nvidia-driver-for-turing-gpus/16520?page=18",
+        "score": 62,
+        "comments": 3
+      },
+      {
+        "title": "IRGC Claims It Destroyed Amazon's Bahrain Data Center",
+        "url": "https://houseofsaud.com/irgc-claims-destroyed-amazon-bahrain-data-center/",
+        "score": 156,
+        "comments": 94
+      },
+      {
+        "title": "Latest Airbus Single Aisle Aircraft Innovations",
+        "url": "https://www.airbus.com/en/newsroom/stories/2026-07-how-the-a321xlr-is-redefining-single-aisle-comfort-for-passengers",
+        "score": 17,
+        "comments": 13
+      },
+      {
+        "title": "Kaizen #4: Overhauled Homelab",
+        "url": "https://timharek.no/blog/kaizen-4/",
+        "score": 17,
+        "comments": 2
+      },
+      {
+        "title": "Interview with a Maintainer",
+        "url": "https://nesbitt.io/2026/07/24/interview-with-a-maintainer.html",
+        "score": 10,
+        "comments": 7
+      },
+      {
+        "title": "Open Weights and American AI Leadership [pdf]",
+        "url": "https://images.nvidia.com/pdf/Open-Weights-and-American-AI-Leadership.pdf",
+        "score": 68,
+        "comments": 32
+      }
+    ],
+    "reddit": [],
+    "x_twitter": []
+  },
+  "angles": [
+    {
+      "source": "Hacker News",
+      "topic": "IRGC Claims It Destroyed Amazon's Bahrain Data Center",
+      "score": 156,
+      "relevance_score": 15,
+      "url": "https://houseofsaud.com/irgc-claims-destroyed-amazon-bahrain-data-center/",
+      "angle_suggestion": "Expert perspective on 'IRGC Claims It Destroyed Amazon's Bahrain Data Center'",
+      "platforms": [
+        "X",
+        "YouTube",
+        "LinkedIn"
+      ]
+    }
+  ]
+}
