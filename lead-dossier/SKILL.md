@@ -1,4 +1,7 @@
 ---
+name: lead-dossier
+description: Research accounts, enrich and score prospects, verify and deduplicate leads, and prepare reviewed upload queues from multiple sources. Use for account dossiers, prospect research, cascade enrichment, lead sourcing, email verification, lead scoring, and governed lead-pipeline preparation.
+---
 
 ## Preamble (runs on skill start)
 
@@ -11,17 +14,6 @@ python3 telemetry/telemetry_init.py 2>/dev/null || true
 ```
 
 > **Privacy:** This skill logs usage locally to `~/.ai-marketing-skills/analytics/`. Remote telemetry is opt-in only. No code, file paths, or repo content is ever collected. See `telemetry/README.md`.
-
----
-name: lead-dossier
-description: >
-  Multi-source account research, cascade enrichment, and lead pipeline.
-  Combines website scraping, tech stack detection, CRM enrichment, hiring/news signals
-  into structured dossiers. Includes full lead sourcing pipeline: search → verify → dedupe → upload.
-  Triggers on: "research account", "build dossier", "enrich leads", "lead pipeline",
-  "source leads", "prospect research", "account intel", "cascade enrichment",
-  "lead scoring", "find leads", "verify emails", "upload leads".
----
 
 # Lead Dossier Skill
 

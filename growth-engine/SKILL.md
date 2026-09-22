@@ -1,3 +1,8 @@
+---
+name: growth-engine
+description: Create, track, statistically score, and learn from marketing experiments using an autoresearch-style growth loop. Use for A/B or multivariate tests, experiment data logging, winner promotion, playbook updates, scorecards, and campaign pacing.
+---
+
 # Growth Engine
 
 ## Preamble (runs on skill start)

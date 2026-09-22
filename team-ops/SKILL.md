@@ -1,3 +1,8 @@
+---
+name: team-ops
+description: Analyze team performance and meeting transcripts to produce structured scorecards, role and workflow recommendations, decisions, action items, and follow-ups. Use for KPI reviews, team audits, stack ranking, meeting intelligence, and CRM-ready task drafts.
+---
+
 # AI Team Ops
 
 ## Preamble (runs on skill start)

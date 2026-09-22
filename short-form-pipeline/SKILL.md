@@ -1,3 +1,8 @@
+---
+name: short-form-pipeline
+description: Turn long-form YouTube videos into vertical TikTok, Reels, and Shorts clips with download, transcription, AI segmentation, cut verification, smart cropping, and burned captions. Use when asked to repurpose long videos into short-form clips.
+---
+
 # Short-Form Video Clip Pipeline — Skill
 
 ## Preamble (runs on skill start)

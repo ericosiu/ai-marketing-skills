@@ -1,3 +1,8 @@
+---
+name: video-clip-pipeline
+description: Convert long-form YouTube episodes into standalone landscape highlight clips through download, transcription, AI segmentation, boundary verification, cutting, and optional upload preparation. Use for podcasts, interviews, talks, back catalogs, and high-volume clip production.
+---
+
 # Long-Form Video Clip Pipeline
 
 ## Preamble (runs on skill start)
