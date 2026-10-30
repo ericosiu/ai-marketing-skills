@@ -101,12 +101,51 @@ def scan_flags(raw: str) -> list[str]:
 def hard_classes(text: str) -> list[str]:
     t = norm(text)
     found = [k for k, rx in HARD_RX.items() if re.search(rx, t)]
-    # the external_send / publish / delete words inside a clearly non-acting phrase do not count,
-    # but only when the whole ask is non-acting (fail closed otherwise)
-    if found and any(re.search(rx, t) for rx in NOT_ACTION):
-        acting = re.search(r"\b(and|then|also)\b.*\b(send|publish|delete|merge|buy|pay)\b", t)
-        if not acting:
-            found = [k for k in found if k not in ("external_send", "publish", "delete")]
+    # Only suppress a hard verb when EVERY occurrence is the non-acting thing
+    # (e.g. "draft the email" with no explicit send, "shadow run only")
+    # Never suppress when the non-acting word describes an object that comes after the verb
+    # (e.g. "send a read-only receipt log", "delete the read-only receipt log")
+    # If even ONE occurrence is acting, keep the hard class.
+    # 
+    # Strategy: fail closed. Only suppress if NOT_ACTION comes RIGHT BEFORE the verb
+    # with at most "the" or "a" between, so we're confident it modifies the verb, not an object.
+    if found:
+        keep = []
+        for k in found:
+            if k not in ("external_send", "publish", "delete"):
+                keep.append(k)
+                continue
+            # Find all occurrences of this hard verb
+            verb_matches = list(re.finditer(HARD_RX[k], t))
+            all_non_acting = True  # Assume all are non-acting until we find an acting one
+            for vm in verb_matches:
+                verb_word = vm.group(0)
+                # Check if a NOT_ACTION phrase immediately precedes this verb
+                # Look back up to 20 chars for NOT_ACTION + optional article
+                before_start = max(0, vm.start() - 20)
+                before_text = t[before_start:vm.start()]
+                # Pattern: NOT_ACTION followed by optional article/prep and then immediately the verb
+                # e.g., "draft the email", "log-only send", "shadow delete"
+                this_verb_is_non_acting = False
+                for na_rx in NOT_ACTION:
+                    na_matches = list(re.finditer(na_rx, before_text))
+                    if na_matches:
+                        # Check if the last NOT_ACTION match is close to the verb
+                        last_na = na_matches[-1]
+                        # Text between NOT_ACTION and verb
+                        between = before_text[last_na.end():]
+                        # Only suppress if between is just whitespace and/or articles/determiners
+                        if re.match(r'^\s*(the|a|an)?\s*$', between):
+                            this_verb_is_non_acting = True
+                            break
+                # If this occurrence is acting (no NOT_ACTION prefix), keep the class
+                if not this_verb_is_non_acting:
+                    all_non_acting = False
+                    break  # Found an acting verb, no need to check other occurrences
+            # Only suppress if ALL occurrences were non-acting
+            if not all_non_acting:
+                keep.append(k)
+        found = keep
     return found
 
 
@@ -132,16 +171,21 @@ def active(row: dict, today: dt.date) -> bool:
     return not exp or dt.date.fromisoformat(exp) >= today
 
 
-def standing_covers(row: dict, ask: str, classes: list[str], used_today: int, count: int) -> bool:
-    """A standing approval covers an ask only with a cap, a window, every hard class, every require regex."""
+def standing_covers(row: dict, ask: str, context: str, classes: list[str], used_today: int, count: int) -> bool:
+    """A standing approval covers an ask only with a cap, a window, every hard class, every require regex.
+    Positive requirements must match the ask (the requested action) only.
+    Exclusions check both ask and context (so context can block)."""
     if row.get("kind") != "standing" or not row.get("cap") or not row.get("window"):
         return False  # capless standing = inactive
     if not set(classes) <= set(row.get("covers", [])):
         return False
-    t = norm(ask)
-    if not all(re.search(rx, t) for rx in row.get("require", [])):
+    ask_norm = norm(ask)
+    full_text_norm = norm(ask + " " + context)
+    # Require patterns must match the ask only (prevents context from authorizing out-of-scope actions)
+    if not all(re.search(rx, ask_norm) for rx in row.get("require", [])):
         return False
-    if any(re.search(rx, t) for rx in row.get("exclude", [])):
+    # Exclude patterns check both ask and context (so context can block)
+    if any(re.search(rx, full_text_norm) for rx in row.get("exclude", [])):
         return False
     return used_today + max(count, 1) <= int(row["cap"])
 
@@ -203,8 +247,12 @@ def judge(q: dict, base: Path = HERE, today: dt.date | None = None) -> dict:
 
     classes = hard_classes(ask + " " + ctx)
     if classes:
+        # Enforce cap usage tracking: HOLD when verified usage is unavailable
+        if "used_today" not in q:
+            return verdict("HOLD", "hard gate with standing approval requires verified usage tracking", 
+                         lane=lane, classes=classes)
         for row in ledger:
-            if active(row, today) and standing_covers(row, ask, classes, int(q.get("used_today", 0)), ask_count(ask)):
+            if active(row, today) and standing_covers(row, ask, ctx, classes, int(q.get("used_today", 0)), ask_count(ask)):
                 return verdict("DECIDED", "covered by a capped standing approval", decision="yes",
                                cite=dict(id=row["id"], words=row.get("owner_words", "")), lane=lane,
                                score=1.0, classes=classes)

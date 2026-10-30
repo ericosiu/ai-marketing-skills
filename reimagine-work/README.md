@@ -21,6 +21,11 @@ It has two parts:
   gate or cap changes and anything irreversible are matched by plain regexes and always HOLD, unless a
   standing approval in the ledger covers every hard class, inside its cap and time window. A standing
   approval with no cap is inactive.
+- **Usage tracking is required.** Standing approvals with caps require verified usage tracking.
+  When checking a hard gate against a capped standing approval, the caller must provide `used_today`
+  explicitly. Omitting `used_today` results in HOLD instead of defaulting to zero. This prevents
+  cap-1 approvals from being used repeatedly without enforcement. Callers should maintain persistent
+  usage state keyed by approval ID and window (e.g., a usage file that records each effective DECIDED).
 - **Broad leans never decide alone.** "The owner usually agrees with the recommendations" can support
   a decision but never makes one.
 - **Fail closed.** Tampered text (prompt injection, hidden characters, look-alike letters, a relayed
