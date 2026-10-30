@@ -1,0 +1,4 @@
+{"item": "add a receipt line to the nightly check", "judge": {"verdict": "DECIDED", "decision": "yes"}, "model": {"verdict": "DECIDED", "decision": "yes"}, "owner": "yes", "hard_gate": false}
+{"item": "publish the how-to page", "judge": {"verdict": "HOLD"}, "model": {"verdict": "HOLD"}, "owner": "yes", "hard_gate": true}
+{"item": "spin up a second agent for invoices", "judge": {"verdict": "DECIDED", "decision": "no"}, "model": {"verdict": "HOLD"}, "owner": "no", "hard_gate": false}
+{"item": "go with the recommended option", "judge": {"verdict": "HOLD"}, "model": {"verdict": "DECIDED", "decision": "yes"}, "owner": null, "hard_gate": false}

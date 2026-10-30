@@ -1,0 +1,4 @@
+{"event": "add", "id": "K-1", "ts": "2026-01-09T08:10:00-08:00", "bot": "ops-agent", "ask": "add a receipt line to the nightly check", "yes_line": null, "ledger": "NOT_COVERED", "judge": "DECIDED yes (P-RECEIPTS, shadow -> HOLD)"}
+{"event": "add", "id": "K-2", "ts": "2026-01-09T08:12:00-08:00", "bot": "content-agent", "ask": "publish the how-to page", "yes_line": "yes publish the how-to page", "ledger": "NOT_COVERED", "judge": "HOLD (hard gate: publish)"}
+{"event": "add", "id": "K-3", "ts": "2026-01-09T08:15:00-08:00", "bot": "ops-agent", "ask": "send the weekly status email to the internal team list", "yes_line": null, "ledger": "COVERED A-0001 (cap left 1)", "judge": "DECIDED yes (A-0001)"}
+{"event": "answer", "id": "K-2", "ts": "2026-01-09T09:02:00-08:00", "owner_answer": "yes", "owner_words": "yes publish it"}

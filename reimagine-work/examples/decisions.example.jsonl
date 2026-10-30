@@ -1,0 +1,11 @@
+{"id": "D-0001", "date": "2026-01-02", "ask": "add a receipt line to the nightly check", "owner_answer": "yes", "owner_words": "yes, log it, no need to ask for receipts"}
+{"id": "D-0002", "date": "2026-01-02", "ask": "patch the parser bug, backup kept, tests pass", "owner_answer": "yes", "owner_words": "fix forward, just keep a backup"}
+{"id": "D-0003", "date": "2026-01-03", "ask": "expire asks older than 3 days", "owner_answer": "yes", "owner_words": "let old asks expire, do not count silence as a no"}
+{"id": "D-0004", "date": "2026-01-03", "ask": "spin up a second agent for the weekly report", "owner_answer": "no", "owner_words": "no, give it to the agent that already owns it"}
+{"id": "D-0005", "date": "2026-01-04", "ask": "add another daily digest for errors", "owner_answer": "no", "owner_words": "no more digests, one is enough"}
+{"id": "D-0006", "date": "2026-01-04", "ask": "write drafts for the three how-to pages", "owner_answer": "yes", "owner_words": "draft as many as you want, I publish"}
+{"id": "D-0007", "date": "2026-01-04", "ask": "go with the recommended option", "owner_answer": "yes", "owner_words": "agree with your recs"}
+{"id": "D-0008", "date": "2026-01-05", "ask": "standing rule for the internal weekly status email", "owner_answer": "yes", "owner_words": "yes, the weekly status email to the internal team list is fine, max 1 a day"}
+{"id": "D-0009", "date": "2026-01-06", "ask": "send the onboarding note", "owner_answer": "yes", "owner_words": "fine to send the onboarding note"}
+{"id": "D-0010", "date": "2026-01-07", "ask": "move the nightly report job to run every hour", "owner_answer": "no", "owner_words": "no, keep it on the existing schedule"}
+{"id": "D-0011", "date": "2026-01-08", "ask": "rename the queue folder to inbox-queue", "owner_answer": "yes", "owner_words": "yes rename the queue folder"}
