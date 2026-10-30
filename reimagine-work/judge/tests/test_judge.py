@@ -173,5 +173,70 @@ class ThreeWay(unittest.TestCase):
         self.assertNotIn("false_yes", r["judge_vs_owner"])
 
 
+class RegressionP1Fixes(Base):
+    """Regression tests for the three P1 findings from PR #37 automated review."""
+    
+    def test_p1_1_send_readonly_receipt_log_holds(self):
+        """P1-1: 'send a read-only receipt log' should HOLD (read-only describes object, not send action)"""
+        v = self.j("send a read-only receipt log to the customer")
+        self.assertEqual(v["verdict"], "HOLD")
+        self.assertIn("external_send", v["hard_classes"])
+    
+    def test_p1_1_delete_readonly_receipt_log_holds(self):
+        """P1-1: 'delete the read-only receipt log' should HOLD (read-only describes object, not delete action)"""
+        v = self.j("delete the read-only receipt log")
+        self.assertEqual(v["verdict"], "HOLD")
+        self.assertIn("delete", v["hard_classes"])
+    
+    def test_p1_1_send_receipt_holds(self):
+        """P1-1: 'send a receipt' should HOLD (receipt describes object, not send action)"""
+        v = self.j("send a receipt to the vendor")
+        self.assertEqual(v["verdict"], "HOLD")
+        self.assertIn("external_send", v["hard_classes"])
+    
+    def test_p1_1_draft_email_no_send_ok(self):
+        """P1-1: 'draft the email' with no explicit send should not trigger external_send"""
+        v = self.j("draft the email for tomorrow")
+        # Should not have external_send since we're only drafting
+        self.assertNotIn("external_send", v.get("hard_classes", []))
+    
+    def test_p1_2_context_client_exclusion_holds(self):
+        """P1-2: Standing approval exclusions must check context too"""
+        v = self.j("send the weekly status email to the internal team list", 
+                  context="include the client", used_today=0)
+        # A-0001 excludes "client", which appears in context
+        self.assertEqual(v["verdict"], "HOLD")
+    
+    def test_p1_2_context_client_in_ask_holds(self):
+        """P1-2: Client in ask should also be excluded"""
+        v = self.j("send the weekly status email to the internal team list and the client", 
+                  used_today=0)
+        self.assertEqual(v["verdict"], "HOLD")
+    
+    def test_p1_2_context_customer_exclusion_holds(self):
+        """P1-2: Customer (similar to client) in context should exclude"""
+        v = self.j("send the weekly status email to the internal team list",
+                  context="cc the customer", used_today=0)
+        self.assertEqual(v["verdict"], "HOLD")
+    
+    def test_p1_3_missing_used_today_holds(self):
+        """P1-3: Standing approval should HOLD when used_today is not provided"""
+        # Without used_today, should HOLD instead of defaulting to 0
+        v = self.j("send the weekly status email to the internal team list")
+        self.assertEqual(v["verdict"], "HOLD")
+        self.assertIn("verified usage", v["reason"])
+    
+    def test_p1_3_explicit_zero_usage_works(self):
+        """P1-3: Explicit used_today=0 should work"""
+        v = self.j("send the weekly status email to the internal team list", used_today=0)
+        self.assertEqual(v["verdict"], "DECIDED")
+        self.assertEqual(v["decision"], "yes")
+    
+    def test_p1_3_at_cap_holds(self):
+        """P1-3: At cap should HOLD"""
+        v = self.j("send the weekly status email to the internal team list", used_today=1)
+        self.assertEqual(v["verdict"], "HOLD")
+
+
 if __name__ == "__main__":
     unittest.main()
