@@ -238,5 +238,49 @@ class RegressionP1Fixes(Base):
         self.assertEqual(v["verdict"], "HOLD")
 
 
+class RegressionP1FixesPR38(Base):
+    """Regression tests for the two P1 findings from PR #38 automated review."""
+    
+    def test_p1_4_draft_then_send_holds(self):
+        """P1-4: Only suppress when EVERY occurrence is non-acting. Draft+send must HOLD."""
+        v = self.j("draft the email for a read-only receipt log and then send it to the customer")
+        self.assertEqual(v["verdict"], "HOLD")
+        self.assertIn("external_send", v["hard_classes"])
+    
+    def test_p1_4_multiple_sends_one_acting_holds(self):
+        """P1-4: Multiple sends, one acting - must HOLD"""
+        v = self.j("draft send for logging and also email the team")
+        self.assertEqual(v["verdict"], "HOLD")
+        self.assertIn("external_send", v["hard_classes"])
+    
+    def test_p1_4_all_draft_no_hard_class(self):
+        """P1-4: All occurrences are drafts - should not have external_send"""
+        v = self.j("draft the email and draft the message")
+        self.assertNotIn("external_send", v.get("hard_classes", []))
+    
+    def test_p1_5_require_in_context_holds(self):
+        """P1-5: Require patterns must match ask only, not context"""
+        # A-0001 requires "status email" and "internal team"
+        # If context alone satisfies these, should HOLD
+        v = self.j("send the onboarding note to the vendor",
+                  context="The internal team status email was sent already.", used_today=0)
+        # Should HOLD because the ask is about "onboarding note", not "status email"
+        self.assertEqual(v["verdict"], "HOLD")
+    
+    def test_p1_5_require_in_ask_works(self):
+        """P1-5: Require patterns in the ask itself should still work"""
+        v = self.j("send the weekly status email to the internal team list",
+                  context="unrelated background info", used_today=0)
+        self.assertEqual(v["verdict"], "DECIDED")
+        self.assertEqual(v["decision"], "yes")
+    
+    def test_p1_5_exclude_in_context_still_blocks(self):
+        """P1-5: Exclude patterns should still check context"""
+        v = self.j("send the weekly status email to the internal team list",
+                  context="include the client on this one", used_today=0)
+        # Should HOLD because "client" in context matches the exclude pattern
+        self.assertEqual(v["verdict"], "HOLD")
+
+
 if __name__ == "__main__":
     unittest.main()
