@@ -1,0 +1,16 @@
+{
+ "note": "Public template. Every lane starts in shadow (live: false). A lane can only be set live by a human editing this file after go_live_ready() says ready. A rebuild never adds a live lane.",
+ "lanes": {
+  "ops": {"live": false},
+  "content": {"live": false}
+ },
+ "go_live_criteria": {
+  "min_decided_in_shadow": 30,
+  "min_days": 7,
+  "max_false_yes": 0,
+  "min_decided_only_agreement": 0.95,
+  "owner_spot_signs": 10,
+  "holds_count_toward_agreement": false,
+  "rollback": "first live false yes -> that lane back to shadow; a false yes on a hard-gate verb -> every lane back to shadow"
+ }
+}

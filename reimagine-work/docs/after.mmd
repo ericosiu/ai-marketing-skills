@@ -1,0 +1,10 @@
+flowchart TB
+  A1[40 bots need something] --> A2[One shared ask queue]
+  A2 --> A3{Already answered, or a<br/>standing approval covers it?}
+  A3 -->|yes| A7[Bot does the work]
+  A3 -->|no| A4{Can the judge cite a<br/>past founder answer?}
+  A4 -->|yes, and it is internal<br/>and reversible| A7
+  A4 -->|badly framed question| A8[Sent back to the bot]
+  A4 -->|new judgment, or a send,<br/>spend, publish or delete| A5[One yes line to the founder]
+  A5 --> A7
+  A7 --> A6[Every call logged and<br/>the judge scored against the founder]
