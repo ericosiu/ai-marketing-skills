@@ -8,12 +8,14 @@ description: >-
   routine: weekly full pass with an outside reviewer, plus weekday incremental
   runs that propose at most one new change or stay silent. Also use when
   work arrives "one drop at a time" (batch waits, daily-only runs, per-item
-  human review) and should become a continuous stream. It proposes and
+  human review) and should become a continuous stream, or when deciding how
+  much autonomy an ask type has earned, what threshold makes an input worth
+  acting on, or which lanes cost too much per real outcome. It proposes and
   builds only internal, reversible checks. It never sends, posts, spends,
   enrolls, deletes, merges or changes a routine.
 ---
 
-# Reimagine work (public template, based on v3.1: weekly Elon loop + continuous stream + escalation ladder)
+# Reimagine work (v3.3 template: weekly Elon loop + continuous stream + escalation ladder + earned autonomy)
 
 > Template. Replace every `<PLACEHOLDER>` with your own values. Nothing in this skill sends, posts, spends or approves anything; it only proposes. The judge it refers to ships in shadow mode (log only) with hard gates on.
 
@@ -91,6 +93,29 @@ quotes. Principles 12 to 16 come from those two texts:
     repeated failures trigger an investigation and a fix", and put the fix in
     a shared skill, prompt or context file so every agent gets it next time.
 
+A third source is a follow-up thread by the same founder on how the fleet got
+there ("we started with a simple thing that worked", "it earned autonomy over
+months", "we audit every token against our goals hourly / we double down on
+what works / and cut things that don't fast"). Principles 17 to 21 come from it:
+
+17. **Start narrow, earn autonomy.** Start with one small job that works, check
+    its output closely, and widen scope one ask type at a time as the record
+    proves it. Autonomy is granted per ask type, never per agent.
+18. **One dial for how much to take on.** Spend is set by a threshold for what
+    counts as an actionable signal ("how bad does a bug have to be? are we
+    fixing every P5 or only P3+"). Saying no to more is how cost goes down, and
+    it can be turned back up the next day. The owner moves the dial; nobody
+    decides item by item whether a low-value item is worth doing.
+19. **Audit cost against outcomes on a clock.** Tokens are checked against the
+    goal often (cost per outcome that actually changed something). Double
+    down on what works, and cut what doesn't, fast.
+20. **Rate the work where it lands.** Ask the people the work is for to rate it
+    on a fixed cadence ("every 15 messages") and track the trend, instead of
+    the owner reviewing items.
+21. **Watch a newcomer try it.** A regular cold-start test ("watching newbies
+    try [the product] weekly", borrowed from playtesting culture) finds what
+    only the owner knows.
+
 ## Rules
 
 - Write only your own report, your own state file, and internal checks that
@@ -141,7 +166,12 @@ stale asks, and the same correction made twice.
 ### 2. DELETE: what protects nothing?
 Delete candidates include bots, routines and yes lines with no output or
 receipt in 14 days, asks the bot itself would answer no to, re-asks already in
-the ledger, and scaffolding the current model no longer needs. **Proposals
+the ledger, and scaffolding the current model no longer needs. Rank delete
+candidates by **cost per changed outcome** (tokens, plus dollars labeled
+estimate, divided by outcomes with `what_changed = changed` in the window).
+Rank "double down" candidates the same way from the cheap end. Never propose
+cutting a lane younger than 14 days, or one whose latest outcomes are still
+`pending`, so slow work is not cut just before it lands. **Proposals
 only.** Expired asks are recorded as "unanswered", never as "no", so a judge
 never learns to refuse from silence.
 
@@ -190,6 +220,17 @@ For each ask type, look up the judge's (and each shadow rung's) match rate on th
 - **Go-live gate:** at least 30 shadow cases of that declared type with
   **zero misses**, plus the owner's yes for the rule change. Below that, it
   stays in shadow.
+- **Earned autonomy, per ask type** (principle 17). Keep an autonomy level
+  for each ask type in the state file: `shadow` → `live-sampled` (acts, owner
+  sees a sample plus every disagreement) → `live`. Promotion uses the
+  go-live gate above. The weekly pass lists every ask type that met the bar
+  in one block with one yes line (the owner can strike any type), never one
+  yes line per type.
+- **Demotion is automatic.** Each live rung carries a built-in tripwire: one
+  miss on an ask type (an owner override, a false CLEAR, or a no_change on a
+  decided yes) drops that type back to `shadow` at once and logs it. This
+  only tightens, so it needs no ask. Recommend the tripwire as an internal
+  check; never edit a routine to add it.
 - The bot must declare the ask type from a fixed list. No free text.
 - Never auto-approve these: retries or "continue" (a retry can re-fire a
   send), changes that loosen a gate, and every hard-gate class.
@@ -212,15 +253,21 @@ timestamps, yes-queue, routine schedule) and mark each one drop or stream:
 | Unit of work | Items held for a daily or weekly batch | Each item moves as soon as it clears its checks |
 | Review | A human reviews every item, including items the bot itself would drop | The escalation ladder per item (deterministic, then second-opinion text or second-opinion images, then judge); human reviews a sample plus every disagreement |
 | Gate | One yes line per item for a recurring kind of ask | One standing rule with a hard cap, approved once by the owner, logged per item |
+| Intake | Low-value inputs reach the owner as "is this worth doing?" asks | A per-lane signal threshold (principle 18): below it, log and skip; at or above it, the item enters the stream |
+| Quality | The owner reviews items to judge quality | Ratings from the people the work is for, on a fixed cadence, read next to the outcome record (principle 20) |
 | Failure | The same break patched again | Fix forward, and after the second repeat, rewrite the step and add a shared check |
 | Backlog | Open picks pile up across days | Stale picks expire as "unanswered" and the stream keeps moving |
 
-Measure each stream lane on two numbers:
+Measure each stream lane on three numbers:
 - **Signal-to-shipped time**: from the input landing (lead, draft, reply,
   error) to the outcome receipt. Report the median and the slowest, and show
   the math.
 - **Throughput and batch wait**: items shipped per day, plus the share of
   item-hours spent waiting on a batch, a clock or a person.
+- **Cost per changed outcome** (principle 19): tokens from usage fields, plus
+  dollars labeled estimate with the rate and its source, divided by outcomes
+  graded `changed`. Read it on a clock (at least daily) from files; the
+  owning agent reads its own number, and no human relays it.
 
 Rules for the stream layer:
 - A stream never removes a hard gate. Sends, spend, publishing, merges and
@@ -229,6 +276,19 @@ Rules for the stream layer:
   approves that rule once, and every change to it needs a new yes.
 - Sampling review applies only to work inside an approved gate, or to
   internal and reversible work.
+- **Signal threshold.** Each lane has one threshold for what counts as an
+  actionable input (severity, value or confidence), stored in the state file.
+  It covers internal, reversible work only; hard-gate classes ignore it and
+  stay human. Raising it (doing less) only tightens and needs no ask.
+  Lowering it (doing more, spending more) is a rule change and needs one yes.
+  When cost per changed outcome rises, propose raising the threshold before
+  proposing to cut the lane.
+- **Ratings never clear anything.** A rating is read next to `what_changed`;
+  a pleasant result that changed nothing still counts as no_change. A falling
+  rating trend is a stall (principle 7) for the owning agent. Use ratings
+  only where the owner already collects them, or from the owner's own
+  sampled reviews. Adding a rating prompt to anything outside people see is
+  a new send and a hard gate: propose it, never build it.
 - Re-measure after each change (principle 14). A fix that moved the wait to
   the next step is a partial, not a win.
 
@@ -274,6 +334,8 @@ For each top candidate, answer these questions:
 4. Can the agent fix forward and roll back instead of asking first?
 5. Where must a human stay? Make that gate small, dumb and hard-coded.
 6. What would make it 10x better, not 10%?
+7. What is the smallest single ask type this could start with, in shadow,
+   this week? (principle 17) Name it in the redesign.
 Write the redesign in two or three sentences: what the agent does, what the
 human still does, and what the hard gate is.
 
@@ -299,6 +361,16 @@ improves:
 Score only from files. If a part has no data, it scores 0 and is named as a
 gap.
 
+## Cold-start test (weekly)
+
+Once per weekly pass, give a fresh agent with no memory and no prior context
+only a lane's entry point and its written instructions, and have it try the
+lane's job in shadow (read only, nothing acted on). Log every place it stalls,
+asks a human, or guesses. Each stall is a QUESTION finding (owner knowledge
+that lives nowhere written) and a principle 16 fix: put the answer in the
+shared skill, prompt or context file. Rotate lanes week to week. It touches no
+gate and sends nothing.
+
 ## Outside reviewer (weekly)
 
 Once per weekly pass, send the top 3 to 5 moves to a second strong model that
@@ -312,8 +384,10 @@ personal data, money amounts or deal names.
 - **Weekly full pass** (routine, for example Friday morning): all five steps,
   the outside reviewer, the leverage score, the judge shadow status by ask
   type, the outcome record summary, and the **per-bot stream check** (each bot
-  marked drop or stream on the six checks, with its signal-to-shipped median
-  and the week-over-week change). Output: top 3 moves, copy-paste yes
+  marked drop or stream on the eight checks, with its signal-to-shipped median
+  and the week-over-week change), **cost per changed outcome** by lane, the
+  **autonomy level by ask type** (promotions and automatic demotions), each
+  lane's **signal threshold**, and the **cold-start test** stalls. Output: top 3 moves, copy-paste yes
   lines (one per gated move), one DELETE line and one 10x ask for the owner's
   taste.
 - **Weekday incremental** (routine): read only what changed since
@@ -333,7 +407,7 @@ Three options:
 ONE ask: `<exact yes line>`   (only when it touches a hard gate or a rule change)
 ```
 The weekly pass adds a top-10 table (process, evidence, class, redesign,
-min/week) and a "spawn check": each principle above marked match, partial or
+min/week) and a "principles check": each principle above marked match, partial or
 miss, with evidence. It also adds a stream table (bot, drop signs, fix,
 signal-to-shipped now and target, whether it needs a yes).
 
@@ -342,7 +416,7 @@ signal-to-shipped now and target, whether it needs a yes).
 ```json
 {
   "schema_version": 3,
-  "ladder_version": "3.1",
+  "ladder_version": "3.3",
   "last_run_at": "ISO-8601 with offset",
   "last_full_scan_at": "ISO-8601 with offset",
   "bar_minutes_per_week": 30,
@@ -350,7 +424,13 @@ signal-to-shipped now and target, whether it needs a yes).
   "leverage_score_history": [{"week": "YYYY-Www", "score": 0, "parts": {}}],
   "cursors": {"<source path>": {"mtime": "", "lines": 0, "last_id": ""}},
   "stream": {"<bot>": {"week": "YYYY-Www", "drop_signs": [],
-             "signal_to_shipped_median_min": null, "items_per_day": null}},
+             "signal_to_shipped_median_min": null, "items_per_day": null,
+             "cost_per_changed_outcome": null, "rating_trend": null}},
+  "signal_threshold": {"<lane>": {"value": "", "set_by_owner_at": "", "note": ""}},
+  "autonomy": {"<ask type>": {"level": "shadow|live-sampled|live",
+               "shadow_cases": 0, "misses": 0, "promoted_at": null,
+               "demoted_at": null, "demote_reason": null}},
+  "cold_start": [{"week": "YYYY-Www", "lane": "", "stalls": 0, "finding_ids": []}],
   "findings": [{
     "fingerprint": "lane|step-kind|source-path",
     "title": "", "step": "question|delete|simplify|speed_up|automate",
@@ -389,3 +469,7 @@ findings to their outcome row (`outcome_ref`) → keep the last 60 runs.
 - The leverage score is reported, along with what would raise it next week.
 - Every active bot has a stream check row with its drop signs and its
   signal-to-shipped time, or a named data gap.
+- Cost per changed outcome is reported per lane from files, or named as a gap.
+- Autonomy level is listed per ask type, with every demotion and its reason.
+- The weekly cold-start test ran on at least one lane, and its stalls are
+  findings.
