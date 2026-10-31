@@ -1,13 +1,13 @@
 # Reimagine Work
 
-A pattern for a team of AI agents whose biggest bottleneck is the one human they all wait on.
+A pattern for a team of AI agents whose biggest bottleneck is the one human they all wait on. v3.3 adds earned autonomy per ask type (shadow → live-sampled → live), signal thresholds for internal work, cost-per-outcome ranking, and a weekly cold-start test.
 
 It has two parts:
 
 1. **The improvement loop** (`skills/reimagine-work/SKILL.md`). A weekly pass of the "Elon algorithm"
    (question, delete, simplify, speed up, automate) over your agent fleet, plus a weekday scan that
-   proposes at most one change or stays silent. It only proposes. It never sends, posts, spends,
-   deletes, merges or changes a schedule.
+   proposes at most one change or stays silent. v3.3 adds DELETE ranking by cost per changed outcome,
+   an autonomy ladder per ask type, signal thresholds for intake filtering, and a cold-start test. It only proposes. It never sends, posts, spends, deletes, merges or changes a schedule.
 2. **The owner judge** (`judge/`). A "shadow owner" that reads one ask from an agent and answers
    DECIDED (yes/no, citing a past recorded answer), SENT_BACK (bad or already-answered question) or
    HOLD (goes to the human).
@@ -72,9 +72,10 @@ python3 tools/self_check.py .
 
 ## Where the ideas come from
 
-The skill credits two public write-ups: one from a small company running a fleet of permanent agents
-("found what work was waiting on and removed it, over and over"), and one on agent-written code
-arriving as a continuous stream rather than one drop at a time.
+The skill credits three public write-ups: one from a small company running a fleet of permanent agents
+("found what work was waiting on and removed it, over and over"), one on agent-written code
+arriving as a continuous stream rather than one drop at a time, and a follow-up thread on earned autonomy
+("we started with a simple thing that worked", "it earned autonomy over months").
 
 ## License
 
