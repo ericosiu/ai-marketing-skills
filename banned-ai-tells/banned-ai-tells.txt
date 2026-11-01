@@ -1,0 +1,47 @@
+# banned-ai-tells.txt  (machine list for check_tells.py)
+# Source: @Zephyr_hg, https://x.com/Zephyr_hg/status/2116643887624430055 (2026-10-31 2:30 PM PT)
+# Format: one Python regex per line, matched case-insensitively. Blank lines and lines starting
+# with "# " are comments. A line "#@ <id> | <label> | <fix>" starts a category; patterns under it
+# report that category. (?-i:...) forces case-sensitive for that part (used for BREAKING).
+# The nine categories are Zephyr's, in his order. Patterns are derived from his examples only.
+# Category 0 is the existing fleet rule (the em dash the post builds on), not one of the nine.
+
+#@ 0 | Em or en dash (existing fleet rule) | use a comma, period or parentheses
+\u2014
+\u2013
+
+#@ 1 | "Quietly." | delete the word. If it shipped, it shipped
+\bquietly\b
+
+#@ 2 | "It's not X, it's Y." | say what it does
+\b(it|this|that)(['\u2019]s| is)\s+not\s+(just\s+|only\s+)?[^.!?\n]{1,60}?[,;:]\s*(it|this|that)(['\u2019]s| is)\b
+\b(it|this|that)(['\u2019]s| is)\s+not\s+(just\s+|only\s+)?[^.!?\n]{1,60}?\.\s+(it|this|that)(['\u2019]s| is)\b
+\bit(['\u2019]s| is)n['\u2019]?t\s+(just\s+)?[^.!?\n]{1,60}?[,;.]\s*(it|this|that)(['\u2019]s| is)\b
+
+#@ 3 | The fake deadline | say how long the setup takes. Leave the reader's calendar alone
+\bbefore (monday|tuesday|wednesday|thursday|friday|saturday|sunday|the weekend)\b
+\b(do|set|build|try|start|ship|finish|get)\b[^.!?\n]{0,30}\bthis weekend\b
+
+#@ 4 | Talking to a crowd ("most people...") | talk to the one person reading. Say what you do instead
+\bmost people\b
+
+#@ 5 | "Can now X like a pro." | show the output and let them judge the price
+\bcan now \w+ like an?\s
+\blike a pro\b
+
+#@ 6 | The little line that sounds deep | delete it. The sentence before it already said it
+\b(that|this|it)(['\u2019]s| is) the whole game\b
+\bthe part (everyone|everybody|most people|nobody) skips\b
+
+#@ 7 | Three of everything up top ("Write. Edit. Ship.") | keep the one reason you actually believe
+(?:^|[.!?]\s+)[a-z]+\.\s+[a-z]+\.\s+[a-z]+\.(?=\s|$)
+
+#@ 8 | Adjectives in a pile ("powerful, seamless, game-changing") | name the thing. If it's good, the name is enough
+\bpowerful\b
+\bseamless(ly)?\b
+\bgame[- ]chang(ing|er)\b
+
+#@ 9 | Sirens, arrows, CAPITALS | write the news as a normal sentence
+\U0001F6A8
+(?-i:\bBREAKING\b)
+[\u2193\u2B07\u2935\U0001F447]
