@@ -40,6 +40,7 @@ These aren't prompts. They're complete workflows — scripts, scoring algorithms
 | [**Shortform Format Library**](./shortform-format-library/) | Maintain visual format references and match content ideas to recording outlines | Content Spikes, Creator Discovery, Freshness, Edit Briefs, Lead-Magnet Handoff |
 | [**Net-New Video Editor**](./net-new-video-editor/) | Turn fresh talking-head recordings into reversible, review-ready vertical drafts | JSON Edit Plans, FFmpeg Rendering, Captions, Hook Cards, Visual QA |
 | [**X Long-Form + Humanizer**](./x-longform-post/) | Write X articles that sound human — with a 24-pattern AI slop detector | Post Writer, Humanizer Checklist, ASCII Diagram Builder |
+| [**Banned AI Tells**](./banned-ai-tells/) | Catch and eliminate AI writing tells before they ship — 9 tells plus baseline em/en-dash rule | CLI Checker, Regex Patterns, 24 Tests |
 
 ---
 
