@@ -1,0 +1,4 @@
+interface:
+  display_name: "Event Research and Follow-up"
+  short_description: "Qualify event leads and manage approved follow-up"
+  default_prompt: "Use $event-research-follow-up to organize this event’s authorized leads, verify company fit, and prepare follow-up; execute only actions within my explicit approval."
