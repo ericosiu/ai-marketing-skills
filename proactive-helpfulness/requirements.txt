@@ -1,0 +1,2 @@
+# No third-party Python dependencies. Optional repository telemetry uses Python 3.10+.
+# The offline funnel helper and tests require Node.js 18+ with no npm packages.
