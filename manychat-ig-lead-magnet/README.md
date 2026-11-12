@@ -1,6 +1,6 @@
 # ManyChat Instagram lead magnets
 
-A reviewable procedure for post-comment and Story-reply resource delivery, separate
+A reviewable procedure for post-comment and Story-reply resource delivery, explicit required
 newsletter consent, Beehiiv/CRM attribution, and evidence-backed lead triage.
 
 ## Quick start
@@ -12,15 +12,16 @@ newsletter consent, Beehiiv/CRM attribution, and evidence-backed lead triage.
 5. Use [lead-fit routing](references/lead-fit-and-routing.md) for five independent
    advisory tiers; approve the private Slack destination before alerts.
 
-Email unlocks the resource. Newsletter consent is separate and optional. Unknown
+Verified newsletter signup unlocks the resource. Consent is explicit and required;
+declining, pending confirmation or failed signup does not deliver the resource. Unknown
 fit is not D. Recruiting assessments use job-relevant evidence only; they do not
 make hiring decisions. Story direct replies require a separate trigger; public
 Story comments and likes do not substitute for it.
 
 ## Architecture and dependencies
 
-Instagram → ManyChat → resource delivery → optional consent → verified newsletter
-integration → existing newsletter CRM intake when configured. Separately authorized
+Instagram → ManyChat → explicit consent + validated email → verified newsletter
+signup → resource delivery and existing newsletter CRM intake when configured. Separately authorized
 resource-lead CRM attribution can occur without newsletter signup; it never grants
 newsletter consent. Reconcile both entry paths to avoid duplicates. Authorized Jev enrichment can produce advisory
 client, partnership, sponsorship, M&A and recruiting tiers, then an evidence-backed

@@ -10,7 +10,7 @@ These aren't prompts. They're complete workflows — scripts, scoring algorithms
 
 | Category | What It Does | Key Skills |
 |----------|-------------|------------|
-| [**ManyChat IG Lead Magnet**](./manychat-ig-lead-magnet/) | Email-gated resources with separate newsletter consent, attribution and advisory lead triage | Post/Story Triggers, Beehiiv/CRM, Five-Lane Fit, S-Tier Alerts |
+| [**ManyChat IG Lead Magnet**](./manychat-ig-lead-magnet/) | Newsletter-signup-gated resources with explicit consent, attribution and advisory lead triage | Post/Story Triggers, Beehiiv/CRM, Five-Lane Fit, S-Tier Alerts |
 | [**Growth Engine**](./growth-engine/) | Autonomous marketing experiments that run, measure, and optimize themselves | Experiment Engine, Pacing Alerts, Weekly Scorecard |
 | [**Sales Pipeline**](./sales-pipeline/) | Turn anonymous website visitors into qualified pipeline | RB2B Router, Deal Resurrector, Trigger Prospector, ICP Learner |
 | [**Event Research and Follow-up**](./event-research-follow-up/) | Research events, qualify evidence-backed leads and execute only approved follow-up | Roster and Photo Leads, Company Fit, Delivery Ledgers, Reply Outcomes |

@@ -15,7 +15,7 @@ Use this skill to produce the full lead magnet path:
 
 1. Identify the source asset, offer, target Instagram post/reel, trigger keywords, and desired follower experience.
 2. Create or locate the approved resource with an available PDF/page builder; identify its audience, format and delivery promise.
-3. Read `references/email-and-story-checklist.md` for the email-first, separate-consent, Story-reply, and Beehiiv/CRM contract. Confirm the requested resource opens and contains no private/internal-only content. For a PDF attachment, verify the file is under 25 MB. For a GitHub skill, deliver its exact public directory link; do not substitute an interactive tool.
+3. Read `references/email-and-story-checklist.md` for the required-newsletter-signup, Story-reply, and Beehiiv/CRM contract. Confirm the requested resource opens and contains no private/internal-only content. For a PDF attachment, verify the file is under 25 MB. For a GitHub skill, deliver its exact public directory link; do not substitute an interactive tool.
 4. Prepare or edit the ManyChat automation from a known working Instagram comment template.
 5. Generate the keyword set, tracking fields/tags, DM copy, email capture copy, attachment plan, preview/test plan, and saved/update checklist.
 6. Stop for explicit approval before sending Slack messages, publishing hosted pages, updating live ManyChat flows, or enabling anything external-facing.
@@ -26,7 +26,7 @@ For sanitized lessons from the recorded workflow and UI anchors, read `reference
 
 ## Intake
 
-Default: collect a validated email before delivering the resource, then offer a separate optional newsletter opt-in. Email capture alone never authorizes newsletter subscription. Declining newsletter signup must not block delivery after a valid email. Preserve existing campaign promises until the exact revised rollout is approved.
+Default: explicit newsletter opt-in and verified signup to the intended Beehiiv publication are required before resource delivery. No resource on decline, invalid email, pending confirmation or failed signup. Disclose the condition before collection; never silently reactivate unsubscribed contacts. Verify the exact live rollout separately.
 
 Collect or infer:
 
@@ -36,7 +36,7 @@ Collect or infer:
 - Resource name and promise: concise, follower-facing title.
 - Instagram target: exact post/reel/account; separately identify any promoted Story and its direct-reply trigger. A reshare does not inherit the post trigger.
 - Comment keywords: include likely misspellings or variants if the user wants them.
-- Delivery path: validated email first, then resource (PDF or public link); newsletter consent is a separate optional step. Review the exact live rollout when this changes a previously advertised no-gate promise.
+- Delivery path: disclose newsletter requirement → affirmative consent + valid stored email → verified subscribed status → resource. Review changes from any prior no-gate or optional-consent promise.
 - CTA block: products/services/channels to include at the end of the resource.
 
 If any of these are missing, make a reasonable draft and mark the open field. Ask only when the missing item blocks execution or would risk editing the wrong live automation.
@@ -126,11 +126,11 @@ Use Browser or Computer Use for ManyChat because the workflow is UI-driven.
    - Keep tracking before the PDF delivery step.
 10. Edit the DM sequence:
    - Acknowledge the opt-in.
-   - After the platform-required opening button, request a validated email to unlock the resource. Store System Email, then deliver. Offer separate optional newsletter consent; declining it must not block the resource.
+   - After the platform-required opening button, explain that newsletter signup is required for the resource. Obtain explicit consent and a validated email, then verify subscribed status before delivery.
    - Attach the PDF directly in ManyChat when under 25 MB.
    - Insert a hosted link only when direct upload is not suitable.
    - Keep the message natural and short.
-11. Distinguish resource-email capture from newsletter signup. The email gate does not set marketing opt-in. Ask separately with Yes/No or equivalent explicit consent naming the newsletter. Fire the newsletter event only on valid stored email plus affirmative consent. Preserve a newsletter decline route. Follow `references/email-and-story-checklist.md`.
+11. Name the newsletter and publication, explain unsubscribe rights and the resource condition, and provide explicit accept/decline. A comment or email alone is not consent. Decline ends without signup or resource; acceptance enters the verified signup path. Follow `references/email-and-story-checklist.md`.
 12. Save and verify the UI shows saved.
 13. Before pressing `Update`, publishing, or enabling the live automation, confirm explicit approval covers the exact rollout. If it does not, show a concise confirmation summary and wait; if it does, proceed without asking again.
 
@@ -141,8 +141,8 @@ Use Browser or Computer Use for ManyChat because the workflow is UI-driven.
 - If a verified shared newsletter event exists, reuse it; otherwise prepare an authorized supported integration. Email capture alone does not invoke Zapier; each intended signup flow must explicitly fire the event after valid email input and newsletter consent.
 - Inspect the existing shared Zap and bounded run history before claiming emails were lost or creating a replacement integration. Successful beehiiv API acceptance is distinct from final subscription status and email delivery.
 - Before changing a shared email mapping, inspect consuming flows. Prefer validated System Email for new flows, but do not switch a shared Zap to that field when legacy flows leave it blank. Preserve compatible mapping or prepare a separately approved migration. Check the actual saved mapping after Continue and after publishing.
-- Verify the resource email gate, System Email storage, resource delivery and separate newsletter Yes/No routes. No email means no new gated delivery unless the campaign promises otherwise; valid email plus newsletter decline still receives the resource. Email capture or a comment alone is not newsletter consent. Never grant new marketing opt-in on the resource-only collection step or clear existing legitimate consent.
-- Newsletter signup runs asynchronously. Delivery copy should say the signup request is in, not promise completed subscription. State newsletter terms before affirmative newsletter opt-in/enrollment; resource-only email collection is separate. Do not clear existing legitimate consent or reactivate unsubscribed contacts by default.
+- Verify consent, System Email storage, signup status and delivery routing. No resource on decline, invalid email, failed signup or pending confirmation. Preserve existing legitimate consent; never silently reactivate an unsubscribed contact.
+- Newsletter signup runs asynchronously. API/Zap acceptance is not subscribed status. Hold delivery until a supported readback or callback proves the intended email is subscribed. Pending double opt-in stays pending; do not bypass it. If status cannot be verified, hold the gate rather than pretending the signup completed.
 - Inspection of live flow settings may require opening its editor. Explain that inspection is read-only and do not change fields or publish unrelated flows.
 - Trigger Save can activate a copied trigger. Check its enabled state immediately. Treat content publication and trigger activation as separate states: Saved alone does not mean live.
 - For an authorized replacement, publish the reviewed integration, stop the old competing trigger, publish the new content, enable its trigger, and read back both flows in the automation list. Verify account, any-post versus specific-post scope, keywords, event, and exact resource URL.
