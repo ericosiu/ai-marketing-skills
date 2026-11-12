@@ -1,0 +1,4 @@
+interface:
+  display_name: "ManyChat IG Lead Magnet"
+  short_description: "Create IG comment lead magnet flows"
+  default_prompt: "Use $manychat-ig-lead-magnet to create a brand-guided PDF lead magnet and prepare the ManyChat IG comment automation."
