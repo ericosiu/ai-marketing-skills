@@ -31,9 +31,10 @@ Use this template before touching a live ManyChat automation.
 - Custom fields:
 - Immediate comment/reply copy:
 - DM copy:
-- Resource email-gate copy and approved change from any prior promise:
-- Separate optional newsletter consent copy and Yes/No routes:
-- Validated System Email input (resource-only, marketing opt-in off) and newsletter decline routing:
+- Required-newsletter exchange copy and approved change from prior promises:
+- Explicit required newsletter consent copy and accept/decline routes:
+- Validated System Email, consent evidence, no-resource decline routing:
+- Verified subscription callback/readback, pending/failure and unsubscribe paths:
 - Consent timestamp, text/version, campaign and source evidence:
 - Existing Zap/native integration inspected, consumers and mapping:
 - Single Beehiiv path, publication, deduplication and unsubscribe behavior:
@@ -56,7 +57,9 @@ Use this template before touching a live ManyChat automation.
 - [ ] Tracking tag/custom fields are applied or explicitly marked missing.
 - [ ] ManyChat shows saved.
 - [ ] Completed the case matrix in `email-and-story-checklist.md`; distinguish actual test, configuration inspection, dry-run, fail and blocked.
-- [ ] Valid email unlocks resource even when newsletter signup is declined.
+- [ ] Resource only after explicit consent and verified subscribed status.
+- [ ] Decline, invalid email, pending confirmation and failed/unverified signup do not deliver resource.
+- [ ] Existing subscribed/unsubscribed handling preserves suppression and confirmation settings.
 - [ ] No newsletter consent and invalid-email paths never fire the newsletter event.
 - [ ] Consent-button replies cannot overwrite the email mapped into the shared Zap.
 - [ ] Campaign/source attribution verified independently in Beehiiv and CRM, or marked unavailable.

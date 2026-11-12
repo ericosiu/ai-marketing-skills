@@ -1,4 +1,4 @@
-# Email-first resource, separate newsletter consent and Story contract
+# Required newsletter signup and Story delivery contract
 
 Procedure version: 2026-11-12. This is a procedure, not proof that any
 live flow, integration or subscription has been changed. Preserve campaign-specific
@@ -6,33 +6,39 @@ promises and the user's approval boundary.
 
 ## Follower experience
 
-1. Scope the comment trigger to the approved post/reel and keyword. Use
-   case-insensitive contains matching when requested; test a longer comment too.
-2. Send the opening DM/button required by Instagram, then ask for a valid email
-   to unlock the resource. Example: “What email should I associate with your
-   resource request? Enter it below to get the list. This does not subscribe you
-   to the newsletter.” Do not promise email delivery unless that is implemented.
-3. Use validated Email input and store System Email without granting new marketing
-   opt-in. Do not clear existing legitimate consent or subscription status.
-   Valid email unlocks the resource. No email or invalid email stays on the gate;
-   preserve an explicit campaign exception if a prior promise still applies.
-4. Offer newsletter signup separately, preferably after resource delivery:
-   “Want to subscribe to my newsletter for more AI, marketing and business
-   workflows? You can unsubscribe anytime.” Name the verified newsletter and
-   provide explicit Yes/No options. Declining never blocks an earned resource.
-5. Only affirmative newsletter consent may set email opt-in and fire the newsletter
-   event. Record timestamp, consent-copy version, resource campaign and entry
-   source (post or Story). Do not retrofit consent onto earlier contacts or backfill
-   newsletter subscriptions from a comment, email field or resource-request tag.
-6. Review the exact live rollout if changing a previously advertised resource-first
-   or no-email promise. A new default is not proof that old flows were changed,
-   nor permission to retry a denied publication without the required approval.
+1. Scope the comment trigger to the approved post/reel and keyword. Use requested
+   case-insensitive contains matching and test longer comments.
+2. Before collecting email, disclose the exchange plainly: “Subscribe to
+   [newsletter] to get [resource]. You'll receive [newsletter topic]. You can
+   unsubscribe anytime.” Name the verified publication; no prechecked consent.
+   Provide an explicit affirmative choice and a decline route. A comment or email
+   alone is not consent. Do not hide the condition behind “send me the list.”
+3. On affirmative consent, collect a validated email and store System Email.
+   Record consent text/version, timestamp, campaign and post/Story source.
+   Decline or invalid email means no signup event and no resource delivery.
+4. Submit through the verified existing integration. Deliver the resource only
+   after supported status readback/callback verifies the intended email is
+   subscribed to the intended publication. API acceptance, an email captured in
+   ManyChat or a successful Zap run alone is insufficient. Preserve final status
+   evidence bound to this contact and request; do not rely on a generic delay.
+5. Pending confirmation/double opt-in means wait without the resource. Failed or
+   unavailable signup means hold and report/reconcile, not a false success DM.
+   Explain pending confirmation accurately and respect messaging-window limits.
+6. Existing subscribed contacts require verified identity/status; do not create
+   duplicates or unwanted re-onboarding. Previously unsubscribed contacts must
+   not be silently reactivated: offer the provider's supported user-led signup or
+   reconfirmation route and wait for verified subscribed status. Never override
+   suppression or double opt-in settings to unlock the resource.
+7. Review the exact live rollout when changing an earlier no-gate or optional
+   signup promise. Earlier contacts are not retroactively enrolled. A new skill
+   default neither changes the original live flow nor authorizes retrying a denied
+   publication without the required action-time approval.
 
 ## Stories are a separate entry point
 
 A post reshared to Stories does not inherit its comment automation. Configure a
 separate Instagram Story Reply trigger and route it into the reviewed resource
-and optional signup flow. Use “Reply KEYWORD to this story” in the Story CTA.
+and required newsletter-signup flow. Use “Reply KEYWORD to this story” in the Story CTA.
 Direct replies and supported reactions can trigger; public Story comments and
 likes do not. A keyword condition should exclude unrelated reactions/replies.
 
@@ -104,20 +110,22 @@ subscriber or use an unrelated production contact as a test.
 | --- | --- |
 | Exact keyword; mixed case; keyword in longer comment | Approved post triggers the correct public reply and opening DM |
 | Non-matching comment; same keyword on unrelated post | No campaign trigger |
-| Opening button | Correct resource email prompt, not silent newsletter signup |
-| Valid resource email | Correct resource delivered and publicly accessible logged out |
-| Story direct keyword reply | Separate scoped Story trigger enters the same email-gated resource path |
+| Opening button | Explicit newsletter requirement, accept/decline and email prompt |
+| Valid email only | No resource until explicit consent and verified subscription |
+| Story direct keyword reply | Separate scoped Story trigger enters the same required-signup resource path |
 | Story like, public comment, unrelated reply | No keyword Story flow |
-| No email | No gated delivery unless campaign exception; no Beehiiv event |
-| Valid email, newsletter declined | Resource delivered; no Beehiiv event |
+| No email | No resource or Beehiiv event |
+| Valid email, newsletter declined | No resource and no Beehiiv event |
 | Invalid email | Validation path; no Beehiiv event |
-| Valid email without newsletter consent | No Beehiiv event |
-| Valid email plus explicit consent | Stored email/consent/source/tag and exactly one intended event |
+| Valid email without newsletter consent | No Beehiiv event or resource |
+| Valid email plus explicit consent | One intended signup event if needed, zero for verified active subscriber; hold resource until verified subscribed |
+| Pending/double opt-in, failed or unavailable status | No resource; honest pending/failure state |
+| Verified subscribed status for intended identity/publication | Deliver correct publicly accessible resource |
 | Consent button changes Last Input Text | Actual event still contains valid stored email, never button text |
 | CRM/Beehiiv attribution | Correct source read back separately; no unconsented Beehiiv subscription |
 | Insufficient fit evidence | Unknown/advisory, no automatic high-impact decision |
 | Existing subscriber | No duplicate subscriber or unintended re-onboarding |
-| Previously unsubscribed contact | Not reactivated automatically |
+| Previously unsubscribed contact | No silent reactivation/resource; supported user-led reconfirmation and verified status required |
 | Same person enters via post and Story | No unintended duplicate signup or message loop |
 | Integration failure/uncertain result | Recorded and reconciled before retry; no false success copy |
 | Provider accepts request | Check actual Beehiiv status separately from API/Zap acceptance |

@@ -2,7 +2,7 @@
 
 These lessons come from the existing recorded workflow. Private screenshots, account IDs, automation IDs, integration IDs, names, run counts, and live-state snapshots are omitted. This reference is not a coordinate replay or a claim that a particular flow is currently active.
 
-Delivery default: validated email before resource, with newsletter consent separately optional. Historical campaign observations below are not universal configuration. Follow `email-and-story-checklist.md` for current implementation and tests.
+Current default: explicit newsletter signup is required before resource delivery; consent must be unambiguous and subscription verified. Earlier optional-consent or email-only observations are historical, not current rollout instructions. Follow `email-and-story-checklist.md`.
 
 ## Recorded operating sequence
 
