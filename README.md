@@ -10,6 +10,7 @@ These aren't prompts. They're complete workflows — scripts, scoring algorithms
 
 | Category | What It Does | Key Skills |
 |----------|-------------|------------|
+| [**Relationship Intelligence**](./relationship-intelligence/) | Consolidate lead feeds, verified prior touches and five independent opportunity lanes | Identity Reconciliation, Touch Attribution, Evidence Gates, Owner Review |
 | [**ManyChat IG Lead Magnet**](./manychat-ig-lead-magnet/) | Newsletter-signup-gated resources with explicit consent, attribution and advisory lead triage | Post/Story Triggers, Beehiiv/CRM, Five-Lane Fit, S-Tier Alerts |
 | [**Growth Engine**](./growth-engine/) | Autonomous marketing experiments that run, measure, and optimize themselves | Experiment Engine, Pacing Alerts, Weekly Scorecard |
 | [**Sales Pipeline**](./sales-pipeline/) | Turn anonymous website visitors into qualified pipeline | RB2B Router, Deal Resurrector, Trigger Prospector, ICP Learner |
