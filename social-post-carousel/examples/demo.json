@@ -1,0 +1,9 @@
+{
+  "name": "Example Studio",
+  "handle": "@examplestudio",
+  "slides": [
+    "A faster dashboard won't fix a slow decision.",
+    "Start with the decision, not the chart.\n\nWhat does the team need to do differently on Monday?",
+    "Choose one number that can change the answer.\n\nGive it a clear owner and a review date."
+  ]
+}

@@ -16,6 +16,7 @@ These aren't prompts. They're complete workflows — scripts, scoring algorithms
 | [**Sales Pipeline**](./sales-pipeline/) | Turn anonymous website visitors into qualified pipeline | RB2B Router, Deal Resurrector, Trigger Prospector, ICP Learner |
 | [**Event Research and Follow-up**](./event-research-follow-up/) | Research events, qualify evidence-backed leads and execute only approved follow-up | Roster and Photo Leads, Company Fit, Delivery Ledgers, Reply Outcomes |
 | [**Proactive Helpfulness**](./proactive-helpfulness/) | Prioritize useful lead follow-ups and relationship commitments with verified evidence | Cross-Channel Reconciliation, Introductions, Approval Gates, Deduplicated Funnel |
+| [**Social Post Carousel**](./social-post-carousel/) | Turn post text into consistent, brand-neutral square cards | Paragraph Planning, Fixed Type, Local PNG Renderer |
 | [**Content Ops**](./content-ops/) | Ship content that scores 90+ every time | Expert Panel, Quality Gate, Editorial Brain, Quote Miner |
 | [**Growth Signal Charts**](./growth-signal-charts/) | Turn original content and measured audience signals into cited social charts | Content Spikes, Recent Research, Desk Edition, PNG/PDF Exports |
 | [**Content OS Portable Starter**](./content-os-portable-starter/) | Bootstrap a vendor-neutral, draft-first content control loop | Config Schema, Approval Gates, Connector Matrix, Readback Templates |
