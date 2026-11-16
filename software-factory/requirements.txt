@@ -1,0 +1,3 @@
+# Core scripts use the Python standard library only (3.10+).
+# Optional, only for scripts/github_app_token.sh:
+# cryptography>=41

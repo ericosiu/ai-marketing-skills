@@ -28,6 +28,7 @@ These aren't prompts. They're complete workflows — scripts, scoring algorithms
 | [**Conversion Ops**](./conversion-ops/) | Score any landing page and turn survey data into lead magnets | CRO Audit, Survey-to-Lead-Magnet Engine |
 | [**Podcast Ops**](./podcast-ops/) | One episode → 20+ content pieces across every platform | Podcast-to-Everything Pipeline, Content Calendar |
 | [**Team Ops**](./team-ops/) | Ruthless performance audits and meeting intelligence | Elon Algorithm, Meeting-to-Action Extractor |
+| [**Software Factory**](./software-factory/) | Let coding agents ship fixes through reviewed PRs, capped pinned-SHA merges, dated backups and a 24h rollback watch | Acceptance Tests, Two-Model Review, Daily Merge Cap, Rollback Watcher |
 | [**Reimagine Work**](./reimagine-work/) | A weekly Elon-algorithm pass over an agent fleet plus a shadow owner judge that stops asking the founder things already answered | Shadow Judge, Weekly Loop, Escalation Ladder |
 | [**Sidebar Prioritizer**](./sidebar-prioritizer/) | Reset Codex sidebar priorities and label tasks by work category and inactivity | P0–P4 Priorities, B7 Age Markers, Follow-up Evidence, Verified Labels |
 | [**Sales Playbook**](./sales-playbook/) | Value-based pricing framework that turns $10K deals into $100K deals | Pre-Call Briefing, Tiered Packager, Call Analyzer, Pattern Library |

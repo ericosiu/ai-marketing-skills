@@ -1,0 +1,21 @@
+title = "factory gitleaks config"
+
+[extend]
+useDefault = true
+
+[[rules]]
+id = "secret-files"
+description = "Secret or key files"
+path = '''(\.pem|\.key|-token-key|secret.*\.json|\.env[^/]*)$'''
+
+[[rules]]
+id = "non-placeholder-email"
+description = "Email that is not a placeholder address"
+regex = '''[A-Za-z0-9._%+-]+@(?:gmail|yahoo|hotmail|outlook|icloud|proton|aol)\.[A-Za-z.]{2,}'''
+
+[[rules]]
+id = "linkedin-profile"
+description = "Real LinkedIn profile URL"
+regex = '''linkedin\.com/in/[A-Za-z0-9_%-]{3,}'''
+[rules.allowlist]
+regexes = ['''linkedin\.com/in/li-[0-9a-f]{6}''', '''linkedin\.com/in/\{''']
