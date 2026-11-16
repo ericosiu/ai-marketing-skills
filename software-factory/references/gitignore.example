@@ -1,0 +1,12 @@
+config.json
+KILL
+ledger/
+digest/
+proofs/
+live/
+*.bak-*
+names.txt
+.map.json
+.env
+*.pem
+*.key

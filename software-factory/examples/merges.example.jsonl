@@ -1,0 +1,2 @@
+{"time": "2026-11-16T10:00:00+00:00", "event": "merged", "repo": "example-org/example-app", "pr": 101, "pr_url": "https://github.com/example-org/example-app/pull/101", "title": "Fix typo in docs", "head_sha": "aaaaaaaa", "merge_sha": "bbbbbbbb", "merged_by": "auto", "blast_tier": "LOW", "checks": {"ci": "success"}, "portback": "pending", "revert": "none", "note": ""}
+{"time": "2026-11-16T10:20:00+00:00", "event": "portback_update", "repo": "example-org/example-app", "pr": 101, "portback": "LIVE", "note": "shadow PASS, watch started"}

@@ -1,0 +1,12 @@
+[
+  {
+    "repo": "example-org/example-app",
+    "pr": 102,
+    "url": "https://github.com/example-org/example-app/pull/102",
+    "title": "Docs typo follow-up",
+    "head": "cccccccc",
+    "priority": "P1",
+    "held_because": "daily cap reached",
+    "created_at": "2026-11-16T11:00:00+00:00"
+  }
+]

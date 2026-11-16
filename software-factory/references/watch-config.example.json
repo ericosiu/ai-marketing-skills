@@ -1,0 +1,28 @@
+{
+  "fix_id": "example-fix",
+  "pr": "N",
+  "applied_at": "2026-11-16T00:00:00+00:00",
+  "watch_hours": 24,
+  "live_root": "/var/factory/live",
+  "live_files": [
+    {
+      "rel": "bin/parse.py",
+      "live_path": "/var/factory/live/bin/parse.py",
+      "bak_path": "/var/factory/live/bin/parse.py.bak-20261116-pr-N"
+    }
+  ],
+  "metric": {
+    "name": "error_count",
+    "source": "/var/factory/live/metrics.json",
+    "read_spec": {"type": "json", "key_path": ["errors"]},
+    "baseline": 0,
+    "threshold": 0,
+    "direction": "above"
+  },
+  "errors": {
+    "log_paths": ["/var/factory/live/app.log"],
+    "patterns": ["Traceback", "ERROR", "CRITICAL"],
+    "max_errors": 0
+  },
+  "watch_log": "/var/factory/proofs/watch.jsonl"
+}

@@ -1,0 +1,46 @@
+{
+  "timezone": "UTC",
+  "kill_switch_file": "KILL",
+  "ledger_dir": "ledger",
+  "digest_dir": "digest",
+  "proofs_dir": "proofs",
+  "max_dispatch_per_weekday": 4,
+  "max_fix_rounds": 2,
+  "coding_agents": {
+    "build": "cursor-cloud",
+    "review_l1": "codex-cli",
+    "review_l2": "claude-cli"
+  },
+  "automerge": {
+    "enabled": false,
+    "state": "DISARMED",
+    "max_per_day": 2,
+    "no_merge_days": [],
+    "repos": ["example-org/example-app"],
+    "required_checks": {
+      "example-org/example-app": ["ci"]
+    },
+    "require_label": "blast:low",
+    "merge_method": "squash",
+    "never_use_admin_flag": true,
+    "auto_revert_on_red": true
+  },
+  "lanes": {
+    "draft_only": {
+      "enabled": false,
+      "repos": ["example-org/example-gateway"],
+      "base_branch": "master",
+      "max_drafts_per_day": 5,
+      "merge": "lane_owner"
+    }
+  },
+  "portback": {
+    "live_root": "live",
+    "strip_prefixes": [],
+    "exclude": []
+  },
+  "not_live": {
+    "warn_hours": 4,
+    "stuck_hours": 24
+  }
+}
