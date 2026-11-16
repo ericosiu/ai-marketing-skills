@@ -1,3 +1,8 @@
+---
+name: sales-pipeline
+description: Operate a governed sales pipeline from visitor identification and intent scoring through suppression, campaign routing, dead-deal revival, trigger prospecting, and ICP learning. Use for outbound routing, suppression checks, pipeline reactivation, and prospect-signal analysis.
+---
+
 # AI Sales Pipeline
 
 ## Preamble (runs on skill start)
