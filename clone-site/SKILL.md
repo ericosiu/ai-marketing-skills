@@ -1,4 +1,7 @@
 ---
+name: clone-site
+description: Clone any website into a pixel-perfect Next.js replica. Point it at a URL and it reverse-engineers the design, extracts assets, and rebuilds it section by section using parallel builder agents. Use when asked to clone, copy, replicate, rebuild, or reverse-engineer any website or landing page. Also use for "make it look like this site" or "build a page based on this URL".
+---
 
 ## Preamble (runs on skill start)
 
@@ -11,11 +14,6 @@ python3 telemetry/telemetry_init.py 2>/dev/null || true
 ```
 
 > **Privacy:** This skill logs usage locally to `~/.ai-marketing-skills/analytics/`. Remote telemetry is opt-in only. No code, file paths, or repo content is ever collected. See `telemetry/README.md`.
-
----
-name: clone-site
-description: Clone any website into a pixel-perfect Next.js replica. Point it at a URL and it reverse-engineers the design, extracts assets, and rebuilds it section by section using parallel builder agents. Use when asked to clone, copy, replicate, rebuild, or reverse-engineer any website or landing page. Also use for "make it look like this site" or "build a page based on this URL".
----
 
 # Clone Site
 
