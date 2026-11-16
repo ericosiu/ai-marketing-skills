@@ -104,3 +104,7 @@ PR diff for that file.
 ## License
 
 MIT
+
+<p align="center">
+Built by <a href="https://www.singlegrain.com/?utm_source=github&utm_medium=repo&utm_campaign=ai-marketing-skills">Single Grain</a>. Powered by <a href="https://www.singlebrain.com/?utm_source=github&utm_medium=repo&utm_campaign=ai-marketing-skills">Single Brain</a>.
+</p>

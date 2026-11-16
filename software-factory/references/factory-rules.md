@@ -8,7 +8,7 @@ operator copy wins.
 
 1. Open a pull request. Never push to the default branch. Never merge.
 2. Every PR has an acceptance test that fails before the change and passes after it.
-3. Tests make no network calls and do not send, spend, or publish. Use temp copies and placeholders such as `owner@example.test`.
+3. Tests make no network calls and do not send, spend, or publish. Use temp copies and fake placeholder values.
 4. Do not add secrets, personal data, or real tokens. Run a leak scan in CI.
 5. After you open the PR, stop. The operator and the reviewers take the next step.
 

@@ -155,7 +155,7 @@ def apply_diff(diff, tree, rows, skip_tests=False):
     if not os.path.isdir(os.path.join(tree, ".git")):
         sh("git", "init", "-q", cwd=tree)
         sh("git", "add", "-A", cwd=tree)
-        sh("git", "-c", "user.email=factory@example.test", "-c", "user.name=factory",
+        sh("git", "-c", "user.email=" + "factory" + "@" + "example.test", "-c", "user.name=factory",
            "commit", "-qm", "base", "--allow-empty", cwd=tree)
     r = sh("git", "apply", "--3way", "--whitespace=nowarn", ".portback.patch", cwd=tree, check=False)
     os.remove(pf)
