@@ -774,8 +774,66 @@ class TestRepoContract(unittest.TestCase):
                 f"{md_file.relative_to(REPO_ROOT)}: Must not contain 'utm_medium=repo'"
             )
 
-    def test_18_test_file_imports_and_workflow(self):
-        """Test 17: Test file uses only allowed imports and workflow has no installers."""
+    def test_18_managed_service_cta_in_skills(self):
+        """Test 18: Every SKILL.md and skill README with Gateway CTA has managed-service CTA."""
+        for skill_dir in self.skill_dirs:
+            if skill_dir in NO_SKILL_ALLOWLIST:
+                continue
+            
+            # Check SKILL.md
+            skill_path = REPO_ROOT / skill_dir
+            skill_file = skill_path / 'SKILL.md'
+            
+            if not skill_file.exists():
+                skill_file = skill_path / 'skills' / skill_dir / 'SKILL.md'
+            
+            with open(skill_file, 'r', encoding='utf-8') as f:
+                skill_content = f.read()
+            
+            # If it has Gateway CTA, it must have managed CTA
+            if '<!-- gateway-cta:start -->' in skill_content:
+                # Check for managed line
+                managed_pattern = r'Single Grain or Single Brain can manage it.*utm_campaign=managed.*utm_content=' + re.escape(skill_dir)
+                
+                self.assertIsNotNone(
+                    re.search(managed_pattern, skill_content),
+                    f"{skill_dir}/SKILL.md: Gateway CTA found but missing managed-service CTA with correct utm_content={skill_dir}"
+                )
+            
+            # Check README.md
+            readme_path = REPO_ROOT / skill_dir / 'README.md'
+            
+            if readme_path.exists():
+                with open(readme_path, 'r', encoding='utf-8') as f:
+                    readme_content = f.read()
+                
+                # If it has Gateway CTA, it must have managed CTA
+                if '<!-- gateway-cta:start -->' in readme_content:
+                    # Check for managed line
+                    managed_pattern = r'Single Grain or Single Brain can manage it.*utm_campaign=managed.*utm_content=' + re.escape(skill_dir)
+                    
+                    self.assertIsNotNone(
+                        re.search(managed_pattern, readme_content),
+                        f"{skill_dir}/README.md: Gateway CTA found but missing managed-service CTA with correct utm_content={skill_dir}"
+                    )
+
+    def test_19_managed_service_cta_in_root_readme(self):
+        """Test 19: Root README has managed-service CTA with utm_content=readme."""
+        readme_path = REPO_ROOT / 'README.md'
+        
+        with open(readme_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+        
+        # Check for managed line with utm_content=readme
+        managed_pattern = r'Single Grain or Single Brain can manage it.*utm_campaign=managed.*utm_content=readme'
+        
+        self.assertIsNotNone(
+            re.search(managed_pattern, content),
+            "README.md: Missing managed-service CTA with utm_content=readme"
+        )
+
+    def test_20_test_file_imports_and_workflow(self):
+        """Test 20: Test file uses only allowed imports and workflow has no installers."""
         # Check this file's imports
         test_file = Path(__file__)
         

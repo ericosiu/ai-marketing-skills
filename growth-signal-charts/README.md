@@ -59,4 +59,6 @@ This skill is free and MIT licensed. To run it on your live accounts, connect th
 - Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=growth-signal-charts
 
 Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+
+Want a team to run this for you? Single Grain or Single Brain can manage it: [talk to us](https://www.singlegrain.com/contact-us/?utm_source=github&utm_medium=skill&utm_campaign=managed&utm_content=growth-signal-charts)
 <!-- gateway-cta:end -->

@@ -22,6 +22,8 @@ Install a single skill:
 npx skills add ericosiu/ai-marketing-skills -s seo-ops
 ```
 
+Want a team to run these skills for you? Single Grain or Single Brain can manage it: [talk to us](https://www.singlegrain.com/contact-us/?utm_source=github&utm_medium=skill&utm_campaign=managed&utm_content=readme)
+
 ## Manual Install (No Node.js)
 
 ```bash
