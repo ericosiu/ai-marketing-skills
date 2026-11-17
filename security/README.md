@@ -41,7 +41,7 @@ Edit `security/sanitizer-config.json`:
 
 ```json
 {
-  "company_blocklist": ["Single Grain", "ClickFlow", "Nextiva"],
+  "company_blocklist": ["Single Grain", "Acme Corp", "Contoso Ltd"],
   "person_blocklist": ["Jane Doe"],
   "custom_patterns": [
     "ACME-\\d{6}",

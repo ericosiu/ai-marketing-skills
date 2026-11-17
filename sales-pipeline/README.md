@@ -128,7 +128,7 @@ The orchestrator: combines intent scoring + suppression + agency classification 
 python3 rb2b_instantly_router.py --serve --port 4100
 
 # Dry run test
-echo '{"email":"vp@techco.com","job_title":"VP Marketing","company":"TechCo","industry":"SaaS","company_size":"200","pages_visited":["https://yoursite.com/pricing","https://yoursite.com/case-studies"]}' | python3 rb2b_instantly_router.py --dry-run
+echo '{"email":"vp@example.com","job_title":"VP Marketing","company":"Example Corp","industry":"SaaS","company_size":"200","pages_visited":["https://yoursite.com/pricing","https://yoursite.com/case-studies"]}' | python3 rb2b_instantly_router.py --dry-run
 ```
 
 ### 4. 🔥 Deal Resurrector (`deal_resurrector.py`)
