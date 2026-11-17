@@ -1,6 +1,6 @@
 ---
 name: closed-loop-analytics-upgrade
-description: Upgrade marketing, content, SEO/AEO/GEO, and revenue skills so changes are judged by platform analytics instead of vibes. Use when applying closed-loop learning to X, YouTube, SEO, AEO/GEO, outbound, paid creative, or revenue workflows.
+description: Modernize legacy analytics implementations to GA4 and current best practices. Audit, migrate, validate.
 ---
 
 # Closed-Loop Analytics Upgrade
@@ -167,3 +167,15 @@ Promote / keep testing / rollback / unproven
 ## Next readback
 <date + metric>
 ```
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=closed-loop-analytics-upgrade&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=closed-loop-analytics-upgrade
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

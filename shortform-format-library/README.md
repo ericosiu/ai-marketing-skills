@@ -40,8 +40,15 @@ python3 -m unittest discover -s shortform-format-library/tests
 
 See `references/page-and-data.md` for the interchange contract. Source truth and actual page/render behavior need separate review. Keep private source data and generated client output outside this public repository.
 
----
 
-<p align="center">
-  Built by <a href="https://www.singlegrain.com/?utm_source=github&utm_medium=repo&utm_campaign=ai-marketing-skills">Single Grain</a>. Powered by <a href="https://www.singlebrain.com/?utm_source=github&utm_medium=repo&utm_campaign=ai-marketing-skills">Single Brain</a>.
-</p>
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=shortform-format-library&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=shortform-format-library
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

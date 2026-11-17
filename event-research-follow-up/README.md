@@ -28,6 +28,14 @@ Keep all operational rosters, photos, contact details, messages, receipts and ou
 
 In a full repository checkout, run `python3 security/sanitizer.py --scan --dir event-research-follow-up --recursive` from the repository root before committing. For a standalone copy, inspect every file for real names, contacts, credentials, private links, local paths and event-specific facts; use an available secret/PII scanner as an additional check. Review reference links and approval gates as well: a pattern scan cannot establish factual correctness or live-delivery safety. No live outreach or paid evaluation is needed to validate the package.
 
-<p align="center">
-  Built by <a href="https://www.singlegrain.com/?utm_source=github&utm_medium=repo&utm_campaign=ai-marketing-skills">Single Grain</a>. Powered by <a href="https://www.singlebrain.com/?utm_source=github&utm_medium=repo&utm_campaign=ai-marketing-skills">Single Brain</a>.
-</p>
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=event-research-follow-up&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=event-research-follow-up
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

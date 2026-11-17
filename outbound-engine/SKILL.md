@@ -1,6 +1,6 @@
 ---
-name: cold-outbound-optimizer
-description: Design, analyze, and optimize cold outbound email campaigns for Instantly. Handles end-to-end ICP definition, expert panel scoring (recursive to 90+), sequence copywriting, infrastructure audit, capacity planning, and implementation docs. Use when asked to build cold outbound sequences, optimize cold email, analyze outbound campaigns, build sales sequences, build Instantly sequences, create cold outbound strategies, or design email campaigns. Supports both "start from scratch" and "optimize existing" modes.
+name: outbound-engine
+description: ICP definition to emails in inbox, fully automated. Cold outbound optimizer, lead pipeline, competitive monitor.
 ---
 
 
@@ -170,3 +170,15 @@ Adjust targets based on niche and offer. Cold traffic to a free audit converts d
 | `scripts/competitive-monitor.py` | Competitor tracking and intelligence |
 | `scripts/cross-signal-detector.py` | Multi-source signal detection |
 | `scripts/cold-outbound-sender.py` | Send approved outbound emails |
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: Instantly, B2B prospecting, email finder
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=outbound-engine&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=outbound-engine
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

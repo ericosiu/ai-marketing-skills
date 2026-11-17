@@ -1,6 +1,6 @@
 ---
 name: leveling-up-content-engine
-description: "Diagnose and transform any authorized video URL, upload, recording, transcript, podcast, interview, presentation, screen recording, webinar, ad, or published video into the strongest justified content portfolio. Use for video audits, format recommendations, long-form editing, mid-form explainers, Shorts and Reels, teasers, tutorials, case studies, paid cutdowns, captions, packaging, delivery, or publication preparation."
+description: Portable workflow for editor notes, moment selection, proof-led edits, and version-bound review. Recording review to release planning.
 ---
 
 # Leveling Up Content Engine
@@ -143,3 +143,15 @@ python3 scripts/validate_delivery.py --root <delivery-folder>
 ```
 
 Return scores, mode, opportunity counts, portfolio map, runtimes, packages, sources, outputs, QC, verified destination, publication status, and a 24-hour, 72-hour, and seven-day measurement plan. Promote a lesson only after repeated comparable results.
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=leveling-up-content-engine&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=leveling-up-content-engine
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

@@ -1,6 +1,6 @@
 ---
 name: event-research-follow-up
-description: Research business events, organize photo leads and attendee rosters, qualify companies with evidence, and prepare or execute explicitly approved event follow-up with verified delivery records.
+description: Research events, qualify evidence-backed leads, and execute only approved follow-up with delivery ledgers and reply outcomes.
 ---
 
 # Event Research and Follow-up
@@ -77,3 +77,15 @@ Status: incubating. Repeat only on an explicit request or an already approved bo
 Verify counts against page/export totals, identities against sources, budget against receipts, and recommendations against evidence. If a model is used, compare it with a simple rules baseline; report missing or inconclusive evidence. Commercial success uses reference gates, not classification accuracy.
 
 Write misses and corrections to local `learning.jsonl`. Update reusable instructions only after a concrete pattern emerges; sanitize all examples. Promote to validated after a real bounded artifact and source/readback checks. Production promotion needs repeatable lifecycle and commercial evidence, plus an independent qualifying evaluation for any model-assisted routing; it never grants sending authority. Suspend expansion on identity errors, source drift, unreliable follow-through or poor economics. Retire only through an explicit owner decision; archive sanitized lessons while keeping private records local.
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=event-research-follow-up&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=event-research-follow-up
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

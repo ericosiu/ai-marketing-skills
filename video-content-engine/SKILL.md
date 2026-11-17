@@ -1,6 +1,6 @@
 ---
 name: video-content-engine
-description: "Diagnose and transform any authorized video URL, upload, recording, transcript, podcast, interview, presentation, screen recording, webinar, ad, or published video into the strongest justified content portfolio. Use for video audits, format recommendations, long-form editing, mid-form explainers, Shorts and Reels, teasers, tutorials, case studies, paid cutdowns, captions, packaging, delivery, or publication preparation."
+description: Diagnose any video and route it into the strongest justified content portfolio. Long-form optimizer, shorts engine.
 ---
 
 # Video Content Engine
@@ -152,3 +152,15 @@ Return scores, mode, opportunity counts, portfolio map, runtimes, packages, sour
 ## Maintain the engine
 
 Run on request; this skill installs no background job. Track each asset through prepared, review candidate, changes requested, approved, rendering, and delivered; track publication separately with destination evidence. Record corrections as reusable editing rules without private project details. Keep performance observations separate from brand preferences. Promote a workflow only after real artifacts pass its applicable gates, and retire a rule when a documented replacement supersedes it.
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=video-content-engine&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=video-content-engine
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

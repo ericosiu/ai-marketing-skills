@@ -1,3 +1,8 @@
+---
+name: sales-pipeline
+description: Turn anonymous website visitors into qualified pipeline. RB2B router, deal resurrector, trigger prospector, ICP learner.
+---
+
 # AI Sales Pipeline
 
 ## Preamble (runs on skill start)
@@ -78,3 +83,15 @@ Prospect DB  → ICP Analyzer (learn patterns) → Filter Recommendations
 - `requests` (for HubSpot API)
 - `psycopg2-binary` (for ICP Analyzer only)
 - No other external dependencies — scripts use stdlib HTTP server and urllib
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: HubSpot CRM, Gong
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=sales-pipeline&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=sales-pipeline
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

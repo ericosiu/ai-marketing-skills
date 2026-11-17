@@ -1,6 +1,6 @@
 ---
 name: sidebar-prioritizer
-description: Reset and prioritize the Codex task sidebar with work categories, P0–P4 priorities, and B7 labels for tasks inactive beyond seven days. Use for sidebar cleanup, confusing task lists, or refreshing follow-up priorities.
+description: Reset Codex sidebar priorities and label tasks by work category and inactivity. P0-P4 priorities, B7 age markers.
 ---
 
 # Sidebar Prioritizer
@@ -68,3 +68,15 @@ Return the verified count, B7 count, coverage gaps, and the smallest ordered lis
 For a busy sidebar, recommend a light refresh once each weekday before work and a full priority reset once weekly. Treat this as an operating preference, not a measured optimal frequency. Use on-demand runs after a large batch of work. Avoid hourly scans.
 
 Create or update an automation only if requested. Inspect existing automations first and reuse one where appropriate. Use the supported automation tools, keep the source/host scope explicit, and authorize only the intended sidebar metadata edits. Refresh runs preserve priorities; weekly resets use current evidence. Keep unchanged or non-actionable results quiet. Notify only for a meaningful priority change, a new human action, completion, failure, or missing access. Do not notify merely because another old reference item crossed seven days.
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=sidebar-prioritizer&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=sidebar-prioritizer
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

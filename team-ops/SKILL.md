@@ -1,3 +1,8 @@
+---
+name: team-ops
+description: Ruthless performance audits and meeting intelligence. Elon algorithm, meeting-to-action extractor.
+---
+
 # AI Team Ops
 
 ## Preamble (runs on skill start)
@@ -105,3 +110,15 @@ Structured JSON / Markdown + Optional CRM Push
 - Python 3.9+
 - `anthropic` or `openai` (for LLM-powered analysis)
 - `requests` (for optional HubSpot integration)
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=team-ops&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=team-ops
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

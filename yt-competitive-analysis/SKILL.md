@@ -1,9 +1,6 @@
 ---
 name: yt-competitive-analysis
-description: >-
-  Analyze YouTube channels for outlier videos and packaging patterns. Identifies
-  what's working (2x+ average views) across any set of channels. Use when asked for
-  YouTube competitive analysis, viral video patterns, or packaging/title inspiration.
+description: Find outlier videos and packaging patterns across any YouTube channels. Outlier detector, title pattern extractor.
 ---
 
 # YouTube Competitive Analysis
@@ -85,3 +82,15 @@ Do not call packaging validated until analytics are checked. Otherwise it is a s
 - "2024 vs 2025 X" (year comparison)
 - "Bad Good Great X" (tier ranking)
 - "Stop doing X, do Y instead" (contrarian)
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=yt-competitive-analysis&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=yt-competitive-analysis
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

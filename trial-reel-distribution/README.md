@@ -7,3 +7,15 @@ Rank your feed posts by reach over the last 90 days. Take the proven winners and
 Winners graduate: a trial that clears your reach bar (1,000 in the worked example) gets posted to the main feed and enters your repost lifecycle. When a winner breaks the bar, pause, re-optimize around it, and raise the bar (next: 10,000). New feed posts that prove themselves refill the pool, so the lane feeds itself.
 
 Why it works: in the anonymized worked run, 8 distribution posts produced 5 results over 1,000 reach and about 16,900 total reach, roughly 11x the per-post reach of the variant-testing approach it replaced (best single variant there: 366). See `SKILL.md` for the full workflow, the winner rule, and the pitfalls.
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=trial-reel-distribution&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=trial-reel-distribution
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

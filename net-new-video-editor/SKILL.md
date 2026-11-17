@@ -1,6 +1,6 @@
 ---
 name: net-new-video-editor
-description: Turn newly recorded talking-head footage into review-ready vertical video drafts with an explicit edit plan, deterministic FFmpeg rendering, captions, hook cards, audio normalization, and visual QA. Use for original Instagram Reels, TikTok videos, YouTube Shorts, LinkedIn videos, founder-led recordings, multiple takes of a new script or idea card, or requests to automate the first video-editing pass. Do not use to mine clips from long-form source videos.
+description: Turn fresh talking-head recordings into reversible, review-ready vertical drafts. JSON edit plans, FFmpeg rendering, captions, hook cards.
 ---
 
 # Net-New Video Editor
@@ -96,3 +96,15 @@ Return the plan, export paths, QA evidence, and any required pickups. Never publ
 - `DONE_WITH_CONCERNS`: the draft is usable but a named creative or source concern remains.
 - `NEEDS_CONTEXT`: a take, transcript, brief, or approved asset is missing.
 - `BLOCKED`: FFmpeg, source access, or format validation prevents a safe render.
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=net-new-video-editor&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=net-new-video-editor
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

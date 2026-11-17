@@ -1,6 +1,6 @@
 ---
 name: growth-signal-charts
-description: "Select and create Growth Signal chart posts for Instagram, X, and LinkedIn from original content, measured post performance, and primary data. Use the approved Desk Edition style with chart-level sources and PNG/PDF exports. Use for this series or an explicit request for its house style."
+description: Turn original content and measured audience signals into cited social charts. Content spikes, recent research, desk edition.
 ---
 
 # Growth Signal Charts
@@ -75,3 +75,15 @@ Concept boards can show adjacent slides for review. Final carousels must include
 Check the reading order, standalone subject, source placement, clipping, and phone-size legibility. Verify actual values, axis ranges, units, geometry, and calculations; do not trust the image generator's bar lengths or cell counts. Check that diagrams do not imply measured causation or fabricated results.
 
 Deliver the requested artifact, source ledger/captions as applicable, and one clear recommendation. Save final project assets in the workspace. This skill prepares local drafts; it does not imply authority to publish, send, schedule, install paid research tools, or spend external research quota.
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=growth-signal-charts&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=growth-signal-charts
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

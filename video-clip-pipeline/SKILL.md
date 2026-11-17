@@ -1,3 +1,8 @@
+---
+name: video-clip-pipeline
+description: Extract, score, and package clips from long-form video. Moment finder, clip validator, batch processor.
+---
+
 # Long-Form Video Clip Pipeline
 
 ## Preamble (runs on skill start)
@@ -185,3 +190,15 @@ YouTube URL → yt-dlp (download) → Whisper (transcribe) → Claude (segment) 
 - `yt-dlp` — Video download (system binary)
 - `ffmpeg` / `ffprobe` — Video processing (system binary)
 - `requests` — HTTP client (for optional upload features)
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=video-clip-pipeline&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=video-clip-pipeline
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

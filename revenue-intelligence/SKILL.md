@@ -1,3 +1,8 @@
+---
+name: revenue-intelligence
+description: Prove content ROI and turn sales calls into strategy. Gong insight pipeline, revenue attribution, client report generator.
+---
+
 # AI Revenue Intelligence
 
 ## Preamble (runs on skill start)
@@ -211,3 +216,15 @@ Every promoted playbook patch should include the change made, source systems, ba
 ```bash
 pip install -r requirements.txt
 ```
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: HubSpot CRM, Gong, Stripe
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=revenue-intelligence&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=revenue-intelligence
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

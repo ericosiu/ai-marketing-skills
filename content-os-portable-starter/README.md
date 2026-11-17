@@ -43,3 +43,15 @@ Each transition must be persisted, attributable, idempotent, and blocked when it
 ## License and provenance
 
 This starter is a newly written, public-safe synthesis of general workflow patterns. See `LICENSE` and `skills/README.md`. It is not a copy of private operating data or a production deployment.
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=content-os-portable-starter&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=content-os-portable-starter
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

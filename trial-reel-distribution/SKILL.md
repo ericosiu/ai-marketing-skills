@@ -1,6 +1,6 @@
 ---
 name: trial-reel-distribution
-description: Use Instagram trial reels as a distribution channel instead of a testing lab. Rank your feed posts by reach over the last 90 days, take the proven winners, and repost them as trial reels with the video unchanged - only a fresh caption and a fresh export. Winners that clear the reach bar graduate to the main feed. Use when asked to: "run trial reels", "distribute my best posts as trials", "repost winners as trial reels", "trial reel strategy", "why are my trial reels not working".
+description: Distribute trial video content across platforms with approval gates and performance tracking. Multi-platform scheduler.
 ---
 
 # Trial Reel Distribution
@@ -88,3 +88,15 @@ One account switched its trial program from variant testing to distribution:
 - Judging on a pending analytics row. Empty means not synced yet. Wait one more cycle.
 - Flooding the feed with graduates. Winners queue behind your daily feed cap. A winner posted on the first open day loses nothing.
 - Optimizing the edit when the idea is the bottleneck. If your variants cluster at low reach, stop variant testing and check whether the underlying posts ever proved themselves anywhere.
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=trial-reel-distribution&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=trial-reel-distribution
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

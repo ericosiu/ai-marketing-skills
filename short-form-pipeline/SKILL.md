@@ -1,3 +1,8 @@
+---
+name: short-form-pipeline
+description: End-to-end short-form video pipeline from idea to published clip. Hook validation, edit templates, platform distribution.
+---
+
 # Short-Form Video Clip Pipeline — Skill
 
 ## Preamble (runs on skill start)
@@ -100,3 +105,15 @@ Each clip is output as:
 - **Caption sync issues:** Run Whisper on the cut clip, not the source episode.
 - **TikTok upload fails:** Ensure H.264 + AAC encoding. Add `-c:v libx264 -c:a aac` if needed.
 - **Clip too long:** Claude sometimes overshoots. The pipeline auto-trims clips >90s to 75s.
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=short-form-pipeline&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=short-form-pipeline
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->
