@@ -12,10 +12,11 @@ Scans and redacts PII / sensitive data from files in this repo.
 | **API_KEY** | sk-xxx, ghp_xxx, op_xxx, Bearer tokens, KEY=value patterns |
 | **IP_ADDRESS** | Public IPv4 addresses (skips localhost/private ranges) |
 | **URL_CREDENTIALS** | https://user:pass@host.com |
-| **AMOUNT** | $1,234.56, $1.2M, $500K |
 | **COMPANY** | Names from blocklist (configurable) |
 | **PERSON** | Names from blocklist + title-prefixed names (Mr./Dr./etc.) |
 | **CUSTOM** | Any regex you add to the config |
+
+**Note:** Dollar amounts and revenue figures are not PII and are not scanned. The AMOUNT pattern was disabled in [PR #52](https://github.com/ericosiu/ai-marketing-skills/pull/52) because pricing examples and cost documentation in this repo are educational content, not sensitive data.
 
 ## Quick Start
 

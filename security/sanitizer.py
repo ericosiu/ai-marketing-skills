@@ -101,14 +101,15 @@ PATTERNS: list[tuple[str, str, str, str, int]] = [
         r"(?<!\d)(?:\+?1[\s\-]?)?(?:\(\d{3}\)|\d{3})[\s\-]?\d{3}[\s\-]?\d{4}(?!\d)",
         0,
     ),
-    # Dollar amounts / revenue figures  ($1,234  $1,234.56  $1M  $1.2B)
-    (
-        "AMOUNT",
-        "[AMOUNT]",
-        "[REDACTED]",
-        r"\$\s?\d[\d,]*(?:\.\d{1,2})?(?:\s?[MBKmkb](?:illion|illion)?)?",
-        0,
-    ),
+    # Dollar amounts / revenue figures are NOT PII - pattern disabled
+    # See https://github.com/ericosiu/ai-marketing-skills/pull/52
+    # (
+    #     "AMOUNT",
+    #     "[AMOUNT]",
+    #     "[REDACTED]",
+    #     r"\$\s?\d[\d,]*(?:\.\d{1,2})?(?:\s?[MBKmkb](?:illion|illion)?)?",
+    #     0,
+    # ),
 ]
 
 # Person-name heuristic: two or more capitalized words that look like names.
