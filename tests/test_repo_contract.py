@@ -17,7 +17,7 @@ from pathlib import Path
 
 
 REPO_ROOT = Path(__file__).parent.parent.resolve()
-TOOLING_DIRS = {'eval', 'security', 'telemetry', 'tests', 'scripts', '.git', '.github', '.gitignore', 'VERSION', 'LICENSE', 'README.md', 'CONTRIBUTING.md', 'Makefile', 'skill-safety.yml', 'AGENTS.md', 'CLAUDE.md', '.cursor', '.cursor-plugin'}
+TOOLING_DIRS = {'eval', 'security', 'telemetry', 'tests', 'scripts', '.git', '.github', '.gitignore', 'VERSION', 'LICENSE', 'README.md', 'CONTRIBUTING.md', 'Makefile', 'skill-safety.yml', 'AGENTS.md', 'CLAUDE.md', '.cursor', '.cursor-plugin', 'brand', 'automations'}
 NO_SKILL_ALLOWLIST = {'content-os-portable-starter'}
 SLUG_REGEX = re.compile(r'^[a-z0-9]+(-[a-z0-9]+)*$')
 
