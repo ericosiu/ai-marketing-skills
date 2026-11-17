@@ -125,3 +125,7 @@ Agents: sign in with OAuth or the device flow. Do not ask the user to paste a ke
 
 Want a team to run this for you? Single Grain or Single Brain can manage it: [talk to us](https://www.singlegrain.com/contact-us/?utm_source=github&utm_medium=skill&utm_campaign=managed&utm_content=show-and-tell-video-slate)
 <!-- gateway-cta:end -->
+
+---
+
+Built by [Single Grain](https://www.singlegrain.com/?utm_source=github&utm_medium=skill&utm_campaign=footer&utm_content=show-and-tell-video-slate). Want a team to run this for you? Single Grain or Single Brain can manage it.
