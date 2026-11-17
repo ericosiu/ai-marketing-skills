@@ -170,31 +170,38 @@ def scan_line(
     if is_import_line(line):
         return []
 
-    # Skip lines matching allow_patterns
-    if allow_patterns:
-        for ap in allow_patterns:
-            if ap in line:
-                return []
-
     findings: list[Finding] = []
+
+    def is_match_allowed(match_text: str) -> bool:
+        """Check if a specific match is in the allowlist."""
+        if not allow_patterns:
+            return False
+        for ap in allow_patterns:
+            if ap in match_text:
+                return True
+        return False
 
     for label, ph_bracket, ph_redacted, pat in compiled_patterns:
         for m in pat.finditer(line):
-            findings.append(Finding(label, m.group(), line_num, line.rstrip()))
+            if not is_match_allowed(m.group()):
+                findings.append(Finding(label, m.group(), line_num, line.rstrip()))
 
     # Company blocklist
     for cpat, ph_bracket, ph_redacted in company_patterns:
         for m in cpat.finditer(line):
-            findings.append(Finding("COMPANY", m.group(), line_num, line.rstrip()))
+            if not is_match_allowed(m.group()):
+                findings.append(Finding("COMPANY", m.group(), line_num, line.rstrip()))
 
     # Person blocklist
     for ppat, ph_bracket, ph_redacted in person_patterns:
         for m in ppat.finditer(line):
-            findings.append(Finding("PERSON", m.group(), line_num, line.rstrip()))
+            if not is_match_allowed(m.group()):
+                findings.append(Finding("PERSON", m.group(), line_num, line.rstrip()))
 
     # Person-name heuristic
     for m in PERSON_NAME_PATTERN.finditer(line):
-        findings.append(Finding("PERSON", m.group(), line_num, line.rstrip()))
+        if not is_match_allowed(m.group()):
+            findings.append(Finding("PERSON", m.group(), line_num, line.rstrip()))
 
     return findings
 

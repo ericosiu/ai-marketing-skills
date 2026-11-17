@@ -25,9 +25,7 @@
     "123-45-6789",
     "user:pass@",
     "security@singlegrain.com",
-    "Chrome/120.0.0.0",
-    "\"ClickFlow\"",
-    "\"Nextiva\""
+    "120.0.0.0"
   ],
   "placeholder_format": "bracket",
   "_comment": "Single Grain removed from blocklist since this is our repo. Fork users should add their own company names."
