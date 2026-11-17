@@ -143,7 +143,7 @@ Inputs:
 - GSC clicks, impressions, CTR, average position, queries, pages
 - GA4 sessions, engaged sessions, conversions, assisted leads
 - Ahrefs rankings, backlinks, traffic estimates, keyword movement
-- ClickFlow opportunities where available
+- SEO platform opportunities where available
 - AI-search / answer-engine / GEO visibility where available
 - CMS/page change log
 

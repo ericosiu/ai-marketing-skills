@@ -70,7 +70,7 @@ Track:
 - GSC clicks, impressions, CTR, average position, query/page mix
 - GA4 sessions, engaged sessions, conversions, assisted leads
 - Ahrefs rankings, backlinks, traffic estimates, keyword movement
-- ClickFlow opportunities
+- SEO platform opportunities (if available)
 - AI-search / answer-engine visibility where available
 - CMS/page change log
 
