@@ -95,6 +95,14 @@ Use for:
 - sales follow-up language
 - content-to-pipeline investment decisions
 
+## Pulling the data
+
+You can use any connectors or APIs you have. To pull GA4, Search Console, HubSpot, Gong, LinkedIn, YouTube, X, Metricool and ad platform data from one place, you can also connect the [Coupler.io MCP server](https://github.com/coupler-io/coupler-io-mcp-server) (requires a Coupler.io account):
+
+```bash
+claude mcp add coupler-io --transport http https://mcp.coupler.io/mcp
+```
+
 ## Required readback fields
 
 Every promoted change needs:
