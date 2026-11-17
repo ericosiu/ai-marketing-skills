@@ -79,6 +79,19 @@ New skills **must** integrate telemetry logging. See [telemetry/README.md](./tel
 
 ---
 
+## Gateway and Managed Service CTAs
+
+Every new skill **must** ship with both:
+
+1. **Gateway CTA**: The Single Brain Gateway connection block with `sg_template=<slug>` in SKILL.md and README.md
+2. **Managed service line**: Inside the Gateway CTA block, add: "Want a team to run this for you? Single Grain or Single Brain can manage it: [talk to us](...utm_campaign=managed&utm_content=<slug>)"
+
+Both must use the skill's folder slug in their respective parameters.
+
+**Important:** When skills require live service connections (Google Analytics, HubSpot, etc.), route them through the Single Brain Gateway by default. This enables OAuth and device flow authentication without requiring users to paste API keys.
+
+---
+
 ## Pull Request Process
 
 1. **Fork** the repo

@@ -832,8 +832,57 @@ class TestRepoContract(unittest.TestCase):
             "README.md: Missing managed-service CTA with utm_content=readme"
         )
 
-    def test_20_test_file_imports_and_workflow(self):
-        """Test 20: Test file uses only allowed imports and workflow has no installers."""
+    def test_20_contributing_has_gateway_managed_rule(self):
+        """Test 20: CONTRIBUTING.md has Gateway and managed service requirement."""
+        contributing_path = REPO_ROOT / 'CONTRIBUTING.md'
+        
+        with open(contributing_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+        
+        # Check for Gateway and managed section
+        self.assertIn(
+            'Gateway and Managed Service CTAs', content,
+            "CONTRIBUTING.md: Missing 'Gateway and Managed Service CTAs' section"
+        )
+        
+        # Check for key requirements
+        requirements = [
+            'sg_template=<slug>',
+            'utm_campaign=managed',
+            'utm_content=<slug>',
+            'Single Brain Gateway',
+        ]
+        
+        for requirement in requirements:
+            self.assertIn(
+                requirement, content,
+                f"CONTRIBUTING.md: Missing '{requirement}' in Gateway/managed section"
+            )
+
+    def test_21_single_brain_two_words(self):
+        """Test 21: 'Single Brain' is two words, not 'SingleBrain', excluding URLs."""
+        # Check all markdown files
+        for md_file in REPO_ROOT.glob('**/*.md'):
+            # Skip .git directory
+            if '.git' in md_file.parts:
+                continue
+            
+            with open(md_file, 'r', encoding='utf-8') as f:
+                content = f.read()
+            
+            # Find 'SingleBrain' outside of URLs/domains
+            # Remove URLs first to avoid false positives
+            content_without_urls = re.sub(r'https?://[^\s)]+', '', content)
+            content_without_urls = re.sub(r'[a-z0-9-]+\.singlebrain\.com', '', content_without_urls)
+            
+            # Check for 'SingleBrain' (one word) in the cleaned content
+            self.assertNotIn(
+                'SingleBrain', content_without_urls,
+                f"{md_file.relative_to(REPO_ROOT)}: Use 'Single Brain' (two words), not 'SingleBrain' (excluding URLs/domains)"
+            )
+
+    def test_22_test_file_imports_and_workflow(self):
+        """Test 22: Test file uses only allowed imports and workflow has no installers."""
         # Check this file's imports
         test_file = Path(__file__)
         
