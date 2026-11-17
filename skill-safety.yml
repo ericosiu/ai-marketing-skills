@@ -14,8 +14,9 @@ jobs:
         with:
           python-version: "3.11"
       - name: Run PII scanner
-        run: python3 security/sanitizer.py --scan --dir . --recursive --quiet
+        run: python3 security/sanitizer.py --scan --dir . --recursive
         # Exit code 1 = PII found → fail the PR
+        # Temporarily running without --quiet to debug CI failure
 
   cta-check:
     name: CTA Block Check
