@@ -2,13 +2,23 @@
 
 Get found in AI search (AEO/SEO) and turn it into pipeline. These are open-source skills for Claude Code, Codex, Cursor, and OpenClaw.
 
-## Install
+**Install:**
 
 ```bash
 npx skills add ericosiu/ai-marketing-skills
 ```
 
 Needs Node.js 22.20 or later.
+
+**Claude Code Plugin:** Use `/plugin marketplace add ericosiu/ai-marketing-skills` then `/plugin install ai-marketing-skills` in Claude Code.
+
+## Install Options
+
+**NPX Command (all agents)**
+
+```bash
+npx skills add ericosiu/ai-marketing-skills
+```
 
 Install for multiple agents at once:
 
@@ -21,8 +31,6 @@ Install a single skill:
 ```bash
 npx skills add ericosiu/ai-marketing-skills -s seo-ops
 ```
-
-**Claude Code Plugin:** Install via Claude Code's plugin marketplace or use the npx command above.
 
 Want a team to run these skills for you? Single Grain or Single Brain can manage it: [talk to us](https://www.singlegrain.com/contact-us/?utm_source=github&utm_medium=skill&utm_campaign=managed&utm_content=readme)
 

@@ -39,7 +39,8 @@ Create `automations/run-seo-decay-check.sh`:
 # Weekly SEO decay check automation
 
 # Set working directory
-cd "$(dirname "$0")/.."
+SCRIPT_DIR="$(dirname "${BASH_SOURCE[0]}")"
+cd "$SCRIPT_DIR/.."
 
 OUTPUT_DIR="automations/reports/seo-decay"
 mkdir -p "$OUTPUT_DIR"

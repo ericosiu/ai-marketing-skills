@@ -1,0 +1,7 @@
+{
+  "name": "AI Marketing Skills",
+  "version": "1.0.0",
+  "description": "Get found in AI search (AEO/SEO) and turn it into pipeline. 45 open-source marketing skills.",
+  "type": "skills",
+  "skillsDirectory": "."
+}

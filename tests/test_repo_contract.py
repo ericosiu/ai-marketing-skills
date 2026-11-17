@@ -17,7 +17,7 @@ from pathlib import Path
 
 
 REPO_ROOT = Path(__file__).parent.parent.resolve()
-TOOLING_DIRS = {'eval', 'security', 'telemetry', 'tests', 'scripts', '.git', '.github', '.gitignore', 'VERSION', 'LICENSE', 'README.md', 'CONTRIBUTING.md', 'Makefile', 'skill-safety.yml', 'AGENTS.md', 'CLAUDE.md', '.cursor', '.cursor-plugin', 'brand', 'automations'}
+TOOLING_DIRS = {'eval', 'security', 'telemetry', 'tests', 'scripts', '.git', '.github', '.gitignore', 'VERSION', 'LICENSE', 'README.md', 'CONTRIBUTING.md', 'Makefile', 'skill-safety.yml', 'AGENTS.md', 'CLAUDE.md', '.cursor', '.cursor-plugin', '.claude-plugin', 'brand', 'automations'}
 NO_SKILL_ALLOWLIST = {'content-os-portable-starter'}
 SLUG_REGEX = re.compile(r'^[a-z0-9]+(-[a-z0-9]+)*$')
 
@@ -734,14 +734,56 @@ class TestRepoContract(unittest.TestCase):
             "scripts/install-openclaw.sh: Must contain 'openclaw skills install'"
         )
         
-        # Check marketplace.json if it exists
-        marketplace_json = REPO_ROOT / '.cursor-plugin' / 'marketplace.json'
-        if marketplace_json.exists():
-            with open(marketplace_json, 'r', encoding='utf-8') as f:
+        # Check Cursor plugin marketplace.json
+        cursor_marketplace_json = REPO_ROOT / '.cursor-plugin' / 'marketplace.json'
+        if cursor_marketplace_json.exists():
+            with open(cursor_marketplace_json, 'r', encoding='utf-8') as f:
                 try:
                     json.loads(f.read())
                 except json.JSONDecodeError as e:
                     self.fail(f".cursor-plugin/marketplace.json: Invalid JSON - {e}")
+        
+        # Check Claude plugin files
+        claude_marketplace = REPO_ROOT / '.claude-plugin' / 'marketplace.json'
+        self.assertTrue(claude_marketplace.exists(), ".claude-plugin/marketplace.json must exist")
+        
+        with open(claude_marketplace, 'r', encoding='utf-8') as f:
+            try:
+                claude_data = json.loads(f.read())
+            except json.JSONDecodeError as e:
+                self.fail(f".claude-plugin/marketplace.json: Invalid JSON - {e}")
+        
+        # Validate required fields in Claude marketplace.json
+        required_fields = ['name', 'id', 'version', 'description', 'skills']
+        for field in required_fields:
+            self.assertIn(
+                field, claude_data,
+                f".claude-plugin/marketplace.json: Missing required field '{field}'"
+            )
+        
+        # Check skills array is not empty
+        self.assertGreater(
+            len(claude_data.get('skills', [])), 0,
+            ".claude-plugin/marketplace.json: 'skills' array must not be empty"
+        )
+        
+        # Check Claude plugin.json
+        claude_plugin = REPO_ROOT / '.claude-plugin' / 'plugin.json'
+        self.assertTrue(claude_plugin.exists(), ".claude-plugin/plugin.json must exist")
+        
+        with open(claude_plugin, 'r', encoding='utf-8') as f:
+            try:
+                plugin_data = json.loads(f.read())
+            except json.JSONDecodeError as e:
+                self.fail(f".claude-plugin/plugin.json: Invalid JSON - {e}")
+        
+        # Validate required fields in plugin.json
+        plugin_required = ['name', 'version', 'type']
+        for field in plugin_required:
+            self.assertIn(
+                field, plugin_data,
+                f".claude-plugin/plugin.json: Missing required field '{field}'"
+            )
 
     def test_16_contributing_no_singlegrain_repo(self):
         """Test 16: CONTRIBUTING.md does not contain github.com/singlegrain/ai-marketing-skills."""

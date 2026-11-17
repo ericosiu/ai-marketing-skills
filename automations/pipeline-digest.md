@@ -40,7 +40,8 @@ Create `automations/run-pipeline-digest.sh`:
 # Weekly pipeline digest automation
 
 # Set working directory
-cd "$(dirname "$0")/.."
+SCRIPT_DIR="$(dirname "${BASH_SOURCE[0]}")"
+cd "$SCRIPT_DIR/.."
 
 OUTPUT_DIR="automations/reports/pipeline"
 mkdir -p "$OUTPUT_DIR"

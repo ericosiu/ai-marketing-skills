@@ -42,7 +42,8 @@ Create `automations/run-ai-citation-monitor.sh`:
 # AI citation monitor automation
 
 # Set working directory
-cd "$(dirname "$0")/.."
+SCRIPT_DIR="$(dirname "${BASH_SOURCE[0]}")"
+cd "$SCRIPT_DIR/.."
 
 # Define queries file
 QUERIES_FILE="automations/aeo-queries.txt"

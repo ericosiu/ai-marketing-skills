@@ -39,7 +39,8 @@ Create `automations/run-competitor-watch.sh`:
 # Weekly competitor watch automation
 
 # Set working directory
-cd "$(dirname "$0")/.."
+SCRIPT_DIR="$(dirname "${BASH_SOURCE[0]}")"
+cd "$SCRIPT_DIR/.."
 
 # Check for brand files
 if [ ! -f "brand/competitors.md" ]; then

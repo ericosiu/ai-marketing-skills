@@ -39,7 +39,8 @@ Create `automations/run-content-repurposing.sh`:
 # Content repurposing automation
 
 # Set working directory
-cd "$(dirname "$0")/.."
+SCRIPT_DIR="$(dirname "${BASH_SOURCE[0]}")"
+cd "$SCRIPT_DIR/.."
 
 OUTPUT_DIR="automations/reports/repurposed-content"
 SOURCES_FILE="automations/content-sources.txt"
