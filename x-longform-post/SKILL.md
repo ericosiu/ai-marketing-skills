@@ -1,6 +1,6 @@
 ---
 name: x-longform-post
-description: Write long-form X (Twitter) posts and threads in a founder/CEO voice. Use when drafting X articles, long tweets, thought leadership threads, or viral content. Produces contrarian, data-backed posts with ASCII diagrams and code block visuals. Includes mandatory AI humanizer pass (24-pattern detector) before finalizing.
+description: Write X articles that sound human with a 24-pattern AI slop detector. Post writer, humanizer checklist, ASCII diagrams.
 ---
 
 # X Long-Form Post Writer
@@ -200,3 +200,15 @@ Start at 100. Deduct points per the rubric in `../content-ops/experts/humanizer.
 - **70-89**: Minor AI tells. Quick fixes needed.
 - **50-69**: Obvious AI patterns. Significant rewrite needed.
 - **0-49**: Full rewrite.
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=x-longform-post&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=x-longform-post
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

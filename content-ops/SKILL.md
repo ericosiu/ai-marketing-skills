@@ -1,15 +1,6 @@
 ---
-name: expert-panel
-description: >-
-  Score, evaluate, and iteratively improve any content or strategy using an
-  auto-assembled panel of domain experts. Handles copy, sequences, landing pages,
-  strategy docs, titles, charts, recruiting evaluations, or anything else that
-  needs a quality gate. Recursively iterates until all scores hit 90+ (max 3
-  rounds). Use when asked to: "expert panel this", "score this", "rate these
-  variants", "quality check this", "panel review", "which version is better",
-  "expert score", "evaluate this copy/strategy/page", or when another skill
-  needs a quality gate on its output. Also triggers on: "score this landing page",
-  "expert panel these email variants", "rate this headline", "panel these charts".
+name: content-ops
+description: Ship content that scores 90+ every time with expert panel scoring, quality gates, editorial brain, and quote mining.
 ---
 
 
@@ -244,3 +235,15 @@ experts miss them.
 | `scoring-rubrics/evaluation-quality.md` | Candidate/assessment rubric | Eval scoring |
 | `references/patterns.md` | Learned rejection patterns | Every scoring run |
 | `references/expert-assembly.md` | Domain-expert examples for auto-assembly | When building unfamiliar panels |
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=content-ops&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=content-ops
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

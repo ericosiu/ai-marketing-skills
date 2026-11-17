@@ -1,6 +1,6 @@
 ---
 name: autoresearch
-description: Run Karpathy-style autoresearch optimization on any content. Generates 50+ variants, scores with a 5-expert simulated panel, evolves winners through multiple rounds, outputs optimized version + full experiment log. Use when optimizing landing pages, email sequences, ad copy, headlines, form pages, CTA text, or any conversion-focused content. Triggers on "optimize this page", "run autoresearch", "score these variants", "A/B test this copy".
+description: Karpathy-inspired optimization loops for conversion content. Generate variants, score with expert panel, evolve winners.
 ---
 
 # Autoresearch Skill
@@ -257,3 +257,15 @@ Summarize results to user:
 - **Don't over-optimize for one dimension.** If you're hitting 95 on clarity but 45 on trust, the overall score is misleading.
 - **Don't run more than 5 rounds.** If you're not hitting 80 after 3 rounds, the problem is strategic (wrong positioning), not tactical (wrong words).
 - **Don't cross-breed until each element has its own winner.** Premature cross-breeding creates incoherent combinations.
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=autoresearch&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=autoresearch
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

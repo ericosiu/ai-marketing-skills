@@ -1,6 +1,6 @@
 ---
 name: finance-ops
-description: "AI-powered financial analysis suite. Generates executive CFO briefings from QuickBooks exports (P&L, Balance Sheet, General Ledger, Cash Flow, etc.) with anomaly detection, burn rate, runway analysis, and scenario modeling. Also estimates codebase development costs with organizational overhead and AI ROI analysis. Triggers on: 'CFO briefing', 'financial analysis', 'cost briefing', 'expense review', 'runway analysis', 'burn rate', 'cost estimate', 'how much would this cost to build', 'development cost', 'Claude ROI'."
+description: Your AI CFO that finds hidden costs in 30 minutes. CFO briefing, cost estimate, scenario modeler.
 ---
 
 
@@ -133,3 +133,15 @@ If the codebase was built with AI assistance, calculate value per AI hour using 
 - Highlight highest-complexity areas that drive cost
 - Always show ranges (low/avg/high), never a single number
 - Search for CURRENT year market rates, don't use stale data
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=finance-ops&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=finance-ops
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

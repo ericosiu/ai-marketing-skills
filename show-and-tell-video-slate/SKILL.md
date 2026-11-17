@@ -1,6 +1,6 @@
 ---
 name: show-and-tell-video-slate
-description: Turn authorized current builds, workflows, dashboards, analytics, and completed work into proof-led founder videos, then rank and combine the strongest filmable artifacts into exact 15-minute long-form slates with strict title and thumbnail evaluation. Use when deciding what to film, creating show-and-tell business videos, combining thin topics into complete episodes, or requiring packaging concepts to clear explicit quality gates.
+description: Turn real builds and first-party proof into ranked 15-minute video episodes before production. Evidence inventory, episode scoring.
 ---
 
 # Show-and-Tell Video Slate
@@ -111,3 +111,15 @@ Separate `ready` from `repair`. A strong package never overrides missing proof. 
 - **Learning writeback:** store user corrections, failed proof checks, and post-publication performance evidence in the private runtime folder.
 - **Promotion:** validate after one real build produces a passing slate and a complete recording. Treat as production-ready after three useful slates and at least two measured content readbacks.
 - **Retirement:** archive if three consecutive runs add no differentiated ready episode or another workflow absorbs the complete process.
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=show-and-tell-video-slate&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=show-and-tell-video-slate
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

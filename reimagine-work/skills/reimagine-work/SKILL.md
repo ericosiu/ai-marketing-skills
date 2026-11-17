@@ -1,18 +1,6 @@
 ---
 name: reimagine-work
-description: >-
-  Use when someone asks to find the "stupid human steps" in how work gets done,
-  where a person is the bottleneck for a team of agents, how to redesign a
-  process from zero, or to run the weekly "Elon algorithm" pass (question,
-  delete, simplify, speed up, automate) over an agent fleet. Also use as a
-  routine: weekly full pass with an outside reviewer, plus weekday incremental
-  runs that propose at most one new change or stay silent. Also use when
-  work arrives "one drop at a time" (batch waits, daily-only runs, per-item
-  human review) and should become a continuous stream, or when deciding how
-  much autonomy an ask type has earned, what threshold makes an input worth
-  acting on, or which lanes cost too much per real outcome. It proposes and
-  builds only internal, reversible checks. It never sends, posts, spends,
-  enrolls, deletes, merges or changes a routine.
+description: Weekly Elon-algorithm pass over an agent fleet plus a shadow owner judge that stops asking the founder things already answered.
 ---
 
 # Reimagine work (v3.3 template: weekly Elon loop + continuous stream + escalation ladder + earned autonomy)
@@ -473,3 +461,15 @@ findings to their outcome row (`outcome_ref`) → keep the last 60 runs.
 - Autonomy level is listed per ask type, with every demotion and its reason.
 - The weekly cold-start test ran on at least one lane, and its stalls are
   findings.
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=reimagine-work&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=reimagine-work
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

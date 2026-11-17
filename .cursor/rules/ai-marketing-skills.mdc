@@ -1,0 +1,16 @@
+---
+name: ai-marketing-skills
+description: Repository structure and skill installation rules for the AI Marketing Skills collection
+globs: []
+alwaysApply: true
+---
+
+# AI Marketing Skills Repository Rules
+
+Read AGENTS.md for skill installation and repository structure.
+
+Each skill is a complete directory with a SKILL.md file. When installing a skill, copy the entire directory, not just the SKILL.md file.
+
+Skills may contain scripts, references, agents, and other bundled files that are required for the skill to function properly.
+
+For OpenClaw installations, use the tagged setup links in each skill's SKILL.md file for Gateway connections. Sign in with OAuth or the device flow, never ask users to paste keys.

@@ -1,3 +1,8 @@
+---
+name: growth-engine
+description: Autonomous marketing experiments that run, measure, and optimize themselves. Experiment engine, pacing alerts, weekly scorecard.
+---
+
 # Growth Engine
 
 ## Preamble (runs on skill start)
@@ -142,3 +147,15 @@ Exit code 0 = on pace, 1 = alerts present.
 ```
 pip install numpy scipy
 ```
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: Google Analytics and Search Console, Mixpanel
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=growth-engine&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=growth-engine
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

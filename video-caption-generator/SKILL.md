@@ -1,17 +1,6 @@
 ---
-
-## Preamble (runs on skill start)
-
-```bash
-# Version check (silent if up to date)
-python3 telemetry/version_check.py 2>/dev/null || true
-
-# Telemetry opt-in (first run only, then remembers your choice)
-python3 telemetry/telemetry_init.py 2>/dev/null || true
-```
-
-> **Privacy:** This skill logs usage locally to `~/.ai-marketing-skills/analytics/`. Remote telemetry is opt-in only. No code, file paths, or repo content is ever collected. See `telemetry/README.md`.
-
+name: video-caption-generator
+description: Generate accurate captions for video content with timing and formatting. Transcript to SRT, caption styling.
 ---
 name: video-caption-generator
 description: >
@@ -83,3 +72,15 @@ For each unique new clip, output:
 ## Adding New Folders
 
 Pass `--folder-id <ID>` for different folders. Each folder uses the same shared `processed_ids.json` log (Drive IDs are globally unique so there's no collision).
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=video-caption-generator&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=video-caption-generator
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

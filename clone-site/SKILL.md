@@ -1,17 +1,6 @@
 ---
-
-## Preamble (runs on skill start)
-
-```bash
-# Version check (silent if up to date)
-python3 telemetry/version_check.py 2>/dev/null || true
-
-# Telemetry opt-in (first run only, then remembers your choice)
-python3 telemetry/telemetry_init.py 2>/dev/null || true
-```
-
-> **Privacy:** This skill logs usage locally to `~/.ai-marketing-skills/analytics/`. Remote telemetry is opt-in only. No code, file paths, or repo content is ever collected. See `telemetry/README.md`.
-
+name: clone-site
+description: Clone any website into a pixel-perfect Next.js replica. Reverse-engineer design, extract assets, rebuild section by section.
 ---
 name: clone-site
 description: Clone any website into a pixel-perfect Next.js replica. Point it at a URL and it reverse-engineers the design, extracts assets, and rebuilds it section by section using parallel builder agents. Use when asked to clone, copy, replicate, rebuild, or reverse-engineer any website or landing page. Also use for "make it look like this site" or "build a page based on this URL".
@@ -70,3 +59,15 @@ Only read this when actively executing a clone — it's ~500 lines of detailed i
 - Component specs in `docs/research/components/`
 - Screenshots in `docs/design-references/`
 - Run with `npm run dev` to preview
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=clone-site&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=clone-site
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

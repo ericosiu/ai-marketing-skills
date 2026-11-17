@@ -1,17 +1,6 @@
 ---
-
-## Preamble (runs on skill start)
-
-```bash
-# Version check (silent if up to date)
-python3 telemetry/version_check.py 2>/dev/null || true
-
-# Telemetry opt-in (first run only, then remembers your choice)
-python3 telemetry/telemetry_init.py 2>/dev/null || true
-```
-
-> **Privacy:** This skill logs usage locally to `~/.ai-marketing-skills/analytics/`. Remote telemetry is opt-in only. No code, file paths, or repo content is ever collected. See `telemetry/README.md`.
-
+name: lead-dossier
+description: Research and enrich leads with verified contact data, company intel, and relationship mapping. B2B prospecting and enrichment.
 ---
 name: lead-dossier
 description: >
@@ -183,3 +172,15 @@ The enricher:
 - **Email validation 429s**: Script handles with backoff; if persistent, reduce volume
 - **Campaign tool silent failures**: Some APIs silently block at high request rates; scripts include batch delays
 - **Cache stale**: Delete files in `data/account-research/` to force refresh
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: B2B prospecting, web search, social profile search
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=lead-dossier&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=lead-dossier
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

@@ -160,3 +160,15 @@ Every generated piece is scored on three dimensions:
 - **SEO Ops** — Feed blog outlines to the SEO pipeline for keyword validation
 - **Outbound Engine** — Use podcast insights as personalization hooks in outbound sequences
 - **Growth Engine** — A/B test different content formats from the same episode atoms
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=podcast-ops&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=podcast-ops
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

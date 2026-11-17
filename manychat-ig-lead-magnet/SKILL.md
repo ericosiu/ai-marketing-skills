@@ -1,6 +1,6 @@
 ---
 name: manychat-ig-lead-magnet
-description: Create or prepare Instagram comment-to-DM lead magnet workflows using a PDF, public resource link, or GitHub skill and ManyChat automation. Use when the user wants to turn a source asset such as a YouTube video, podcast, post, Slack/Hermes output, or existing PDF into a lead magnet, choose the right comment keyword(s), upload the PDF into ManyChat, add tracking tags/fields, QA the flow, and set it up so people can comment on an Instagram post/reel and receive the resource by DM or after an email capture.
+description: Newsletter-signup-gated resources with explicit consent, attribution, and advisory lead triage. Post/story triggers, five-lane fit.
 ---
 
 # ManyChat IG Lead Magnet
@@ -184,3 +184,15 @@ Before reporting done, verify:
 - Any live test uses a safe test comment/account or remains a dry run if approval was not given.
 
 Final response should include what was prepared, what was actually changed, evidence checked, and any remaining approval needed.
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=manychat-ig-lead-magnet&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=manychat-ig-lead-magnet
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

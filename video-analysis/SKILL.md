@@ -1,6 +1,6 @@
 ---
 name: video-analysis
-description: Analyze YouTube videos or local footage using transcripts first, with silent video checks for demonstrations, delivery, editing, and clip boundaries. Use for video summaries, research, repurposing, or timestamped critiques.
+description: Read transcripts first and inspect video silently when visuals or timing matter. Transcript review, demo verification.
 ---
 
 # Video Analysis
@@ -55,3 +55,15 @@ Lead with the answer and the smallest useful next action. Include timestamp link
 Label editorial recommendations as judgments rather than measured audience effects. Mention only limitations that could change the conclusion. Return the result in chat unless an artifact is requested or materially useful.
 
 Close task-created browser tabs when finished. Report incomplete analysis or failed upload cleanup plainly. Stop after delivering the requested review; do not start editing, publishing, or recurring monitoring without that scope.
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=video-analysis&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=video-analysis
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

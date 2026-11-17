@@ -1,3 +1,8 @@
+---
+name: sales-playbook
+description: Value-based pricing framework that turns $10K deals into $100K deals. Pre-call briefing, tiered packager, call analyzer.
+---
+
 # AI Sales Playbook — Value-Based Pricing & Deal Upselling
 
 ## Preamble (runs on skill start)
@@ -79,3 +84,15 @@ The call analyzer scores calls against these criteria:
 - Python 3.9+
 - `requests` (for API integrations)
 - No other external dependencies
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=sales-playbook&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=sales-playbook
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

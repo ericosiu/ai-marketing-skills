@@ -1,6 +1,6 @@
 ---
 name: deck-generator
-description: Generate professional presentations with AI-generated images. Use when asked to create a deck, presentation, pitch deck, or slides. Supports style presets (whiteboard, corporate, minimalist, etc). Uses Imagen 4.0 API for image generation and Google Slides API for assembly. Produces full decks from markdown content specs in minutes.
+description: Generate AI-powered slide decks with consistent visual styles in minutes. Image generation and Google Slides builder.
 ---
 
 # Deck Generator
@@ -104,3 +104,15 @@ python3 scripts/generate-deck.py \
   --google-slides \
   --google-account your-email@example.com
 ```
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=deck-generator&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=deck-generator
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

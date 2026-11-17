@@ -1,6 +1,6 @@
 ---
 name: shortform-idea-grill
-description: Interview a founder or senior marketer one question at a time, mine current work and owned proof for net-new short-form video ideas, and return a ranked table with one five-second overlay hook, virality and three-second-hook scores, exactly three talking bullets, a complete payoff, and a mapped CTA. Use for Instagram Reels, TikTok, YouTube Shorts, LinkedIn video, founder-led content planning, hook development, content-day production queues, or turning active AI, marketing, and operating work into credible short-form concepts.
+description: Interview, score, and rank proof-led short-form video ideas. Five-second hooks, three-second scores, talking bullets.
 ---
 
 # Shortform Idea Grill
@@ -106,3 +106,15 @@ Before handoff, verify:
 - CTAs use the configured keyword and destination;
 - the table is sorted by recording priority;
 - public output contains no private names, metrics, paths, customer data, or connector details unless the user supplied them for that output.
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=shortform-idea-grill&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=shortform-idea-grill
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

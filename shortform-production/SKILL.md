@@ -1,6 +1,6 @@
 ---
 name: shortform-production
-description: Produce readable vertical shorts with evidence-based B-roll, three opening treatments, editorial review, and authorized Metricool API delivery. Use for shortform edits, captions, hook experiments, or scheduling approved clips.
+description: Produce readable shorts and deliver approved clips through the API. V5 style, hook previews, editorial review, Metricool delivery.
 ---
 
 # Shortform Production
@@ -35,3 +35,15 @@ Include artifacts relevant to the requested mode: source hash and transcript; cl
 Keep credentials and private receipts outside the repository. Preserve raw media and previous renders. Report `review candidate`, `scheduled`, `publishing`, or `published` only with matching evidence.
 
 Use [the next-batch plan](references/next-batch.md) to turn these rules into a production cycle.
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=shortform-production&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=shortform-production
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

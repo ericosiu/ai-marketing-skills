@@ -1,0 +1,29 @@
+name: Skill Safety Rails
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  pii-scan:
+    name: PII Sanitizer Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run PII scanner
+        run: python3 security/sanitizer.py --scan --dir . --recursive --quiet
+        # Exit code 1 = PII found → fail the PR
+
+  skill-contract:
+    name: Repository Contract Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run repository contract tests
+        run: python3 tests/test_repo_contract.py

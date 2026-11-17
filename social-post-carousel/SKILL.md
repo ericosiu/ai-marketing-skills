@@ -1,6 +1,6 @@
 ---
 name: social-post-carousel
-description: Rebuild a text post or user-supplied social screenshot as a clean, unbranded 1080 × 1080 carousel with exact copy, optional attribution, and numbered PNGs. Use for X-style social carousels, not for publishing or accessing accounts.
+description: Turn post text into consistent, brand-neutral square cards. Paragraph planning, fixed type, local PNG renderer.
 ---
 
 # Social Post Carousel
@@ -56,3 +56,15 @@ The renderer is offline; it never fetches external images or publishes. For
 languages outside the font's coverage, use a font with the necessary glyphs
 and inspect the output. For complex script shaping or vertical typography,
 use a capable alternative renderer while retaining the same layout checks.
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=social-post-carousel&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=social-post-carousel
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

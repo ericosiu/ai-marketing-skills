@@ -1,6 +1,6 @@
 ---
 name: proactive-helpfulness
-description: Prioritize lead follow-ups and maintain useful relationships after events or between meetings. Use for networking follow-up, cross-channel reply reviews, introductions, commitments, partner opportunities and outreach funnel reporting. Not for bulk unsolicited outreach, automatic recruiting screens or treating research as permission to send.
+description: Prioritize useful lead follow-ups and relationship commitments with verified evidence. Cross-channel reconciliation, approval gates.
 ---
 
 # Proactive Helpfulness
@@ -97,3 +97,15 @@ These tests check counting rules, not factual research or live execution.
 - Publishing private evidence in public examples, commits, logs or evaluation
   fixtures. Use synthetic IDs and fictional scenarios; keep operational records
   only in approved private storage with the minimum necessary detail.
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=proactive-helpfulness&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=proactive-helpfulness
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

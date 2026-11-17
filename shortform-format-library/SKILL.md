@@ -1,6 +1,6 @@
 ---
 name: shortform-format-library
-description: Build and maintain a visual short-form format library, evaluate supplied content spikes, and match source-grounded ideas to recording outlines and editing briefs. Use for format discovery, refreshing a swipe page, ranking a content table, or preparing a format-library lead magnet.
+description: Maintain visual format references and match content ideas to recording outlines. Content spikes, creator discovery, edit briefs.
 ---
 
 # Shortform Format Library
@@ -48,3 +48,15 @@ Use installed skills when their capability fits: `creator-pattern-copier` for so
 ## Completion evidence
 
 For research: the source inventory, comparisons, and limitations. For a table: distinct idea-source and reference-video links, one default format, three specific prompts, and honest proof limits. For a page: loaded images, working filters/source links, saved draft reload, export content, and phone readability. For an edit: the actual review render and source alignment. For publishing or merging: the target system's readback, not a queued operation.
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=shortform-format-library&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=shortform-format-library
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

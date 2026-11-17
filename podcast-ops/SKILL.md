@@ -1,16 +1,6 @@
 ---
-name: podcast-pipeline
-description: >-
-  Podcast-to-Everything content pipeline. Takes a podcast RSS feed or raw
-  transcript and generates a full cross-platform content calendar: short-form
-  video clips, Twitter/X threads, LinkedIn articles, newsletter sections, quote
-  cards, blog outlines with SEO keywords, and YouTube Shorts/TikTok scripts.
-  Scores each piece by viral potential (novelty × controversy × utility) and
-  deduplicates against recent output. Use when asked to: "repurpose this podcast",
-  "turn this episode into content", "podcast content calendar", "extract clips
-  from this episode", "podcast to social", "content from RSS feed", "batch
-  process episodes", or any request to turn podcast/audio content into a
-  multi-platform content plan.
+name: podcast-ops
+description: One episode to 20+ content pieces across every platform. Podcast-to-everything pipeline, content calendar.
 ---
 
 
@@ -315,3 +305,15 @@ python podcast_pipeline.py --rss "https://feeds.example.com/podcast.xml" --min-s
 | `podcast_pipeline.py` | Main pipeline script |
 | `requirements.txt` | Python dependencies |
 | `README.md` | Setup and usage guide |
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=podcast-ops&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=podcast-ops
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

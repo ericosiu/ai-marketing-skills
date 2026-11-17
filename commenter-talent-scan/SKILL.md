@@ -1,6 +1,6 @@
 ---
 name: commenter-talent-scan
-description: Turn the commenters on a public social media hiring post into a ranked, outreach-ready talent list. Pulls every comment, resolves and enriches each commenter's profile, downloads their profile image, and scores every person with an eval-gated Jev text+images sieve (role depth, hire target vs peer vs brand, role level, primary specialty). Use when asked to: "scan the commenters", "find hires in the comments", "who in these comments is worth hiring", "talent scan this post", "rank the applicants in the comments".
+description: Find high-signal commenters across social platforms and score them as potential hires, partners, or collaborators.
 ---
 
 # Commenter Talent Scan
@@ -153,3 +153,15 @@ A public Head of Content hiring post from a well-known business creator collecte
 - Scoring before the eval gate opens. An ungated first run feels faster and produces a list nobody should trust.
 - Letting the classifier see different evidence than the labeler. Gold labels and question wording must describe the same subject, or calibration fails for wording reasons, not model reasons.
 - Reporting a provider's silence as a zero. No usage field means cost unknown. No dollar total from an enrichment provider means you say that, not a round number.
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=commenter-talent-scan&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=commenter-talent-scan
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

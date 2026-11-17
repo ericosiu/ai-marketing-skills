@@ -1,9 +1,6 @@
 ---
 name: packaging-youtube-thumbnails
-description: Use when a user supplies new video content or a channel and wants on-brand YouTube titles, thumbnail concepts, rendered variants, A/B packaging, identity profiling, precise thumbnail revisions, an inline review board, or a production handoff.
-metadata:
-  version: 1.0.0
-  updated: 2026-09-02
+description: Create, render, revise, and learn from evidence-backed title-thumbnail packages. Channel profiles, package scoring, visual QA.
 ---
 
 # Packaging YouTube Thumbnails
@@ -172,3 +169,15 @@ Performance learning does not replace co-design learning. Direct user correction
 ## Deliverable Contract
 
 Return the profile and review date, performance warnings or evidence gaps, the requested package count, one recommendation, variants or briefs, paths, inline previews grouped by headline, provenance, numeric QA evidence, risks, and a review-ready feedback structure. When requested, also return a tested team handoff ZIP.
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=packaging-youtube-thumbnails&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=packaging-youtube-thumbnails
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

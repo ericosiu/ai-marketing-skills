@@ -1,11 +1,6 @@
 ---
-name: Agentic video understanding
-description: >-
-  Use when an agent must extract moments, quotes, objections, hooks, or evidence
-  from long video or audio cheaper than full-frame ingest — sales calls,
-  podcasts, YouTube episodes, Loom trials, discovery recordings. Goal-directed
-  watch via Gemini agentic video understanding (frames, audio, or transcript).
-  Not for cutting, overlays, rendering, scheduling, or publishing.
+name: agentic-video-understanding
+description: Extract moments, quotes, and evidence from long video or audio via goal-directed Gemini watch. Use for sales calls, podcasts, discovery recordings.
 ---
 
 # Agentic video understanding
@@ -92,3 +87,15 @@ Markdown for humans, optional JSON for machines:
 ## Completion
 
 Done when the caller has the schema above (or a documented empty set) and this skill has performed no side effects beyond the Gemini read.
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=agentic-video-understanding&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=agentic-video-understanding
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

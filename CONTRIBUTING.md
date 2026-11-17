@@ -2,7 +2,7 @@
 
 AI Marketing Skills is an open-source collection of production marketing automation skills. Thanks for contributing.
 
-- **Repo:** [github.com/singlegrain/ai-marketing-skills](https://github.com/singlegrain/ai-marketing-skills)
+- **Repo:** [github.com/ericosiu/ai-marketing-skills](https://github.com/ericosiu/ai-marketing-skills)
 - **README:** [README.md](./README.md)
 
 ---

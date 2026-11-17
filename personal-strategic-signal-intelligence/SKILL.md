@@ -1,6 +1,6 @@
 ---
 name: personal-strategic-signal-intelligence
-description: Turn an executive or operator's private reading, highlights, notes, social bookmarks, and applied work into source-grounded decision intelligence. Use when detecting attention drift, surfacing pre-decision signals, testing contradictions, converting bookmarks into builds, recombining founder IP, finding service-offer arbitrage, or mapping content negative space.
+description: Turn private reading, bookmarks, notes, and applied work into source-grounded decision intelligence. Attention drift, decision court.
 ---
 
 # Personal Strategic Signal Intelligence
@@ -487,3 +487,15 @@ Before delivering any result, verify:
 6. **Private-to-public leakage:** Publishing inferred beliefs or raw notes. Fix with privacy labels and explicit publication approval.
 7. **Timer-driven noise:** Producing frequent summaries because ingestion is frequent. Fix by using weekly plus event-triggered synthesis.
 8. **Permanent recommendations:** Leaving stale advice active. Fix with lifecycle status, owner, review date, and retirement rules.
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=personal-strategic-signal-intelligence&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=personal-strategic-signal-intelligence
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->

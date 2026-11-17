@@ -1,6 +1,6 @@
 ---
 name: relationship-intelligence
-description: Consolidate lead feeds and relationship history into evidence-backed client, recruiting, partnership, sponsorship and acquisition opportunities. Use for cross-source identity reconciliation, prior-touch attribution, independent fit tiers and owner-ready action queues. Not an automatic outreach or hiring decision system.
+description: Consolidate lead feeds, verified prior touches, and five independent opportunity lanes. Identity reconciliation, touch attribution.
 ---
 
 # Relationship Intelligence
@@ -91,3 +91,15 @@ Run synthetic tests with:
 ```bash
 python3 -m unittest discover -s relationship-intelligence/tests
 ```
+
+<!-- gateway-cta:start -->
+## Run this skill on live data
+
+This skill is free and MIT licensed. To run it on your live accounts, connect the Single Brain Gateway.
+
+- Live services: see the full list in the setup file
+- Connect: https://gateway.singlebrain.com/mcp?sg_template=relationship-intelligence&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
+- Setup steps for agents: https://gateway.singlebrain.com/llms.txt?sg_template=relationship-intelligence
+
+Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
+<!-- gateway-cta:end -->
