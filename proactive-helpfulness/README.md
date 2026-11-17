@@ -68,10 +68,6 @@ Tests verify arithmetic, not evidence quality, live agent performance or revenue
 Installation does not activate monitoring. Logging follows the repository's
 consent settings and must exclude relationship data and funnel totals.
 
-<p align="center">
-  Built by <a href="https://www.singlegrain.com/?utm_source=github&utm_medium=repo&utm_campaign=ai-marketing-skills">Single Grain</a>. Powered by <a href="https://www.singlebrain.com/?utm_source=github&utm_medium=repo&utm_campaign=ai-marketing-skills">Single Brain</a>.
-</p>
-
 <!-- gateway-cta:start -->
 ## Run this skill on live data
 

@@ -314,7 +314,6 @@ revenue-intelligence/
 └── client_report_generator.py      # Multi-source client BI reports
 ```
 
----
 
 <!-- gateway-cta:start -->
 ## Run this skill on live data

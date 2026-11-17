@@ -47,17 +47,10 @@ while IFS= read -r -d '' skill_file; do
     # Get the directory containing SKILL.md
     skill_dir="$(dirname "$skill_file")"
     
-    # For nested skills (e.g., reimagine-work/skills/reimagine-work/SKILL.md),
-    # we want the top-level directory
-    if [[ "$skill_dir" == */skills/* ]]; then
-        # Extract the top-level directory
-        skill_dir="$(echo "$skill_dir" | sed 's|/skills/.*||')"
-    fi
-    
     # Make path absolute
     skill_dir="$REPO_ROOT/$skill_dir"
     
-    # Install the skill
+    # Install the skill directory that directly contains SKILL.md
     install_skill "$skill_dir"
 done < <(find . -name "SKILL.md" -type f \
     -not -path "./.git/*" \

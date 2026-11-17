@@ -49,46 +49,11 @@ Each agent looks for skills in specific directories:
 
 ## Manual Installation
 
-To install a skill manually, copy the entire skill directory, not just the SKILL.md file:
-
-```bash
-# Clone the repository
-git clone https://github.com/ericosiu/ai-marketing-skills
-
-# For Claude Code (project)
-mkdir -p .claude/skills
-cp -R ai-marketing-skills/seo-ops .claude/skills/seo-ops
-
-# For Codex (project)
-mkdir -p .agents/skills
-cp -R ai-marketing-skills/seo-ops .agents/skills/seo-ops
-
-# For Cursor (project)
-mkdir -p .agents/skills
-cp -R ai-marketing-skills/seo-ops .agents/skills/seo-ops
-
-# For OpenClaw (project)
-openclaw skills install ./ai-marketing-skills/seo-ops
-
-# For OpenClaw (all skills at once)
-./ai-marketing-skills/scripts/install-openclaw.sh
-```
+For manual installation instructions and agent-specific paths, see the README.md Manual Install section.
 
 **Important**: Copy the skill directory, never a single renamed file.
 
-## Special Case: reimagine-work
-
-The reimagine-work skill uses a nested structure. Its SKILL.md is at:
-
-```
-reimagine-work/skills/reimagine-work/SKILL.md
-```
-
-When copying this skill, use the full path:
-
-```bash
-cp -R ai-marketing-skills/reimagine-work .claude/skills/reimagine-work
-```
+For reimagine-work, the skill folder that contains SKILL.md is `reimagine-work/skills/reimagine-work`.
 
 ## Gateway Setup
 

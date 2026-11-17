@@ -342,7 +342,6 @@ sales-pipeline/
 
 The result: a self-improving pipeline that gets better the more you use it.
 
----
 
 <!-- gateway-cta:start -->
 ## Run this skill on live data

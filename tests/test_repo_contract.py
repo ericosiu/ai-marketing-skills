@@ -755,7 +755,26 @@ class TestRepoContract(unittest.TestCase):
             "CONTRIBUTING.md: Must not contain 'github.com/singlegrain/ai-marketing-skills'"
         )
 
-    def test_17_test_file_imports_and_workflow(self):
+    def test_17_no_old_utm_medium_repo(self):
+        """Test 17: No file contains utm_medium=repo."""
+        # Check all markdown files except CONTRIBUTING.md
+        for md_file in REPO_ROOT.glob('**/*.md'):
+            if md_file.name == 'CONTRIBUTING.md':
+                continue
+            
+            # Skip .git directory
+            if '.git' in md_file.parts:
+                continue
+            
+            with open(md_file, 'r', encoding='utf-8') as f:
+                content = f.read()
+            
+            self.assertNotIn(
+                'utm_medium=repo', content,
+                f"{md_file.relative_to(REPO_ROOT)}: Must not contain 'utm_medium=repo'"
+            )
+
+    def test_18_test_file_imports_and_workflow(self):
         """Test 17: Test file uses only allowed imports and workflow has no installers."""
         # Check this file's imports
         test_file = Path(__file__)

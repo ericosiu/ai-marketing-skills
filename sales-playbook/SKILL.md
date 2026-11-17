@@ -1,6 +1,6 @@
 ---
 name: sales-playbook
-description: Value-based pricing framework that turns $10K deals into $100K deals. Pre-call briefing, tiered packager, call analyzer.
+description: Use when preparing sales calls, building tiered pricing proposals, or analyzing deal structure. Value-based pricing framework and call analyzer.
 ---
 
 # AI Sales Playbook — Value-Based Pricing & Deal Upselling

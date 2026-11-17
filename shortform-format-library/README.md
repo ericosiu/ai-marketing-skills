@@ -40,11 +40,6 @@ python3 -m unittest discover -s shortform-format-library/tests
 
 See `references/page-and-data.md` for the interchange contract. Source truth and actual page/render behavior need separate review. Keep private source data and generated client output outside this public repository.
 
----
-
-<p align="center">
-  Built by <a href="https://www.singlegrain.com/?utm_source=github&utm_medium=repo&utm_campaign=ai-marketing-skills">Single Grain</a>. Powered by <a href="https://www.singlebrain.com/?utm_source=github&utm_medium=repo&utm_campaign=ai-marketing-skills">Single Brain</a>.
-</p>
 
 <!-- gateway-cta:start -->
 ## Run this skill on live data

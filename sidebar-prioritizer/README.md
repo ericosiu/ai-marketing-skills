@@ -45,11 +45,6 @@ For a busy sidebar, use a weekday morning refresh and a weekly full reset. Refre
 
 When using the full repository, run `python3 telemetry/version_check.py` before the workflow. Log completion with `telemetry/telemetry_log.py`: `--skill sidebar-prioritizer`, actual elapsed milliseconds via `--duration`, `--success true` or `false`, and `--version 1.0.0`. Preserve the existing opt-in choice; never enable remote telemetry as part of this skill. Do not log task IDs, titles, business details, paths, or transcript content. Missing helpers do not block a standalone installation.
 
----
-
-<p align="center">
-  Built by <a href="https://www.singlegrain.com/?utm_source=github&utm_medium=repo&utm_campaign=ai-marketing-skills">Single Grain</a>. Powered by <a href="https://www.singlebrain.com/?utm_source=github&utm_medium=repo&utm_campaign=ai-marketing-skills">Single Brain</a>.
-</p>
 
 <!-- gateway-cta:start -->
 ## Run this skill on live data

@@ -28,11 +28,6 @@ When using the full repository, run `python3 telemetry/version_check.py` from it
 
 The optional Gemini route builds on the workflow introduced by [Agent Native](https://agentnative.inc/resources/give-agents-video-analysis-skill). These instructions add transcript-first routing, silent operation, response parsing guidance, and verification of clip boundaries.
 
----
-
-<p align="center">
-  Built by <a href="https://www.singlegrain.com/?utm_source=github&utm_medium=repo&utm_campaign=ai-marketing-skills">Single Grain</a>. Powered by <a href="https://www.singlebrain.com/?utm_source=github&utm_medium=repo&utm_campaign=ai-marketing-skills">Single Brain</a>.
-</p>
 
 <!-- gateway-cta:start -->
 ## Run this skill on live data

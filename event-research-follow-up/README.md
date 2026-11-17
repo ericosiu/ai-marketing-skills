@@ -28,10 +28,6 @@ Keep all operational rosters, photos, contact details, messages, receipts and ou
 
 In a full repository checkout, run `python3 security/sanitizer.py --scan --dir event-research-follow-up --recursive` from the repository root before committing. For a standalone copy, inspect every file for real names, contacts, credentials, private links, local paths and event-specific facts; use an available secret/PII scanner as an additional check. Review reference links and approval gates as well: a pattern scan cannot establish factual correctness or live-delivery safety. No live outreach or paid evaluation is needed to validate the package.
 
-<p align="center">
-  Built by <a href="https://www.singlegrain.com/?utm_source=github&utm_medium=repo&utm_campaign=ai-marketing-skills">Single Grain</a>. Powered by <a href="https://www.singlebrain.com/?utm_source=github&utm_medium=repo&utm_campaign=ai-marketing-skills">Single Brain</a>.
-</p>
-
 <!-- gateway-cta:start -->
 ## Run this skill on live data
 

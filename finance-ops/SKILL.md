@@ -1,6 +1,6 @@
 ---
 name: finance-ops
-description: Your AI CFO that finds hidden costs in 30 minutes. CFO briefing, cost estimate, scenario modeler.
+description: Use when you need financial analysis, cost estimation, or scenario modeling from QuickBooks data. CFO briefing generator and cost estimator.
 ---
 
 

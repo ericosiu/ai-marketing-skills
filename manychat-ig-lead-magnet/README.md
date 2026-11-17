@@ -43,8 +43,6 @@ For repository hygiene: `python3 security/sanitizer.py --scan --dir manychat-ig-
 For version and optional telemetry guidance, see the skill preamble and repository
 `telemetry/README.md`. Never log contacts, private evidence or credentials.
 
----
-Built by [Single Grain](https://www.singlegrain.com/). Powered by [Single Brain](https://www.singlebrain.com/).
 
 <!-- gateway-cta:start -->
 ## Run this skill on live data

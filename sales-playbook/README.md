@@ -203,7 +203,6 @@ sales-playbook/
 
 The result: a systematic approach to value-based pricing that turns data into leverage and conversations into larger deals.
 
----
 
 <!-- gateway-cta:start -->
 ## Run this skill on live data

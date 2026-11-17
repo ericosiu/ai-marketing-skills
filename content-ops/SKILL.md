@@ -1,6 +1,6 @@
 ---
 name: content-ops
-description: Ship content that scores 90+ every time with expert panel scoring, quality gates, editorial brain, and quote mining.
+description: Use when you need expert panel scoring to improve content quality before publishing. Auto-assembled expert panels with iterative feedback loops.
 ---
 
 

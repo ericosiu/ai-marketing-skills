@@ -99,11 +99,6 @@ python3 packaging-youtube-thumbnails/scripts/thumbnail_learning.py --help
 
 Keep creator likenesses, brand assets, raw Studio exports, screenshots, viewer data, cookies, credentials, and connector responses outside this repository. Store performance state under the profile's local output root. Rendering and review are allowed; publishing or changing a live YouTube asset requires explicit approval.
 
----
-
-<p align="center">
-  Built by <a href="https://www.singlegrain.com/?utm_source=github&utm_medium=repo&utm_campaign=ai_marketing_skills">Single Grain</a>. Powered by <a href="https://www.singlebrain.com/?utm_source=github&utm_medium=repo&utm_campaign=ai_marketing_skills">Single Brain</a>.
-</p>
 
 <!-- gateway-cta:start -->
 ## Run this skill on live data

@@ -63,10 +63,10 @@ Content creation, sales intelligence, and automation skills:
 
 | Skill | Description | Connect |
 |-------|-------------|---------|
-| [content-ops](content-ops/) | Ship content that scores 90+ every time with expert panel scoring, quality gates, editorial brain, and quote mining. | [Connect](https://gateway.singlebrain.com/mcp?sg_template=content-ops&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills) |
+| [content-ops](content-ops/) | Use when you need expert panel scoring to improve content quality before publishing. Auto-assembled expert panels with iterative feedback loops. | [Connect](https://gateway.singlebrain.com/mcp?sg_template=content-ops&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills) |
 | [content-eval](content-eval/) | Generate and score content ideas using an expert panel. Pull from transcripts, meetings, competitors, and trends to produce a ranked content menu. | [Connect](https://gateway.singlebrain.com/mcp?sg_template=content-eval&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills) |
 | [closed-loop-analytics-upgrade](closed-loop-analytics-upgrade/) | Modernize legacy analytics implementations to GA4 and current best practices. Audit, migrate, validate. | [Connect](https://gateway.singlebrain.com/mcp?sg_template=closed-loop-analytics-upgrade&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills) |
-| [sales-playbook](sales-playbook/) | Value-based pricing framework that turns $10K deals into $100K deals. Pre-call briefing, tiered packager, call analyzer. | [Connect](https://gateway.singlebrain.com/mcp?sg_template=sales-playbook&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills) |
+| [sales-playbook](sales-playbook/) | Use when preparing sales calls, building tiered pricing proposals, or analyzing deal structure. Value-based pricing framework and call analyzer. | [Connect](https://gateway.singlebrain.com/mcp?sg_template=sales-playbook&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills) |
 | [relationship-intelligence](relationship-intelligence/) | Consolidate lead feeds, verified prior touches, and five independent opportunity lanes. Identity reconciliation, touch attribution. | [Connect](https://gateway.singlebrain.com/mcp?sg_template=relationship-intelligence&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills) |
 | [event-research-follow-up](event-research-follow-up/) | Research events, qualify evidence-backed leads, and execute only approved follow-up with delivery ledgers and reply outcomes. | [Connect](https://gateway.singlebrain.com/mcp?sg_template=event-research-follow-up&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills) |
 | [autoresearch](autoresearch/) | Karpathy-inspired optimization loops for conversion content. Generate variants, score with expert panel, evolve winners. | [Connect](https://gateway.singlebrain.com/mcp?sg_template=autoresearch&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills) |
@@ -108,7 +108,7 @@ Operations, team management, and automation infrastructure:
 
 | Skill | Description | Connect |
 |-------|-------------|---------|
-| [finance-ops](finance-ops/) | Your AI CFO that finds hidden costs in 30 minutes. CFO briefing, cost estimate, scenario modeler. | [Connect](https://gateway.singlebrain.com/mcp?sg_template=finance-ops&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills) |
+| [finance-ops](finance-ops/) | Use when you need financial analysis, cost estimation, or scenario modeling from QuickBooks data. CFO briefing generator and cost estimator. | [Connect](https://gateway.singlebrain.com/mcp?sg_template=finance-ops&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills) |
 | [team-ops](team-ops/) | Ruthless performance audits and meeting intelligence. Elon algorithm, meeting-to-action extractor. | [Connect](https://gateway.singlebrain.com/mcp?sg_template=team-ops&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills) |
 | [commenter-talent-scan](commenter-talent-scan/) | Find high-signal commenters across social platforms and score them as potential hires, partners, or collaborators. | [Connect](https://gateway.singlebrain.com/mcp?sg_template=commenter-talent-scan&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills) |
 | [software-factory](software-factory/) | Let coding agents ship fixes through reviewed PRs, capped pinned-SHA merges, dated backups, and 24h rollback watch. | [Connect](https://gateway.singlebrain.com/mcp?sg_template=software-factory&utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills) |
@@ -129,7 +129,7 @@ Connect skills to your live accounts with the Single Brain Gateway. Sign in with
 
 Gateway: https://gateway.singlebrain.com/mcp?utm_source=github&utm_medium=skill_repo&utm_campaign=ai_marketing_skills
 
-In Single Brain (two words), the Gateway connects AI agents to your marketing and sales stack without exposing API keys.
+Single Brain Gateway connects AI agents to your marketing and sales stack without exposing API keys.
 
 ## Python Script Usage
 

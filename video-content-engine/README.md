@@ -55,11 +55,6 @@ The validators do not prove editorial quality or approval. Full output review re
 
 The bundled validators use only the Python standard library.
 
----
-
-<p align="center">
-  Built by <a href="https://www.singlegrain.com/?utm_source=github&utm_medium=repo&utm_campaign=ai-marketing-skills">Single Grain</a>. Powered by <a href="https://www.singlebrain.com/?utm_source=github&utm_medium=repo&utm_campaign=ai-marketing-skills">Single Brain</a>.
-</p>
 
 <!-- gateway-cta:start -->
 ## Run this skill on live data

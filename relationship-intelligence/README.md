@@ -51,10 +51,6 @@ The release guide defines a measurable top-priority review target, identity and
 suppression gates, replay tests and staged rollout. It does not claim a measured
 95% production result or guaranteed business outcomes.
 
-<p align="center">
-Built by <a href="https://www.singlegrain.com/?utm_source=github&utm_medium=repo&utm_campaign=ai-marketing-skills">Single Grain</a>. Powered by <a href="https://www.singlebrain.com/?utm_source=github&utm_medium=repo&utm_campaign=ai-marketing-skills">Single Brain</a>.
-</p>
-
 <!-- gateway-cta:start -->
 ## Run this skill on live data
 
