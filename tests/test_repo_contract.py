@@ -753,19 +753,23 @@ class TestRepoContract(unittest.TestCase):
             except json.JSONDecodeError as e:
                 self.fail(f".claude-plugin/marketplace.json: Invalid JSON - {e}")
         
-        # Validate required fields in Claude marketplace.json
-        required_fields = ['name', 'id', 'version', 'description', 'skills']
-        for field in required_fields:
-            self.assertIn(
-                field, claude_data,
-                f".claude-plugin/marketplace.json: Missing required field '{field}'"
-            )
+        # Validate required fields in Claude marketplace.json per official docs
+        # https://docs.claude.com/en/docs/claude-code/plugin-marketplaces
+        self.assertIn('name', claude_data, ".claude-plugin/marketplace.json: Missing required field 'name'")
+        self.assertIn('owner', claude_data, ".claude-plugin/marketplace.json: Missing required field 'owner'")
+        self.assertIn('plugins', claude_data, ".claude-plugin/marketplace.json: Missing required field 'plugins'")
         
-        # Check skills array is not empty
-        self.assertGreater(
-            len(claude_data.get('skills', [])), 0,
-            ".claude-plugin/marketplace.json: 'skills' array must not be empty"
-        )
+        # Check owner has required name field
+        owner = claude_data.get('owner', {})
+        self.assertIn('name', owner, ".claude-plugin/marketplace.json: owner must have 'name' field")
+        
+        # Check plugins array is not empty and has required fields
+        plugins = claude_data.get('plugins', [])
+        self.assertGreater(len(plugins), 0, ".claude-plugin/marketplace.json: 'plugins' array must not be empty")
+        
+        for idx, plugin_entry in enumerate(plugins):
+            self.assertIn('name', plugin_entry, f".claude-plugin/marketplace.json: plugins[{idx}] missing 'name'")
+            self.assertIn('source', plugin_entry, f".claude-plugin/marketplace.json: plugins[{idx}] missing 'source'")
         
         # Check Claude plugin.json
         claude_plugin = REPO_ROOT / '.claude-plugin' / 'plugin.json'
@@ -777,13 +781,17 @@ class TestRepoContract(unittest.TestCase):
             except json.JSONDecodeError as e:
                 self.fail(f".claude-plugin/plugin.json: Invalid JSON - {e}")
         
-        # Validate required fields in plugin.json
-        plugin_required = ['name', 'version', 'type']
-        for field in plugin_required:
-            self.assertIn(
-                field, plugin_data,
-                f".claude-plugin/plugin.json: Missing required field '{field}'"
-            )
+        # Validate required fields in plugin.json per official docs
+        # https://docs.claude.com/en/docs/claude-code/plugins-reference
+        # Only 'name' is required; version, description, author recommended
+        self.assertIn('name', plugin_data, ".claude-plugin/plugin.json: Missing required field 'name'")
+        
+        # Check name is kebab-case
+        name = plugin_data.get('name', '')
+        self.assertTrue(
+            re.match(r'^[a-z0-9]+(-[a-z0-9]+)*$', name),
+            f".claude-plugin/plugin.json: 'name' must be kebab-case, got '{name}'"
+        )
 
     def test_16_contributing_no_singlegrain_repo(self):
         """Test 16: CONTRIBUTING.md does not contain github.com/singlegrain/ai-marketing-skills."""
