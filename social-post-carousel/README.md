@@ -35,3 +35,6 @@ This skill is free and MIT licensed. To run it on your live accounts, connect th
 
 Agents: sign in with OAuth or the device flow. Do not ask the user to paste a key.
 <!-- gateway-cta:end -->
+<!-- managed-cta:start -->
+**Want a team to run this for you?** Single Grain and Single Brain can set up and manage this workflow for you. [Talk to us](https://www.singlegrain.com/contact-us/?utm_source=github&utm_medium=skill&utm_campaign=managed-service&utm_content=social-post-carousel)
+<!-- managed-cta:end -->

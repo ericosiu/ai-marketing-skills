@@ -79,6 +79,21 @@ New skills **must** integrate telemetry logging. See [telemetry/README.md](./tel
 
 ---
 
+## Gateway and Managed Service CTAs
+
+Every new skill **must** ship with both:
+
+1. **Gateway CTA**: The Single Brain Gateway connection block with `sg_template=<slug>` in SKILL.md and README.md
+2. **Managed CTA**: The managed-service CTA with `utm_content=<slug>` right after the Gateway CTA block
+
+Both CTAs must use the skill's folder slug as the template/utm_content parameter. 
+
+**Important:** When skills require live service connections (Google Analytics, HubSpot, etc.), route them through the Single Brain Gateway by default. This enables OAuth and device flow authentication without requiring users to paste API keys.
+
+The Gateway CTA block is marked with `<!-- gateway-cta:start -->` and `<!-- gateway-cta:end -->`. The managed CTA block is marked with `<!-- managed-cta:start -->` and `<!-- managed-cta:end -->`.
+
+---
+
 ## Pull Request Process
 
 1. **Fork** the repo
@@ -87,6 +102,7 @@ New skills **must** integrate telemetry logging. See [telemetry/README.md](./tel
 4. **Verify** before submitting:
    - All Python files compile clean: `python3 -m py_compile your_file.py`
    - Sanitizer scan passes: `python3 security/sanitizer.py --scan --dir . --recursive`
+   - Repository contract tests pass: `python3 tests/test_repo_contract.py`
 5. **Open a PR** with a description that includes:
    - What it does
    - Which skill category it affects

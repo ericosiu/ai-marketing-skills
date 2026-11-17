@@ -774,8 +774,129 @@ class TestRepoContract(unittest.TestCase):
                 f"{md_file.relative_to(REPO_ROOT)}: Must not contain 'utm_medium=repo'"
             )
 
-    def test_18_test_file_imports_and_workflow(self):
-        """Test 17: Test file uses only allowed imports and workflow has no installers."""
+    def test_18_managed_cta_in_skill_files(self):
+        """Test 18: Each SKILL.md and skill README has managed CTA with correct utm_content."""
+        for skill_dir in self.skill_dirs:
+            if skill_dir in NO_SKILL_ALLOWLIST:
+                continue
+            
+            # Check SKILL.md
+            skill_path = REPO_ROOT / skill_dir
+            skill_file = skill_path / 'SKILL.md'
+            
+            if not skill_file.exists():
+                skill_file = skill_path / 'skills' / skill_dir / 'SKILL.md'
+            
+            with open(skill_file, 'r', encoding='utf-8') as f:
+                skill_content = f.read()
+            
+            # Check for managed CTA markers
+            self.assertIn(
+                '<!-- managed-cta:start -->', skill_content,
+                f"{skill_dir}/SKILL.md: Missing managed-cta:start marker"
+            )
+            self.assertIn(
+                '<!-- managed-cta:end -->', skill_content,
+                f"{skill_dir}/SKILL.md: Missing managed-cta:end marker"
+            )
+            
+            # Check for correct utm_content in managed CTA
+            managed_cta_pattern = rf'utm_content={re.escape(skill_dir)}'
+            self.assertIsNotNone(
+                re.search(managed_cta_pattern, skill_content),
+                f"{skill_dir}/SKILL.md: Missing or incorrect utm_content={skill_dir} in managed CTA"
+            )
+            
+            # Check README.md
+            readme_path = REPO_ROOT / skill_dir / 'README.md'
+            
+            with open(readme_path, 'r', encoding='utf-8') as f:
+                readme_content = f.read()
+            
+            # Check for managed CTA markers
+            self.assertIn(
+                '<!-- managed-cta:start -->', readme_content,
+                f"{skill_dir}/README.md: Missing managed-cta:start marker"
+            )
+            self.assertIn(
+                '<!-- managed-cta:end -->', readme_content,
+                f"{skill_dir}/README.md: Missing managed-cta:end marker"
+            )
+            
+            # Check for correct utm_content in managed CTA
+            self.assertIsNotNone(
+                re.search(managed_cta_pattern, readme_content),
+                f"{skill_dir}/README.md: Missing or incorrect utm_content={skill_dir} in managed CTA"
+            )
+
+    def test_19_managed_cta_in_root_readme(self):
+        """Test 19: Root README has managed CTA with utm_content=readme."""
+        readme_path = REPO_ROOT / 'README.md'
+        
+        with open(readme_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+        
+        # Check for managed CTA
+        managed_cta_pattern = r'utm_content=readme'
+        self.assertIsNotNone(
+            re.search(managed_cta_pattern, content),
+            "README.md: Missing managed CTA with utm_content=readme"
+        )
+        
+        # Check it's in the right place (after Install section)
+        install_section_end = content.find('## Manual Install')
+        if install_section_end > 0:
+            before_manual = content[:install_section_end]
+            self.assertIn(
+                'utm_content=readme', before_manual,
+                "README.md: Managed CTA should appear after Install section"
+            )
+
+    def test_20_contributing_has_managed_cta_rule(self):
+        """Test 20: CONTRIBUTING.md has Gateway and managed CTA requirement."""
+        contributing_path = REPO_ROOT / 'CONTRIBUTING.md'
+        
+        with open(contributing_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+        
+        # Check for Gateway and managed CTA section
+        self.assertIn(
+            'Gateway and Managed Service CTAs', content,
+            "CONTRIBUTING.md: Missing 'Gateway and Managed Service CTAs' section"
+        )
+        
+        # Check for key requirements
+        requirements = [
+            'sg_template=<slug>',
+            'utm_content=<slug>',
+            'Single Brain Gateway',
+        ]
+        
+        for requirement in requirements:
+            self.assertIn(
+                requirement, content,
+                f"CONTRIBUTING.md: Missing '{requirement}' in Gateway/managed CTA section"
+            )
+
+    def test_21_single_brain_two_words(self):
+        """Test 21: 'Single Brain' is two words, not 'SingleBrain'."""
+        # Check all markdown files
+        for md_file in REPO_ROOT.glob('**/*.md'):
+            # Skip .git directory
+            if '.git' in md_file.parts:
+                continue
+            
+            with open(md_file, 'r', encoding='utf-8') as f:
+                content = f.read()
+            
+            # Check for 'SingleBrain' (one word)
+            self.assertNotIn(
+                'SingleBrain', content,
+                f"{md_file.relative_to(REPO_ROOT)}: Use 'Single Brain' (two words), not 'SingleBrain'"
+            )
+
+    def test_22_test_file_imports_and_workflow(self):
+        """Test 22: Test file uses only allowed imports and workflow has no installers."""
         # Check this file's imports
         test_file = Path(__file__)
         
