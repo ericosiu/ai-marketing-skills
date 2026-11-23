@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  n8n:
+    image: n8nio/n8n:1.84.2
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:5678:5678"
+    environment:
+      - N8N_HOST=localhost
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - WEBHOOK_URL=http://localhost:5678/
+      - N8N_EDITOR_BASE_URL=http://localhost:5678/
+      - N8N_RUNNERS_ENABLED=true
+      - TZ=UTC
+      # Default owner auth (change on first login!)
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=admin
+      - N8N_BASIC_AUTH_PASSWORD=CHANGE_THIS_PASSWORD
+      # Google OAuth (paste exact OAuth Client ID + Secret after step 1 below)
+      - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
+      - GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
+      - GOOGLE_REDIRECT_URI=http://localhost:5678/oauth2/callback/google
+    volumes:
+      - n8n_data:/home/node/.n8n
+      # Mount published Google OAuth credentials so n8n can persist them.
+      # The file below is created by `npm init` + `save` in n8n’s Setup wizard.
+      - ./credentials:/home/node/.n8n/credentials
+    networks:
+      - n8n-net
+
+volumes:
+  n8n_data:
+
+networks:
+  n8n-net:
+    driver: bridge
