@@ -1,0 +1,14 @@
+{
+  "_description": "Default configuration for the DTC content engine.",
+  "quality_threshold": 90,
+  "max_scoring_iterations": 3,
+  "cross_sell_cta_frequency": 3,
+  "image_cooldown_days": 14,
+  "default_model": "claude-sonnet-4-6",
+  "output_dir": "output",
+  "tier_weights": {
+    "1": 2,
+    "2": 1,
+    "3": 1
+  }
+}
