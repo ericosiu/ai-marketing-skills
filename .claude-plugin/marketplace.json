@@ -1,0 +1,15 @@
+{
+  "name": "ai-marketing-skills",
+  "description": "Get found in AI search (AEO/SEO) and turn it into pipeline. 45 open-source marketing skills.",
+  "owner": {
+    "name": "Eric Siu / Single Grain",
+    "url": "https://www.singlegrain.com"
+  },
+  "plugins": [
+    {
+      "name": "ai-marketing-skills",
+      "source": "./",
+      "description": "45 marketing skills: SEO ops, outbound engine, lead research, sales pipeline, CRO, revenue intelligence, growth experiments, content creation, video production, and team operations"
+    }
+  ]
+}
