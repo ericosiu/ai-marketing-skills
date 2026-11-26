@@ -1,0 +1,1 @@
+# No third-party dependencies. The skill is instructions only.
